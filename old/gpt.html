@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Emma Blanchard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Sticky -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Développeuse Web Junior | HTML, CSS, JavaScript</h1>
+        <p>Creative coding</p>
+        <div class="stats-container">
+            <div class="stat"> <span id="lines-code">453K</span> <br> Total lines of code written </div>
+            <div class="stat"> <span id="projects-count">20+</span> <br> Projets réalisés </div>
+            <div class="stat"> <span id="clients">5</span> <br> Clients satisfaits </div>
+        </div>
+        <a href="#projects" class="btn">Voir mes projets</a>
+        <a href="#contact" class="btn btn-secondary">Me Contacter</a>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects">
+        <h2>Mes Projets</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Projet 1</h3>
+                    <p>Description rapide...</p>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Projet 2</h3>
+                    <p>Description rapide...</p>
+                    <a href="#" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos -->
+    <section id="about">
+        <h2>À Propos</h2>
+        <p>Présentation rapide et parcours...</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Tu veux créer quelque chose de <strong>super</strong> ensemble ?</h2>
+        <p>Contacte-moi via :</p>
+        <div class="contact-links">
+            <a href="mailto:email@example.com" class="contact-icon">📧</a>
+            <a href="#" class="contact-icon">💼 LinkedIn</a>
+        </div>
+    </section>
+
+    <script>
+        // Scroll fluide
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

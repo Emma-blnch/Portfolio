@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "matter";
+    src: url(assets/font/matter/Matter-Regular.ttf);
+}
+
+@font-face {
+    font-family: "mona";
+    src: url(assets/font/Mona_Sans/MonaSans-Regular.ttf);
+}
+
+/* Reglages globaux */
+body {
+    font-family: "matter", sans-serif;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+
+ul {
+    font: "matter", sans-serif;
+    font-size: 1.8rem;
+    list-style: none;
+}
+
+/* Nav */
+header {
+    background: #EAEAEA;
+    /*#F6F4F2*/
+    display: flex;
+    justify-content: space-around;
+}
+
+nav {
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: "matter", sans-serif;
+}

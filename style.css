@@ -1,41 +1,381 @@
+/* Importation des polices */
 @font-face {
     font-family: "matter";
     src: url(assets/font/matter/Matter-Regular.ttf);
 }
 
 @font-face {
-    font-family: "mona";
-    src: url(assets/font/Mona_Sans/MonaSans-Regular.ttf);
+    font-family: "matter-thin";
+    src: url(assets/font/matter/Matter-Light.ttf);
+}
+
+@font-face {
+    font-family: "matter-bold";
+    src: url(assets/font/matter/Matter-Bold.ttf);
 }
 
 /* Reglages globaux */
 body {
     font-family: "matter", sans-serif;
     font-size: 1.8rem;
-    margin: 0 auto;
-}
-
-ul {
-    font: "matter", sans-serif;
-    font-size: 1.8rem;
-    list-style: none;
-}
-
-/* Nav */
-header {
+    margin: 0;
+    padding: 0;
     background: #EAEAEA;
-    /*#F6F4F2*/
+    color: #333;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+    /* filter: brightness(1.3);
+    filter: contrast(0.9); */
 }
 
-nav {
-    padding: 5px;
+/* Navigation Sticky */
+header {
+    position: fixed;
+    top: 2%;
+    left: 1%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: fit-content;
+}
+
+#logo {
+    margin-right: 20px;
+    width: 100px;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    gap: 20px;
+    list-style: none;
+    font-size: 1.1rem;
+    border: 0.5px solid rgba(255, 175, 70, 0.95);
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.795);
+    box-shadow: 0px 4px 10px rgba(82, 82, 82, 0.062);
+    padding: 20px 30px;
+    margin: 0;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    color: #36c5e9;
+}
+
+/* Hero Section */
+.intro {
+    text-align: center;
+    padding: 20vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 0.5px solid #e0e0e0;
+    background: #F6F4F2;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 50px;
+    color: #222;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.3;
+    background: linear-gradient(90deg, #36c5e9, rgba(255, 174, 69, 0.949));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro h3 {
     font-size: 1.5rem;
+    color: #505050;
+}
+
+/* Stats */
+#stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 0.5px solid #e0e0e0;
+    position: relative;
+    z-index: 2;
+    background: #EAEAEA;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.stat-circle {
+    background: black;
+    color: #EAEAEA;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
+    font-size: 1rem;
+    font-family: "matter-thin", sans-serif;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#stat-value {
+    font-family: "matter-bold", sans-serif;
+    font-size: 2rem;
+    white-space: normal;
+}
+
+.stat-dots {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.stat-dot {
+    width: 8px;
+    height: 8px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.stat-dot.active {
+    background: white;
+}
+
+
+/* #stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 5vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 0.5px solid #e0e0e0;
+    position: relative;
+    z-index: 2;
+    background: #EAEAEA;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.stats-container {
+    display: flex;
+    gap: 50px;
+}
+
+.stat {
+    background: black;
+    color: #EAEAEA;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
+    font-size: 1rem;
+    font-family: "matter-thin" ,sans-serif;
+    margin: 0 20px;
+}
+
+#lines-code, #projects-count, #clients {
+    font-family: "matter-bold", sans-serif;
+    font-weight: 5rem;
+    font-size: 2rem;
+} */
+
+/* Projets */
+#projets {
+    padding: 15vh 5%;
+    background: #F6F4F2;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 0.5px solid #e0e0e0;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+    position: relative;
+    margin-top: -60px;
+    z-index: 1;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #0077FF;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0055CC;
+}
+
+/* Section À Propos */
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 18vh 5%;
+}
+
+#about img {
+    width: 260px;
+    height: 270px;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+#about p {
+    width: 40%;
+    padding: 20px;
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+/* Skills */
+#skills {
+    text-align: center;
+    padding: 10vh 5%;
+}
+
+h4 {
+    font-family: "matter-thin", sans-serif;
+    font-weight: 50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+h5 {
+    display: flex;
+    justify-content: center;
     text-transform: uppercase;
-    font-family: "matter", sans-serif;
+    padding: 10px 15px;
+    margin: 5px;
+    font-family: "matter-bold", sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    letter-spacing: 0.6rem;
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+    padding: 5vh;
+    border: 1px solid #d3d3d36b;
+    border-radius: 40px;
+    margin: 50px 35px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    /* grid-template-rows: 290px 100px 30px; */
+    grid-template-rows: 290px 110px;
+    /* background: radial-gradient(circle at right top, #36c5e9 , #ffaf46f2, #ffc13b); */
+    position: relative;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#catch {
+    position: relative;
+    z-index: 2;
+    grid-column: span 3;
+    text-align: left;
+    letter-spacing: 0.1rem;
+    line-height: 4.5rem;
+    font-size: 4rem;
+    color: white;
+}
+
+/* #email {
+    grid-column: 3 span;
+    grid-row: 3;
+    margin-top: 0;
+    padding-right: 65px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-family: "matter-thin", sans-serif;
+    font-size: 1.3rem;
+} */
+
+.contact-links {
+    gap: 20px;
+    font-size: 2rem;
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.contact-links button {
+    border-radius: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 40px;
+    color: white;
+    background: black;
+    /* background: none; */
+    font-size: 1.4rem;
+}
+
+.contact-links button:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000000f2;
+    background: whitesmoke;
+    border: 1px solid #ffaf46f2;
 }

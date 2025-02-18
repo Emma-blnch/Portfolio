@@ -9,30 +9,42 @@
 <body>
     <!-- Navigation -->
     <header>
+        <img src="assets/img/EB_Logo-removebg-preview.png" alt="logo-emma" id="logo">
         <nav>
             <ul>
                 <li>Accueil</li>
                 <li>Projets</li>
-                <li>A propos</li>
+                <li>À propos</li>
                 <li>Contact</li>
+                <!-- <li><button id="mode"></button></li> -->
             </ul>
         </nav>
+        <!-- <button id="cv">CV</button> -->
     </header>
 
     <!-- Presentation -->
-    <section id="home" class="intro">
+    <section id="accueil" class="intro">
         <h2>Du design au code, je crée des expériences web élégantes et efficaces.</h2>
-        <h3>-- Creative coding --</h3>
+        <h3>- Emma Blanchard -</h3>
     </section>
 
     <!-- Stats -->
-     <section id="stats">
+     <!-- <section id="stats">
         <div class="stats-container">
-            <div class="stat"> <span id="lines-code">453K</span> <br> Total lines of code written </div>
-            <div class="stat"> <span id="projects-count">20+</span> <br> Projets réalisés </div>
-            <div class="stat"> <span id="clients">5</span> <br> Clients satisfaits </div>
+            <div class="stat"> <span id="lines-code">254K</span> <br> Nombre total de lignes<br>de code écrites </div>
+            <div class="stat"> <span id="projects-count">15+</span> <br> Projets réalisés </div>
+            <div class="stat"> <span id="clients">2</span> <br> Clients satisfaits </div>
         </div>
-     </section>
+     </section> -->
+     <section id="stats">
+        <div class="stat-circle" id="stat-circle">
+            <span id="stat-value">254K</span>
+            <p id="stat-label">Nombre total de lignes <br>de code écrites</p>
+            <div class="stat-dots">
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Projets -->
     <section id="projets">
@@ -58,7 +70,7 @@
     <!-- A propos -->
     <section id="about">
         <img src="assets/img/eblancha.jpg" alt="profile-pic-emma">
-        <p>Développeuse web junior, spécialisée en HTML, CSS, et intégration responsive. Mon objectif ? Transformer des idées en sites web modernes, épurés et performants. Formée à 42 Paris, je combine rigueur, autonomie et créativité pour aider les entrepreneurs et créateurs à donner vie à leurs projets web.</p>
+        <p>Développeuse web junior, spécialisée en HTML, CSS, et <strong>intégration responsive</strong>. <br>Mon objectif ? Transformer des idées en sites web <strong>modernes</strong>, épurés et <strong>performants</strong>. <br><br>Formée à 42 Paris, je combine rigueur, <strong>autonomie</strong> et créativité pour aider les entrepreneurs et créateurs à <strong>donner vie à leurs projets web</strong>.</p>
     </section>
 
     <!-- Skills -->
@@ -67,21 +79,28 @@
         <h5>Clean code</h5>
         <h5>Optimisation SEO</h5>
         <h5>Git/github</h5>
-        <h5>Creativite</h5>
-        <h5>Ecoute client</h5>
+        <h5>Créativité</h5>
+        <h5>Écoute client</h5>
         <h5>Autonomie</h5>
         
     </section>
 
     <!-- Contact -->
     <section id="contact">
+        <video autoplay loop muted playsinline src="assets/video/blue-waves.mp4" type="video/mp4" id="bg-video"></video>
         <div id="catch">
-            <p>Tu veux creer quelque chose de <strong>super</strong> ensemble ? </p>
+            <p>Tu veux créer <br>
+                quelque chose de <strong>super</strong>
+                <br>ensemble ?
+            </p>
         </div>
         <div class="contact-links">
-            <a href="mailto:email@example.com" class="contact-icon">📧</a>
-            <a href="#" class="contact-icon">💼 LinkedIn</a>
+            <button href="mailto:email@example.com">Mail</button>
+            <button href="#">Linkedin</button>
         </div>
+        <!-- <p id="email">Sinon -> emma.blnch4@gmail.com</p> -->
     </section>
+
+    <script src="script.js"></script> <!-- script pour les animations -->
 </body>
 </html>
