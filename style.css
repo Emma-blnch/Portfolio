@@ -57,11 +57,12 @@ nav ul {
     backdrop-filter: blur(2px);
     background: rgba(255, 255, 255, 0.795);
     box-shadow: 0px 4px 10px rgba(82, 82, 82, 0.062);
-    padding: 20px 30px;
+    padding: 15px 30px;
     margin: 0;
 }
 
 nav ul li {
+    padding-top: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -163,50 +164,6 @@ nav ul li:hover {
 .stat-dot.active {
     background: white;
 }
-
-
-/* #stats {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    text-align: center;
-    padding: 5vh 5%;
-    border-radius: 0 0 40px 40px;
-    border-bottom: 0.5px solid #e0e0e0;
-    position: relative;
-    z-index: 2;
-    background: #EAEAEA;
-    background-image: url(assets/effects/otis-redding.png);
-    background-size: 60px;
-    background-blend-mode: multiply;
-}
-
-.stats-container {
-    display: flex;
-    gap: 50px;
-}
-
-.stat {
-    background: black;
-    color: #EAEAEA;
-    width: 250px;
-    height: 250px;
-    aspect-ratio: 1/1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
-    font-size: 1rem;
-    font-family: "matter-thin" ,sans-serif;
-    margin: 0 20px;
-}
-
-#lines-code, #projects-count, #clients {
-    font-family: "matter-bold", sans-serif;
-    font-weight: 5rem;
-    font-size: 2rem;
-} */
 
 /* Projets */
 #projets {
@@ -311,9 +268,7 @@ h5 {
     margin: 50px 35px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    /* grid-template-rows: 290px 100px 30px; */
     grid-template-rows: 290px 110px;
-    /* background: radial-gradient(circle at right top, #36c5e9 , #ffaf46f2, #ffc13b); */
     position: relative;
     overflow: hidden;
 }
@@ -338,18 +293,6 @@ h5 {
     font-size: 4rem;
     color: white;
 }
-
-/* #email {
-    grid-column: 3 span;
-    grid-row: 3;
-    margin-top: 0;
-    padding-right: 65px;
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-    font-family: "matter-thin", sans-serif;
-    font-size: 1.3rem;
-} */
 
 .contact-links {
     gap: 20px;
@@ -379,3 +322,130 @@ h5 {
     background: whitesmoke;
     border: 1px solid #ffaf46f2;
 }
+
+/* Dark mode */
+.dark-mode {
+    background: #121212;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+    color: whitesmoke;
+}
+
+.dark-mode nav ul {
+    background: rgba(40, 40, 40, 0.8);
+}
+
+.dark-mode .stat-circle {
+    border: 1px solid white;
+}
+
+.dark-mode #stats {
+    background: #121212;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.dark-mode .intro {
+    background: #1e1e1e;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.dark-mode .intro h3 {
+    color: whitesmoke;
+}
+
+#dark-mode-toggle img {
+    width: 22px;  /* Ajuste la taille de l'icône */
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#dark-mode-toggle:hover img {
+    transform: scale(1.1);
+}
+
+/* projets mode sombre */
+.dark-mode #projets {
+    background: #1e1e1e;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+/* Mode sombre pour les boutons */
+.dark-mode .contact-links button {
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.dark-mode .contact-links button:hover {
+    color: whitesmoke;
+    background: #000000f2;
+    border: 1px solid #ffaf46f2;
+}
+
+body {
+    transition: background 0.4s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+/* #stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 5vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 0.5px solid #e0e0e0;
+    position: relative;
+    z-index: 2;
+    background: #EAEAEA;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.stats-container {
+    display: flex;
+    gap: 50px;
+}
+
+.stat {
+    background: black;
+    color: #EAEAEA;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
+    font-size: 1rem;
+    font-family: "matter-thin" ,sans-serif;
+    margin: 0 20px;
+}
+
+#lines-code, #projects-count, #clients {
+    font-family: "matter-bold", sans-serif;
+    font-weight: 5rem;
+    font-size: 2rem;
+} */
+
+/* #email {
+    grid-column: 3 span;
+    grid-row: 3;
+    margin-top: 0;
+    padding-right: 65px;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-family: "matter-thin", sans-serif;
+    font-size: 1.3rem;
+} */

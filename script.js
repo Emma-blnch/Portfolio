@@ -36,21 +36,29 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// --------> Animation cercle de statistiques
+// // --------> Animation cercle de statistiques
 document.addEventListener("DOMContentLoaded", function() {
     // Liste des stats à afficher dans le cercle
     const statsData = [
-        { value: "254K", label: "Nombre total de lignes de code écrites" },
+        { value: "254K", label: "Nombre total de lignes<br>de code écrites" },
         { value: "15+", label: "Projets réalisés" },
         { value: "2", label: "Clients satisfaits" }
     ];
 
     let currentIndex = 0;
-    const statValue = document.getElementById("stat-value");
-    const statLabel = document.getElementById("stat-label");
+    const statCircle = document.getElementById("stat-circle");
     const dotsContainer = document.querySelector(".stat-dots");
+    let autoScrollInterval;
 
-    // Création des points si non présents dans le HTML
+    function startAutoScroll() {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % statsData.length;
+            updateStat(nextIndex);
+        }, 5000);
+    }
+
+    // Création des points si non présents
     dotsContainer.innerHTML = "";
     statsData.forEach((_, index) => {
         const dot = document.createElement("span");
@@ -58,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (index === 0) dot.classList.add("active");
         dot.addEventListener("click", () => {
             updateStat(index);
+            startAutoScroll(); // Réinitialise le timer après un clic
         });
         dotsContainer.appendChild(dot);
     });
@@ -66,42 +75,74 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateStat(index) {
         if (index === currentIndex) return; // Évite les répétitions
-        
-        // Ajoute l'animation de transition
-        statValue.style.transition = "transform 0.8s ease, opacity 0.8s ease";
-        statLabel.style.transition = "transform 0.8s ease, opacity 0.8s ease";
-        statValue.style.transform = "translateX(100%)";
-        statLabel.style.transform = "translateX(100%)";
-        statValue.style.opacity = "0";
-        statLabel.style.opacity = "0";
 
+        const nextValue = statsData[index].value;
+        const nextLabel = statsData[index].label;
+
+        // Création d'un conteneur pour l'effet de glissement
+        const statContainer = document.createElement("div");
+        statContainer.style.display = "flex";
+        statContainer.style.position = "absolute";
+        statContainer.style.width = "200%";
+        statContainer.style.left = "0";
+        statContainer.style.transition = "transform 0.8s ease-in-out";
+
+        const currentStat = document.createElement("div");
+        currentStat.innerHTML = `<span style="font-family: 'matter-bold'; font-size: 2rem;">${statsData[currentIndex].value}</span><p>${statsData[currentIndex].label}</p>`;
+        currentStat.style.flex = "1";
+        currentStat.style.textAlign = "center";
+
+        const nextStat = document.createElement("div");
+        nextStat.innerHTML = `<span style="font-family: 'matter-bold'; font-size: 2rem;">${nextValue}</span><p>${nextLabel}</p>`;
+        nextStat.style.flex = "1";
+        nextStat.style.textAlign = "center";
+
+        statContainer.appendChild(currentStat);
+        statContainer.appendChild(nextStat);
+
+        // On vide le cercle AVANT l'animation pour éviter la réapparition de la première stat
+        statCircle.innerHTML = "";
+        statCircle.appendChild(statContainer);
+        statCircle.appendChild(dotsContainer); // On garde les points visibles
+
+        // Déclenche l'animation de glissement fluide
         setTimeout(() => {
-            currentIndex = index;
-            statValue.textContent = statsData[index].value;
-            
-            statValue.style.transform = "translateX(-100%)";
-            statLabel.style.transform = "translateX(-100%)";
+            statContainer.style.transform = "translateX(-50%)";
+        }, 50);
 
-            setTimeout(() => {
-                statValue.style.transform = "translateX(0)";
-                statLabel.style.transform = "translateX(0)";
-                statValue.style.opacity = "1";
-                statLabel.style.opacity = "1";
-            }, 200);
-        }, 200);
+        // Attendre la fin de l'animation avant de mettre à jour
+        setTimeout(() => {
+            statCircle.innerHTML = `
+                <span id="stat-value" style="font-family: 'matter-bold'; font-size: 2rem;">${nextValue}</span>
+                <p id="stat-label">${nextLabel}</p>
+            `;
+            statCircle.appendChild(dotsContainer); // Réintègre les points après mise à jour
+        }, 800);
 
         // Met à jour les points actifs
         dots.forEach((dot, i) => {
             dot.classList.toggle("active", i === index);
         });
+
+        currentIndex = index;
     }
 
-    // Auto-scroll toutes les 4 secondes
-    setInterval(() => {
-        let nextIndex = (currentIndex + 1) % statsData.length;
-        updateStat(nextIndex);
-    }, 4000);
+    // Démarrer l'auto-scroll
+    startAutoScroll();
 
     // Initialisation
     updateStat(0);
+
+    // Ajout du mode sombre avec changement d'icône et logo
+    const toggleDarkMode = document.getElementById("dark-mode-toggle");
+    const darkModeIcon = document.querySelector("#dark-mode-toggle img");
+    const logo = document.getElementById("logo");
+    let isDarkMode = false;
+
+    toggleDarkMode.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        isDarkMode = !isDarkMode;
+        darkModeIcon.src = isDarkMode ? "assets/img/light-mode-modified.png" : "assets/img/dark-mode.png";
+        logo.src = isDarkMode ? "assets/img/EB_Logo-light.png" : "assets/img/EB_Logo-dark.png"; // Changer le logo
+    });
 });

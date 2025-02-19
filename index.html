@@ -1,7 +1,18 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Emma Blanchard, développeuse web spécialisée en HTML, CSS et intégration responsive. Découvrez mes projets !">
+    <meta name="keywords" content="développeuse web, intégration HTML, HTML, CSS, front-end, portfolio, web design">
+    <meta name="author" content="Emma Blanchard">
+    
+    <meta property="og:title" content="Portfolio - Emma Blanchard">
+    <meta property="og:description" content="Découvrez mes projets en développement web et intégration HTML/CSS.">
+    <meta property="og:image" content="assets/img/preview.png">
+    <meta property="og:url" content="https://emma-blnch.github.io/urlsite">
+
     <title>Portfolio - Emma Blanchard</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -9,18 +20,18 @@
 <body>
     <!-- Navigation -->
     <header>
-        <img src="assets/img/EB_Logo-removebg-preview.png" alt="logo-emma" id="logo">
+        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy">
         <nav>
             <ul>
                 <li>Accueil</li>
                 <li>Projets</li>
                 <li>À propos</li>
                 <li>Contact</li>
-                <!-- <li><button id="mode"></button></li> -->
+                <li id="dark-mode-toggle"><img src="assets/img/dark-mode.png" alt="dark-mode-icon" loading="lazy"></li>
             </ul>
         </nav>
-        <!-- <button id="cv">CV</button> -->
     </header>
+    <!-- <button id="cv">CV</button> -->
 
     <!-- Presentation -->
     <section id="accueil" class="intro">
@@ -29,13 +40,6 @@
     </section>
 
     <!-- Stats -->
-     <!-- <section id="stats">
-        <div class="stats-container">
-            <div class="stat"> <span id="lines-code">254K</span> <br> Nombre total de lignes<br>de code écrites </div>
-            <div class="stat"> <span id="projects-count">15+</span> <br> Projets réalisés </div>
-            <div class="stat"> <span id="clients">2</span> <br> Clients satisfaits </div>
-        </div>
-     </section> -->
      <section id="stats">
         <div class="stat-circle" id="stat-circle">
             <span id="stat-value">254K</span>
@@ -52,16 +56,19 @@
             <div class="project-card">
                 <h3>Site pour hackaton</h3>
                 <p>Description rapide...</p>
+                <span>Technos : HTML | CSS | JS</span>
                 <a href="#" class="btn">En savoir plus</a>
             </div>
             <div class="project-card">
                 <h3>Integration Figma</h3>
                 <p>Description rapide...</p>
+                <span>Technos : HTML | CSS | JS</span>
                 <a href="#" class="btn">En savoir plus</a>
             </div>
             <div class="project-card">
                 <h3>Site chatbot IA</h3>
                 <p>Description rapide...</p>
+                <span>Technos : HTML | CSS | JS</span>
                 <a href="#" class="btn">En savoir plus</a>
             </div>
         </div>
@@ -69,8 +76,10 @@
 
     <!-- A propos -->
     <section id="about">
-        <img src="assets/img/eblancha.jpg" alt="profile-pic-emma">
-        <p>Développeuse web junior, spécialisée en HTML, CSS, et <strong>intégration responsive</strong>. <br>Mon objectif ? Transformer des idées en sites web <strong>modernes</strong>, épurés et <strong>performants</strong>. <br><br>Formée à 42 Paris, je combine rigueur, <strong>autonomie</strong> et créativité pour aider les entrepreneurs et créateurs à <strong>donner vie à leurs projets web</strong>.</p>
+        <img src="assets/img/eblancha.jpg" alt="profile-pic-emma" loading="lazy">
+        <p>Développeuse web junior, spécialisée en intégration HTML/CSS et <strong>optimisation responsive</strong>. <br>Mon crédo ? Combiner <strong>rigueur</strong> et <strong>autonomie</strong> pour construire des sites épurés et performants.
+            <br><br>Formée à 42 Paris, je recherche un poste où je pourrai mettre mes compétences en front-end au service d'une <strong>équipe dynamique</strong>.
+        </p>
     </section>
 
     <!-- Skills -->
@@ -89,18 +98,25 @@
     <section id="contact">
         <video autoplay loop muted playsinline src="assets/video/blue-waves.mp4" type="video/mp4" id="bg-video"></video>
         <div id="catch">
-            <p>Tu veux créer <br>
-                quelque chose de <strong>super</strong>
-                <br>ensemble ?
+            <p>Vous recherchez <br>
+                une <strong>développeuse web</strong>
+                <br>passionnée ?
             </p>
         </div>
         <div class="contact-links">
-            <button href="mailto:email@example.com">Mail</button>
-            <button href="#">Linkedin</button>
+            <button onclick="location.href='mailto:emma.blnch4@gmail.com';">Mail</button>
+            <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
         </div>
-        <!-- <p id="email">Sinon -> emma.blnch4@gmail.com</p> -->
     </section>
 
-    <script src="script.js"></script> <!-- script pour les animations -->
+    <script src="script.js" defer></script> <!-- script pour les animations -->
 </body>
 </html>
+
+     <!-- <section id="stats">
+        <div class="stats-container">
+            <div class="stat"> <span id="lines-code">254K</span> <br> Nombre total de lignes<br>de code écrites </div>
+            <div class="stat"> <span id="projects-count">15+</span> <br> Projets réalisés </div>
+            <div class="stat"> <span id="clients">2</span> <br> Clients satisfaits </div>
+        </div>
+     </section> -->
