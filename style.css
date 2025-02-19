@@ -25,8 +25,6 @@ body {
     background-image: url(assets/effects/otis-redding.png);
     background-size: 60px;
     background-blend-mode: multiply;
-    /* filter: brightness(1.3);
-    filter: contrast(0.9); */
 }
 
 /* Navigation Sticky */
@@ -76,7 +74,7 @@ nav ul li:hover {
     text-align: center;
     padding: 20vh 5%;
     border-radius: 0 0 40px 40px;
-    border-bottom: 0.5px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
     background: #F6F4F2;
     background-image: url(assets/effects/otis-redding.png);
     background-size: 60px;
@@ -110,7 +108,7 @@ nav ul li:hover {
     text-align: center;
     padding: 5vh 5%;
     border-radius: 0 0 40px 40px;
-    border-bottom: 0.5px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
     position: relative;
     z-index: 2;
     background: #EAEAEA;
@@ -167,10 +165,10 @@ nav ul li:hover {
 
 /* Projets */
 #projets {
-    padding: 15vh 5%;
+    padding: 15vh 5% 9vh 5%;
     background: #F6F4F2;
     border-radius: 0 0 40px 40px;
-    border-bottom: 0.5px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
     background-image: url(assets/effects/otis-redding.png);
     background-size: 60px;
     background-blend-mode: multiply;
@@ -180,35 +178,150 @@ nav ul li:hover {
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 160px;
 }
 
 .project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px 60px 20px;
+    border-bottom: 1px solid black;
 }
 
 .project-card h3 {
-    font-size: 1.8rem;
+    font-family: "matter-bold", sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.project-card p {
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+.project-card span {
+    font-family: "matter-thin", sans-serif;
+    font-size: 1.2rem;
+}
+
+.project-one {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.text1 {
+    width: 70%;
+}
+
+.image1 {
+    width: 70%;
+}
+
+.project-one img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-two {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    text-align: end;
+    align-items: flex-start;
+}
+
+.text2 {
+    width: 70%;
+}
+
+.image2 {
+    width: 70%;
+}
+
+.project-two img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-three {
+    display: flex;
+    gap: 60px;
+}
+
+.text3 {
+    width: 70%;
+}
+
+.image3 {
+    width: 70%;
+}
+
+.project-three img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-four {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    text-align: end;
+}
+
+.text4 {
+    width: 70%;
+}
+
+.image4 {
+    width: 70%;
+}
+
+.project-four img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #0077FF;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
+    border: 0.5px solid rgba(255, 175, 70, 0.95);
+    border-radius: 40px;
+    background: white;
+    padding: 20px 40px;
+    width: 200px;
+    /* align-items: center; */
+    text-align: center;
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #0055CC;
+    color: whitesmoke;
+    background: black;
+    border: 0.5px solid black;
+}
+
+.project-card h3:hover {
+    color: rgb(17, 191, 244);
 }
 
 /* Section À Propos */
