@@ -146,3 +146,12 @@ document.addEventListener("DOMContentLoaded", function() {
         logo.src = isDarkMode ? "assets/img/EB_Logo-light.png" : "assets/img/EB_Logo-dark.png"; // Changer le logo
     });
 });
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     const menuToggle = document.getElementById("menu-toggle");
+//     const navMenu = document.querySelector("nav ul");
+
+//     menuToggle.addEventListener("click", function() {
+//         navMenu.classList.toggle("active");
+//     });
+// });

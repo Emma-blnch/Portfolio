@@ -490,6 +490,10 @@ h5 {
     background-blend-mode: multiply;
 }
 
+.dark-mode .project-card {
+    border-bottom: 1px solid white;
+}
+
 /* Mode sombre pour les boutons */
 .dark-mode .contact-links button {
     background: white;
@@ -508,57 +512,222 @@ body {
 }
 
 
-/* #stats {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    text-align: center;
-    padding: 5vh 5%;
-    border-radius: 0 0 40px 40px;
-    border-bottom: 0.5px solid #e0e0e0;
-    position: relative;
-    z-index: 2;
-    background: #EAEAEA;
-    background-image: url(assets/effects/otis-redding.png);
-    background-size: 60px;
-    background-blend-mode: multiply;
+/* ---------------------- RESPONSIVE ---------------------- */
+
+@media (max-width: 1200px) {
+    section {
+        padding: 10vh 5%;
+    }
+
+    .project-grid {
+        padding: 0 5%;
+        gap: 20px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-three {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem;
+        white-space: wrap;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .project-card p {
+        font-size: 1.2rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+        margin-top: 15px;
+    }
 }
 
-.stats-container {
-    display: flex;
-    gap: 50px;
+/* TELEPHONE */
+@media (max-width: 768px) {
+    /* Navigation */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: none; /* Cache le menu par défaut */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #dark-mode-toggle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    /* Intro */
+    .intro h2 {
+        font-size: 2rem;
+        padding-top: 30px;
+    }
+
+    /* Sections générales */
+    section {
+        padding: 10vh 5%;
+    }
+
+    /* Stats */
+    .stat-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Section Projets */
+    .project-grid {
+        padding: 0 5%;
+        gap: 20px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-three {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem;
+        white-space: wrap;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .project-card p {
+        font-size: 1.2rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 15px 35px;
+        width: 150px;
+        font-size: 1.2rem;
+    }
+
+    /* Section À Propos */
+    #about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 18vh 5%;
+    }
+
+    #about img {
+        width: 200px;
+        height: 210px;
+        border-radius: 20%;
+        object-fit: cover;
+    }
+
+    #about p {
+        width: 50%;
+        padding: 20px;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    /* Section Contact */
+    #contact {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-links {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 70px;
+    }
+
+    .contact-links button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
 }
-
-.stat {
-    background: black;
-    color: #EAEAEA;
-    width: 250px;
-    height: 250px;
-    aspect-ratio: 1/1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
-    font-size: 1rem;
-    font-family: "matter-thin" ,sans-serif;
-    margin: 0 20px;
-}
-
-#lines-code, #projects-count, #clients {
-    font-family: "matter-bold", sans-serif;
-    font-weight: 5rem;
-    font-size: 2rem;
-} */
-
-/* #email {
-    grid-column: 3 span;
-    grid-row: 3;
-    margin-top: 0;
-    padding-right: 65px;
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-    font-family: "matter-thin", sans-serif;
-    font-size: 1.3rem;
-} */
