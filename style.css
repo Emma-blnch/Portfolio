@@ -2,16 +2,19 @@
 @font-face {
     font-family: "matter";
     src: url(assets/font/matter/Matter-Regular.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: "matter-thin";
     src: url(assets/font/matter/Matter-Light.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: "matter-bold";
     src: url(assets/font/matter/Matter-Bold.ttf);
+    font-display: swap;
 }
 
 /* Reglages globaux */
@@ -81,7 +84,7 @@ nav ul li:hover {
     background-blend-mode: multiply;
 }
 
-.intro h2 {
+.intro h1 {
     font-size: 3rem;
     font-weight: bold;
     padding-top: 50px;
@@ -94,7 +97,7 @@ nav ul li:hover {
     -webkit-text-fill-color: transparent;
 }
 
-.intro h3 {
+.intro h2 {
     font-size: 1.5rem;
     color: #505050;
 }
@@ -405,6 +408,7 @@ h5 {
     line-height: 4.5rem;
     font-size: 4rem;
     color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact-links {
