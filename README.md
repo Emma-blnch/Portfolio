@@ -1,14 +1,3 @@
-
-1. **Clonez le dépôt** :
-   ```sh
-   git clone https://github.com/Emma-blnch/portfolio.git
-   ```
-2. **Accédez au dossier** :
-   ```sh
-   cd portfolio
-   ```
-3. **Ouvrez `index.html` dans un navigateur** 🚀
-
 🚀 # Portfolio - Emma Blanchard
 
 Welcome to my online portfolio!
@@ -44,8 +33,12 @@ If you want to run this project locally:
    ```
 3. **Open `index.html` in your web browser** 🚀
 
-## 📫 Me contacter
+## 📬 Contact
+💡 If you have feedback or suggestions, feel free to reach out!
 
+📧 Email: emma.blnch4@gmail.com
+🔗 Portfolio: emma-blnch.github.io
+💼 LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/emmablnch/)
 
 ---
 
