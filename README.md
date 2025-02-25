@@ -18,7 +18,7 @@ Développeuse web spécialisée en **HTML, CSS et intégration responsive**, ce 
 ✅ **Site entièrement responsive** 📱
 
 ## 🚀 Déploiement sur GitHub Pages
-Le site est disponible en ligne via **GitHub Pages**. Pour voir la version en ligne : [Mon Portfolio](https://emma-blnch.github.io/)
+Le site est disponible en ligne via **GitHub Pages**. Pour voir la version en ligne : [Mon Portfolio](https://emma-blnch.github.io/Portfolio/)]
 
 ## 📂 Installation locale
 Si vous souhaitez exécuter ce projet en local :
