@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     // Liste des stats à afficher dans le cercle
     const statsData = [
-        { value: "254K", label: "Nombre total de lignes<br>de code écrites" },
         { value: "15+", label: "Projets réalisés" },
-        { value: "2", label: "Clients satisfaits" }
+        { value: "300+", label: "Commits Git" },
+        { value: "6+", label: "Langages maîtrisés" }
     ];
 
     let currentIndex = 0;

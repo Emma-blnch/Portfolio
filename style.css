@@ -30,6 +30,10 @@ body {
     background-blend-mode: multiply;
 }
 
+html {
+    transition: none;
+}
+
 /* Navigation Sticky */
 header {
     position: fixed;
@@ -72,6 +76,31 @@ nav ul li:hover {
     color: #36c5e9;
 }
 
+#cv {
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-family: "matter-bold", sans-serif;
+    color: #333;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.795);
+    box-shadow: 0px 4px 10px rgba(82, 82, 82, 0.062);
+    border-radius: 30px;
+    border: 0.5px solid #36c5e9;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1001;
+}
+
+#cv:hover {
+    color: white;
+    border: 0.5px solid black;
+    background: black;
+}
+
 /* Hero Section */
 .intro {
     text-align: center;
@@ -89,7 +118,7 @@ nav ul li:hover {
     font-weight: bold;
     padding-top: 50px;
     color: #222;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.3;
     background: linear-gradient(90deg, #36c5e9, rgba(255, 174, 69, 0.949));
@@ -293,6 +322,7 @@ nav ul li:hover {
 
 .image4 {
     width: 70%;
+    /* box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.062); */
 }
 
 .project-four img {
@@ -308,7 +338,6 @@ nav ul li:hover {
     background: white;
     padding: 20px 40px;
     width: 200px;
-    /* align-items: center; */
     text-align: center;
     color: black;
     font-size: 1.4rem;
@@ -453,6 +482,17 @@ h5 {
     background: rgba(40, 40, 40, 0.8);
 }
 
+.dark-mode #cv {
+    background: rgba(40, 40, 40, 0.8);
+    color: white;
+}
+
+.dark-mode #cv:hover {
+    color: black;
+    background: white;
+    border: 0.5px solid black;
+}
+
 .dark-mode .stat-circle {
     border: 1px solid white;
 }
@@ -476,7 +516,7 @@ h5 {
 }
 
 #dark-mode-toggle img {
-    width: 22px;  /* Ajuste la taille de l'icône */
+    width: 22px;
     height: 22px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -511,10 +551,18 @@ h5 {
     border: 1px solid #ffaf46f2;
 }
 
-body {
-    transition: background 0.4s ease-in-out, color 0.3s ease-in-out;
+body, 
+#cv, 
+header, 
+nav ul, 
+.stat-circle, 
+.project-card, 
+#contact, 
+#skills, 
+#about p, 
+.btn {
+    transition: background-color 0.3s ease, color 0.1s ease, border 0.4s ease;
 }
-
 
 /* ---------------------- RESPONSIVE ---------------------- */
 
