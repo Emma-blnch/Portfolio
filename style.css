@@ -782,4 +782,54 @@ nav ul,
         font-size: 1.2rem;
         padding: 12px 25px;
     }
+
+    #catch {
+        font-size: 2.8rem;
+        line-height: 1.5;
+    }
+}
+
+
+@media (max-width: 431px) {
+    section {
+        padding: 8vh 4%;
+        /* margin-left: 50px; */
+    }
+
+    body {
+        width: 100%;
+    }
+    
+    .intro h1 {
+        font-size: 2.3rem;
+    }
+    
+    .intro h2 {
+        font-size: 1.5rem;
+        padding-top: 30px;
+    }
+
+    .project-two {
+        text-align: center;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #skills h4 {
+        /* padding-right: 50px; */
+    }
+
+    #skills h5 {
+        font-size: 2rem;
+        /* padding-right: 50px; */
+        line-height: 1.5;
+    }
+
+    #catch {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
 }
