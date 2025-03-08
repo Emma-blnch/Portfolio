@@ -1,4 +1,4 @@
-🚀 # Portfolio - Emma Blanchard
+# 🚀 Portfolio - Emma Blanchard
 
 Welcome to my online portfolio!
 
