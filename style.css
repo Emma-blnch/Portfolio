@@ -626,6 +626,12 @@ nav ul,
         align-items: center;
     }
 
+    .project-five {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .project-card h3 {
         font-size: 1.4rem;
         white-space: wrap;
@@ -733,6 +739,12 @@ nav ul,
     }
 
     .project-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-five {
         display: flex;
         flex-direction: column;
         align-items: center;
