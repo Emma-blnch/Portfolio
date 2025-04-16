@@ -3,7 +3,7 @@
 Welcome to my online portfolio!
 
 ## 🌟 About Me
-I am a web developer specializing in **HTML, CSS, and responsive integration**. This website showcases my work and projects. It is designed to provide a **smooth and elegant experience**, both on desktop and mobile.
+This website showcases my work and projects. It is designed to provide a **smooth and elegant experience**, both on desktop and mobile.
 
 ## 🛠️ Technologies Used
 - **HTML5** - Website structure
