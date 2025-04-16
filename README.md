@@ -37,7 +37,7 @@ If you want to run this project locally:
 💡 If you have feedback or suggestions, feel free to reach out!
 
 📧 Email: emma.blnch4@gmail.com   
-🔗 Portfolio: emma-blnch.github.io   
+🔗 Portfolio: [emma-blnch.github.io/Portfolio](https://emma-blnch.github.io/Portfolio/)   
 💼 LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/emmablnch/)
 
 ---
