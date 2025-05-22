@@ -23,7 +23,6 @@ The site is available online via **GitHub Pages**. To view the live version: [My
 ## 📂 Local Installation
 If you want to run this project locally:
 1. **Clone the repository**:
-1. **Clonez le dépôt** :
    ```sh
    git clone https://github.com/Emma-blnch/portfolio.git
    ```
