@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Emma Blanchard, développeuse web spécialisée en HTML, CSS et intégration responsive. Découvrez mes projets !">
+    <meta name="keywords" content="développeuse web, intégration HTML, HTML, CSS, front-end, portfolio, web design">
+    <meta name="author" content="Emma Blanchard">
+    
+    <meta property="og:title" content="Portfolio - Emma Blanchard">
+    <meta property="og:description" content="Découvrez mes projets en développement web et intégration HTML/CSS.">
+    <meta property="og:image" content="assets/img/preview.png">
+    <meta property="og:url" content="https://emma-blnch.github.io/Portfolio/">
+
+    <title>Portfolio - Emma Blanchard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="google-site-verification" content="tX_QQ9jng_1DgtWKW-OUfbh2mVgKwLukUvcIOgcDr8o" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy">
+        <nav>
+            <ul>
+                <li>Accueil</li>
+                <li>Projets</li>
+                <li>À propos</li>
+                <li>Contact</li>
+                <li id="dark-mode-toggle"><img src="assets/img/dark-mode.png" alt="dark-mode-icon" loading="lazy"></li>
+            </ul>
+            <!-- <button id="menu-toggle">☰</button> -->
+        </nav>
+    </header>
+    <a id="cv" href="assets/CV-0325.pdf" download="CV-Emma-Blanchard.pdf">CV</a>
+
+    <!-- Presentation -->
+    <section id="accueil" class="intro">
+         <h1>Je développe des logiciels robustes et performants, <br>avec un code clair et maintenable.</h1>
+        <h2>- Emma Blanchard -</h2>
+    </section>
+
+    <!-- Stats -->
+     <section id="stats">
+        <div class="stat-circle" id="stat-circle">
+            <span id="stat-value">20+</span>
+            <p id="stat-label">Projets réalisés</p>
+            <div class="stat-dots">
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Projets -->
+    <section id="projets">
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-one">
+                    <div class="text1">
+                        <h3 onclick=" window.open('https://github.com/Emma-blnch/minishell', '_blank')">Mini-version d'un shell ↗️</h3>
+                        <p>Implémentation d’un shell en C, capable d’exécuter des commandes système en ligne de commande, en gérant les entrées/sorties et les processus.</p>
+                        <span>Technos : C | Shell</span>
+                    </div>
+                    <div class="image1">
+                        <img src="assets/img/preview-minishell.webp" alt="preview-minishell" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-two">
+                    <div class="text2">
+                        <h3 onclick=" window.open('https://github.com/Emma-blnch/GenAI-Hackaton-02-2025', '_blank')">Visualisation de données ↗️</h3>
+                        <p>Développement d'un site de visualisation de données interactif, intégrant une IA via AWS. Gestion de l'affichage et optimisation du rendu dynamique en JavaScript.</p>
+                        <span>Technos : HTML/CSS | JS | Python</span>
+                    </div>
+                    <div class="image2">
+                        <img src="assets/img/preview-data-vizualisation.webp" alt="preview-data-visualization-site" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-three">
+                    <div class="text3">
+                        <h3 onclick=" window.open('https://github.com/Emma-blnch/cub3D', '_blank')">Cub3D ↗️</h3>
+                        <p>Développement d'un moteur de rendu 3D basé sur la technique du raycasting. Projet combinant algorithmie, gestion de la mémoire, optimisations et ajout de fonctionnalités bonus.</p>
+                        <span>Technos : C</span>
+                    </div>
+                    <div class="image3">
+                        <img src="assets/img/preview-cub3d.webp" alt="preview-cub3d-project" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-four">
+                    <div class="text4">
+                        <h3 onclick=" window.open('https://github.com/Emma-blnch/Blog-technique', '_blank')">Blog technique ↗️</h3>
+                        <p>Blog personnel dédié à mon apprentissage du développement informatique, en particulier du langage C et des bases du web.</p>
+                        <span>Technos : HTML / Hugo / Github pages</span>
+                    </div>
+                    <div class="image4">
+                        <img src="assets/img/preview-blog.webp" alt="preview-blog" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="project-card">
+                <div class="project-five">
+                    <div class="text5">
+                        <h3 onclick=" window.open('https://github.com/Emma-blnch/Blog-technique', '_blank')">Blog technique ↗️</h3>
+                        <p>Blog personnel dédié à mon apprentissage du développement informatique, en particulier du langage C et des bases du web.</p>
+                        <span>Technos : HTML / Hugo / Github pages</span>
+                    </div>
+                    <div class="image5">
+                        <img src="assets/img/preview-blog.webp" alt="preview-blog" width="600" height="400" loading="lazy">
+                    </div>
+                </div>
+            </div> -->
+            <a href="https://github.com/Emma-blnch" target="_blank" class="btn" style="text-decoration:none">Mon Github</a>
+        </div>
+    </section>
+
+    <!-- A propos -->
+    <section id="about">
+        <img src="assets/img/eblancha.webp" alt="profile-pic-emma" loading="lazy">
+        <p>Développeuse logiciel junior, spécialisée en <strong>développement back-end</strong> et algorithmie.<br>
+            Mon objectif : construire des solutions <strong>fiables</strong>, <strong>performantes</strong> et bien <strong>structurées</strong>.
+            <br><br>Formée à 42 Paris, je recherche une alternance où je pourrai mettre mes compétences techniques au service de <strong>projets exigeants</strong>, en environnement <strong>agile et collaboratif</strong>.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h4>Skills</h4>
+        <h5>Clean code</h5>
+        <h5>Debugging</h5>
+        <h5>C/C++</h5>
+        <h5>Git/github</h5>
+        <h5>Résolution de problèmes</h5>
+        <h5>Rigeur & Autonomie</h5>
+        
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy"></video>
+        <div id="catch">
+            <p>Vous recherchez <br>
+                une <strong>développeuse logiciel</strong>
+                <br>passionnée ?
+            </p>
+        </div>
+        <div class="contact-links">
+            <button onclick="location.href='mailto:emma.blnch4@gmail.com';">Mail</button>
+            <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
+        </div>
+    </section>
+
+    <script src="script.js" defer></script> <!-- script pour les animations -->
+</body>
+</html>
+
+<!-- <h1>Du design au code, je crée des expériences web élégantes et efficaces.</h1> -->

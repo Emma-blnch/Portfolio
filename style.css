@@ -1,0 +1,867 @@
+/* Importation des polices */
+@font-face {
+    font-family: "matter";
+    src: url(assets/font/matter/Matter-Regular.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "matter-thin";
+    src: url(assets/font/matter/Matter-Light.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "matter-bold";
+    src: url(assets/font/matter/Matter-Bold.ttf);
+    font-display: swap;
+}
+
+/* Reglages globaux */
+body {
+    font-family: "matter", sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+    background: #EAEAEA;
+    color: #333;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+html {
+    transition: none;
+}
+
+/* Navigation Sticky */
+header {
+    position: fixed;
+    top: 2%;
+    left: 1%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    width: fit-content;
+}
+
+#logo {
+    margin-right: 20px;
+    width: 100px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    font-size: 1.1rem;
+    border: 0.5px solid rgba(255, 175, 70, 0.95);
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.795);
+    box-shadow: 0px 4px 10px rgba(82, 82, 82, 0.062);
+    padding: 15px 30px;
+    margin: 0;
+}
+
+nav ul li {
+    padding-top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    color: #36c5e9;
+}
+
+#cv {
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-family: "matter-bold", sans-serif;
+    color: #333;
+    backdrop-filter: blur(2px);
+    background: rgba(255, 255, 255, 0.795);
+    box-shadow: 0px 4px 10px rgba(82, 82, 82, 0.062);
+    border-radius: 30px;
+    border: 0.5px solid #36c5e9;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1001;
+}
+
+#cv:hover {
+    color: white;
+    border: 0.5px solid black;
+    background: black;
+}
+
+/* Hero Section */
+.intro {
+    text-align: center;
+    padding: 20vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 2px solid #e0e0e0;
+    background: #F6F4F2;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 50px;
+    color: #222;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.3;
+    background: linear-gradient(90deg, #36c5e9, rgba(255, 174, 69, 0.949));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+    color: #505050;
+}
+
+/* Stats */
+#stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5vh 5%;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 2px solid #e0e0e0;
+    position: relative;
+    z-index: 2;
+    background: #EAEAEA;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.stat-circle {
+    background: black;
+    color: #EAEAEA;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062);
+    font-size: 1rem;
+    font-family: "matter-thin", sans-serif;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#stat-value {
+    font-family: "matter-bold", sans-serif;
+    font-size: 2rem;
+    white-space: normal;
+}
+
+.stat-dots {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.stat-dot {
+    width: 8px;
+    height: 8px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.stat-dot.active {
+    background: white;
+}
+
+/* Projets */
+#projets {
+    padding: 15vh 5% 9vh 5%;
+    background: #F6F4F2;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 2px solid #e0e0e0;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+    position: relative;
+    margin-top: -60px;
+    z-index: 1;
+}
+
+.project-grid {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 160px;
+}
+
+.project-card {
+    padding: 20px 20px 60px 20px;
+    border-bottom: 1px solid black;
+}
+
+.project-card h3 {
+    font-family: "matter-bold", sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.project-card p {
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+.project-card span {
+    font-family: "matter-thin", sans-serif;
+    font-size: 1.2rem;
+}
+
+.project-one {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.text1 {
+    width: 70%;
+}
+
+.image1 {
+    width: 70%;
+}
+
+.project-one img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-two {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    text-align: end;
+    align-items: flex-start;
+}
+
+.text2 {
+    width: 70%;
+}
+
+.image2 {
+    width: 70%;
+}
+
+.project-two img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-three {
+    display: flex;
+    gap: 60px;
+}
+
+.text3 {
+    width: 70%;
+}
+
+.image3 {
+    width: 70%;
+}
+
+.project-three img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-four {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 60px;
+    text-align: end;
+}
+
+.text4 {
+    width: 70%;
+}
+
+.image4 {
+    width: 70%;
+    /* box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.062); */
+}
+
+.project-four img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.project-five {
+    display: flex;
+    gap: 60px;
+}
+
+.text5 {
+    width: 70%;
+}
+
+.image5 {
+    width: 70%;
+}
+
+.project-five img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.btn {
+    border: 0.5px solid rgba(255, 175, 70, 0.95);
+    border-radius: 40px;
+    background: white;
+    padding: 20px 40px;
+    width: 200px;
+    text-align: center;
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    color: whitesmoke;
+    background: black;
+    border: 0.5px solid black;
+}
+
+.project-card h3:hover {
+    color: rgb(17, 191, 244);
+}
+
+/* Section À Propos */
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 18vh 5%;
+}
+
+#about img {
+    width: 260px;
+    height: 270px;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+#about p {
+    width: 40%;
+    padding: 20px;
+    font-size: 1.4rem;
+    text-align: justify;
+}
+
+/* Skills */
+#skills {
+    text-align: center;
+    padding: 10vh 5%;
+}
+
+h4 {
+    font-family: "matter-thin", sans-serif;
+    font-weight: 50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+h5 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    margin: 5px;
+    font-family: "matter-bold", sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    letter-spacing: 0.6rem;
+}
+
+/* Contact */
+#contact {
+    text-align: center;
+    padding: 5vh;
+    border: 1px solid #d3d3d36b;
+    border-radius: 40px;
+    margin: 50px 35px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 290px 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#catch {
+    position: relative;
+    z-index: 2;
+    grid-column: span 3;
+    text-align: left;
+    letter-spacing: 0.1rem;
+    line-height: 4.5rem;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-links {
+    gap: 20px;
+    font-size: 2rem;
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.contact-links button {
+    border-radius: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px 40px;
+    color: white;
+    background: black;
+    /* background: none; */
+    font-size: 1.4rem;
+}
+
+.contact-links button:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    color: #000000f2;
+    background: whitesmoke;
+    border: 1px solid #ffaf46f2;
+}
+
+/* Dark mode */
+.dark-mode {
+    background: #121212;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+    color: whitesmoke;
+}
+
+.dark-mode nav ul {
+    background: rgba(40, 40, 40, 0.8);
+}
+
+.dark-mode #cv {
+    background: rgba(40, 40, 40, 0.8);
+    color: white;
+}
+
+.dark-mode #cv:hover {
+    color: black;
+    background: white;
+    border: 0.5px solid black;
+}
+
+.dark-mode .stat-circle {
+    border: 1px solid white;
+}
+
+.dark-mode #stats {
+    background: #121212;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.dark-mode .intro {
+    background: #1e1e1e;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.dark-mode .intro h3 {
+    color: whitesmoke;
+}
+
+#dark-mode-toggle img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#dark-mode-toggle:hover img {
+    transform: scale(1.1);
+}
+
+/* projets mode sombre */
+.dark-mode #projets {
+    background: #1e1e1e;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.dark-mode .project-card {
+    border-bottom: 1px solid white;
+}
+
+/* Mode sombre pour les boutons */
+.dark-mode .contact-links button {
+    background: white;
+    color: black;
+    border: 1px solid white;
+}
+
+.dark-mode .contact-links button:hover {
+    color: whitesmoke;
+    background: #000000f2;
+    border: 1px solid #ffaf46f2;
+}
+
+body, 
+#cv, 
+header, 
+nav ul, 
+.stat-circle, 
+.project-card, 
+#contact, 
+#skills, 
+#about p, 
+.btn {
+    transition: background-color 0.3s ease, color 0.1s ease, border 0.4s ease;
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+
+@media (max-width: 1200px) {
+    section {
+        padding: 10vh 5%;
+    }
+
+    .project-grid {
+        padding: 0 5%;
+        gap: 20px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-three {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-five {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem;
+        white-space: wrap;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .project-card p {
+        font-size: 1.2rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+        margin-top: 15px;
+    }
+}
+
+/* TELEPHONE */
+@media (max-width: 768px) {
+    /* Navigation */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: none; /* Cache le menu par défaut */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #dark-mode-toggle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    /* Intro */
+    .intro h2 {
+        font-size: 2rem;
+        padding-top: 30px;
+    }
+
+    /* Sections générales */
+    section {
+        padding: 10vh 5%;
+    }
+
+    /* Stats */
+    .stat-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Section Projets */
+    .project-grid {
+        padding: 0 5%;
+        gap: 20px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-three {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-five {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem;
+        white-space: wrap;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .project-card p {
+        font-size: 1.2rem;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 15px 35px;
+        width: 150px;
+        font-size: 1.2rem;
+    }
+
+    /* Section À Propos */
+    #about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 18vh 5%;
+    }
+
+    #about img {
+        width: 200px;
+        height: 210px;
+        border-radius: 20%;
+        object-fit: cover;
+    }
+
+    #about p {
+        width: 50%;
+        padding: 20px;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    /* Section Contact */
+    #contact {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-links {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 70px;
+    }
+
+    .contact-links button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+    }
+
+    #catch {
+        font-size: 2.8rem;
+        line-height: 1.5;
+    }
+}
+
+
+@media (max-width: 431px) {
+    section {
+        padding: 8vh 4%;
+        /* margin-left: 50px; */
+    }
+
+    body {
+        width: 100%;
+    }
+    
+    .intro h1 {
+        font-size: 2.3rem;
+    }
+    
+    .intro h2 {
+        font-size: 1.5rem;
+        padding-top: 30px;
+    }
+
+    .project-two {
+        text-align: center;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #skills h4 {
+        /* padding-right: 50px; */
+    }
+
+    #skills h5 {
+        font-size: 2rem;
+        /* padding-right: 50px; */
+        line-height: 1.5;
+    }
+
+    #catch {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+}
