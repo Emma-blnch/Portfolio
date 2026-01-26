@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "Accueil": "accueil",
         "Projets": "projets",
         "À propos": "about",
+        "Skills": "skills",
         "Contact": "contact"
     };
     
@@ -36,122 +37,143 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// // --------> Animation cercle de statistiques
-document.addEventListener("DOMContentLoaded", function() {
-    // Liste des stats à afficher dans le cercle
-    const statsData = [
-        { value: "15+", label: "Projets réalisés" },
-        { value: "300+", label: "Commits Git" },
-        { value: "6+", label: "Langages maîtrisés" }
-    ];
+// --------> Toggle light/dark
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("dark-mode-toggle");
+  const html = document.documentElement; // <html>
+  const logo = document.getElementById("logo");
 
-    let currentIndex = 0;
-    const statCircle = document.getElementById("stat-circle");
-    const dotsContainer = document.querySelector(".stat-dots");
-    let autoScrollInterval;
+  // init depuis localStorage
+  const saved = localStorage.getItem("theme");
+  if (saved === "dark") html.classList.add("dark");
 
-    function startAutoScroll() {
-        clearInterval(autoScrollInterval);
-        autoScrollInterval = setInterval(() => {
-            let nextIndex = (currentIndex + 1) % statsData.length;
-            updateStat(nextIndex);
-        }, 5000);
-    }
+  function updateLogo() {
+    if (!logo) return;
+    const isDark = html.classList.contains("dark");
+    logo.src = isDark ? "assets/img/logo/EB_Logo-light.png" : "assets/img/logo/EB_Logo-dark.png";
+  }
 
-    // Création des points si non présents
-    dotsContainer.innerHTML = "";
-    statsData.forEach((_, index) => {
-        const dot = document.createElement("span");
-        dot.classList.add("stat-dot");
-        if (index === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => {
-            updateStat(index);
-            startAutoScroll(); // Réinitialise le timer après un clic
-        });
-        dotsContainer.appendChild(dot);
-    });
-    
-    const dots = document.querySelectorAll(".stat-dot");
+  updateLogo();
 
-    function updateStat(index) {
-        if (index === currentIndex) return; // Évite les répétitions
-
-        const nextValue = statsData[index].value;
-        const nextLabel = statsData[index].label;
-
-        // Création d'un conteneur pour l'effet de glissement
-        const statContainer = document.createElement("div");
-        statContainer.style.display = "flex";
-        statContainer.style.position = "absolute";
-        statContainer.style.width = "200%";
-        statContainer.style.left = "0";
-        statContainer.style.transition = "transform 0.8s ease-in-out";
-
-        const currentStat = document.createElement("div");
-        currentStat.innerHTML = `<span style="font-family: 'matter-bold'; font-size: 2rem;">${statsData[currentIndex].value}</span><p>${statsData[currentIndex].label}</p>`;
-        currentStat.style.flex = "1";
-        currentStat.style.textAlign = "center";
-
-        const nextStat = document.createElement("div");
-        nextStat.innerHTML = `<span style="font-family: 'matter-bold'; font-size: 2rem;">${nextValue}</span><p>${nextLabel}</p>`;
-        nextStat.style.flex = "1";
-        nextStat.style.textAlign = "center";
-
-        statContainer.appendChild(currentStat);
-        statContainer.appendChild(nextStat);
-
-        // On vide le cercle AVANT l'animation pour éviter la réapparition de la première stat
-        statCircle.innerHTML = "";
-        statCircle.appendChild(statContainer);
-        statCircle.appendChild(dotsContainer); // On garde les points visibles
-
-        // Déclenche l'animation de glissement fluide
-        setTimeout(() => {
-            statContainer.style.transform = "translateX(-50%)";
-        }, 50);
-
-        // Attendre la fin de l'animation avant de mettre à jour
-        setTimeout(() => {
-            statCircle.innerHTML = `
-                <span id="stat-value" style="font-family: 'matter-bold'; font-size: 2rem;">${nextValue}</span>
-                <p id="stat-label">${nextLabel}</p>
-            `;
-            statCircle.appendChild(dotsContainer); // Réintègre les points après mise à jour
-        }, 800);
-
-        // Met à jour les points actifs
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
-        });
-
-        currentIndex = index;
-    }
-
-    // Démarrer l'auto-scroll
-    startAutoScroll();
-
-    // Initialisation
-    updateStat(0);
-
-    // Ajout du mode sombre avec changement d'icône et logo
-    const toggleDarkMode = document.getElementById("dark-mode-toggle");
-    const darkModeIcon = document.querySelector("#dark-mode-toggle img");
-    const logo = document.getElementById("logo");
-    let isDarkMode = false;
-
-    toggleDarkMode.addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
-        isDarkMode = !isDarkMode;
-        darkModeIcon.src = isDarkMode ? "assets/img/light-mode-modified.png" : "assets/img/dark-mode.png";
-        logo.src = isDarkMode ? "assets/img/EB_Logo-light.png" : "assets/img/EB_Logo-dark.png"; // Changer le logo
-    });
+  toggle?.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    const isDark = html.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateLogo();
+  });
 });
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const menuToggle = document.getElementById("menu-toggle");
-//     const navMenu = document.querySelector("nav ul");
+// --------> Changer img preview projet au hover + cacher quand pas hover
+document.addEventListener("DOMContentLoaded", () => {
+  const previewImg = document.getElementById("projectPreview");
+  const links = document.querySelectorAll(".project-link");
+  const list = document.querySelector("#projets .projets-right ul");
 
-//     menuToggle.addEventListener("click", function() {
-//         navMenu.classList.toggle("active");
-//     });
-// });
+  if (!previewImg || links.length === 0) return;
+
+  let currentSrc = "";
+  let hideTimeout = null;
+
+  function showPreview(src) {
+    if (!src) return;
+
+    // si un hide est prévu, on l'annule
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+
+    // si c'est déjà la même image, on garde juste visible
+    if (src === currentSrc) {
+      previewImg.classList.remove("opacity-0");
+      previewImg.classList.add("opacity-100");
+      return;
+    }
+
+    currentSrc = src;
+
+    // fade out rapide si image déjà visible
+    previewImg.classList.add("opacity-0");
+
+    // swap + fade in
+    window.setTimeout(() => {
+      previewImg.src = src;
+      previewImg.classList.remove("opacity-0");
+      previewImg.classList.remove("hidden");
+      previewImg.classList.add("opacity-100");
+    }, 180);
+  }
+
+  function hidePreview() {
+    // fade out
+    previewImg.classList.remove("opacity-100");
+    previewImg.classList.add("opacity-0");
+
+    // après la transition, on enlève le src => "aucune image"
+    hideTimeout = window.setTimeout(() => {
+      currentSrc = "";
+      hideTimeout = null;
+    }, 300);
+  }
+
+  links.forEach((a) => {
+    a.addEventListener("mouseenter", () => showPreview(a.dataset.preview));
+    a.addEventListener("focus", () => showPreview(a.dataset.preview));
+  });
+
+  // quand on quitte la liste entière, on cache l'image
+  if (list) {
+    list.addEventListener("mouseleave", hidePreview);
+
+    // clavier : si focus sort de la liste
+    list.addEventListener("focusout", (e) => {
+      if (!list.contains(e.relatedTarget)) hidePreview();
+    });
+  }
+});
+
+// --------> Changer langue
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("lang-toggle");
+  const supported = ["fr", "en"];
+
+  function getByPath(obj, path) {
+    return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), obj);
+  }
+
+  async function loadLocale(lang) {
+    const res = await fetch(`./locales/${lang}.json`, { cache: "no-store" });
+    if (!res.ok) throw new Error("Locale not found");
+    return res.json();
+  }
+
+  async function applyLang(lang) {
+    const dict = await loadLocale(lang);
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = getByPath(dict, key);
+      if (typeof value === "string") el.textContent = value;
+    });
+
+    // bouton affiche la langue vers laquelle on switch
+    if (btn) btn.textContent = lang === "fr" ? "EN" : "FR";
+
+    localStorage.setItem("lang", lang);
+    document.documentElement.setAttribute("lang", lang);
+  }
+
+  // init
+  const saved = localStorage.getItem("lang");
+  const browser = (navigator.language || "fr").startsWith("en") ? "en" : "fr";
+  const lang = supported.includes(saved) ? saved : browser;
+
+  applyLang(lang).catch(() => applyLang("fr"));
+
+  // toggle
+  btn?.addEventListener("click", () => {
+    const current = localStorage.getItem("lang") || lang;
+    const next = current === "fr" ? "en" : "fr";
+    applyLang(next);
+  });
+});

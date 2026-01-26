@@ -27,20 +27,25 @@
     <meta name="google-site-verification" content="tX_QQ9jng_1DgtWKW-OUfbh2mVgKwLukUvcIOgcDr8o" />
 </head>
 
-<body>
+<body class="bg-bg-dark text-portfolio-black dark:text-white dark:bg-black">
     <!-- Navigation -->
     <header class="fixed top-8 left-5 flex justify-center items-center space-x-5 z-50 w-fit">
-        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-40 h-auto">
+        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-40 h-auto">
         <nav>
-            <ul class="flex items-center gap-7 text-lg border border-portfolio-yellow rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0">
-                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Accueil</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Projets</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">À propos</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Contact</li>
+            <ul class="flex items-center gap-7 text-lg border border-dark-green rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0">
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.home">Accueil</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.about">À propos</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.projects">Projets</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.skills">Skills</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.contact">Contact</li>
                 <li id="dark-mode-toggle" class="list-none cursor-pointer">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
-                    <!-- <img src="assets/img/dark-mode.png" alt="dark-mode-icon" loading="lazy"> -->
+                    <svg id="light-mode" class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>
+                    <svg id="dark-mode" class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
+                </li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue">
+                    <button id="lang-toggle" class="">
+                        EN
+                    </button>
                 </li>
             </ul>
             <!-- <button id="menu-toggle">☰</button> -->
@@ -48,71 +53,13 @@
     </header>
 
     <!-- Presentation -->
-    <section id="accueil" class="intro text-center px-8 pt-[20vh] pb-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light">
-        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" loading="lazy" class="mx-auto pt-14">
+    <section id="accueil" class="intro text-center px-8 py-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light dark:border-b-darker-green dark:bg-portfolio-black">
+        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" loading="lazy" class="mx-auto pt-14">
         <h1 class="mx-auto text-2xl leading-6 text-black" style="font-family: 'Luckiest Guy';">Développeuse front-end</h1>
     </section>
 
-    <!-- Stats -->
-     <section id="stats" class="relative py-10 flex flex-col items-center justify-center rounded-b-2xl border-b-2 border-b-border-light z-2 bg-bg-dark text-center">
-        <div class="stat-circle aspect-square w-2xs font-thin h-2xs bg-black flex flex-col justify-center items-center rounded-full text-bg-dark text-base shadow-md relative overflow-hidden mb-10" id="stat-circle">
-            <span id="stat-value" class="font-bold text-3xl">20+</span>
-            <p id="stat-label">Projets réalisés</p>
-            <div class="stat-dots absolute bottom-10 flex gap-3 justify-center items-center">
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets -->
-    <section id="projets" class="bg-bg-light border-b-2 border-b-border-light rounded-b-2xl relative -mt-10 z-1 py-20 text-center">
-        <div class="flex h-[90vh]">
-            <div class="projets-left w-[50%]">
-
-            </div>
-            <div class="projets-right flex flex-col w-[50%] pl-8 pr-20">
-                <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projets</h2>
-                <hr class="mt-3 w-full">
-                <ul>
-                    <li>
-                        <a href="https://github.com/Emma-blnch/minishell">
-                            <div class="projets-line">
-                                <h3>Mini-version d'un shell</h3>
-                                <span>Algorithmie</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
-                            <div class="projets-line">
-                                <h3>Visualisation de données</h3>
-                                <span>Développement web</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/Emma-blnch/cub3D">
-                            <div class="projets-line">
-                                <h3>Cub3D</h3>
-                                <span>Jeu vidéo</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/Emma-blnch/Blog-technique">
-                            <div class="projets-line">
-                                <h3>Blog technique</h3>
-                                <span>Développement web</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <a href="https://github.com/Emma-blnch" target="_blank" class="btn">Mon Github</a>
-    </section>
-
     <!-- A propos -->
-    <section id="about" class="flex items-center justify-center gap-20 mx-auto py-10">
+    <section id="about" class="relative py-10 flex gap-20 items-center justify-center rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green z-2 bg-bg-dark dark:bg-black dark:text-white text-center">
         <img src="assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
         <p class="text-justify py-10 w-md">Développeuse front-end junior, spécialisée en <strong>création de sites</strong> et intégration web.<br>
             Mon objectif : construire des sites <strong>fiables</strong>, <strong>performants</strong> et bien <strong>référencés</strong>.
@@ -120,9 +67,108 @@
         </p>
     </section>
 
+    <!-- Projets -->
+    <section id="projets" class="bg-bg-light dark:bg-portfolio-black border-b-2 border-b-border-light dark:border-b-darker-green dark:text-white rounded-b-2xl relative -mt-10 z-1 py-20 text-center">
+        <div class="flex h-[65vh] px-20">
+            <div class="projets-left w-[50%] pr-8">
+                <div class="relative h-full w-full overflow-hidden rounded-2xl">
+                    <img id="projectPreview" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Preview projet" class="h-full w-full object-cover transition duration-300 ease-out opacity-0"/>
+                    <!-- optionnel: léger overlay pour lisibilité -->
+                    <div class="pointer-events-none absolute inset-0 bg-black/0"></div>
+                </div>
+            </div>
+            <div class="projets-right flex flex-col w-[50%] mt-3">
+                <div class="flex justify-between items-center">
+                   <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projets</h2>
+                   <a href="https://github.com/Emma-blnch" target="_blank" class="italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150">Mon Github</a>
+                </div>
+                <hr class="mt-3 w-full">
+                <ul>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-singula.webp" href="https://www.singula-sophrologie.fr/">
+                            <div class="projets-line">
+                                <h3>Singulã</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Création de site web</span>
+                                    <span class="italic text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-sporty.webp" href="https://www.sportytrader.com/">
+                            <div class="projets-line">
+                                <h3>SportyTrader</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Intégration web</span>
+                                    <span class="italic text-sm -mt-2">- TWIG, TAILWIND, SYMFONY -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-data-vizualisation.webp" href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
+                            <div class="projets-line">
+                                <h3>Enedis Visualisation</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Développement web</span>
+                                    <span class="italic text-sm -mt-2">- HTML, CSS, JS-</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-cub3d.webp" href="https://github.com/Emma-blnch/cub3D">
+                            <div class="projets-line">
+                                <h3>Cub3D</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Jeu vidéo</span>
+                                    <span class="italic text-sm -mt-2">- C, GIT -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-blog.webp" href="https://github.com/Emma-blnch/Blog-technique">
+                            <div class="projets-line">
+                                <h3>Blog technique</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Développement web</span>
+                                    <span class="italic text-sm -mt-2">- HTML, CSS, HUGO -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-minishell.webp" href="https://github.com/Emma-blnch/minishell">
+                            <div class="projets-line">
+                                <h3>Mini-version d'un shell</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Algorithmie</span>
+                                    <span class="italic text-sm -mt-2">- C, GIT -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-portfolio.webp" href="#">
+                            <div class="projets-line">
+                                <h3>Portfolio Emma Blanchard</h3>
+                                <div class="projets-right">
+                                    <span class="goal">Création de site web</span>
+                                    <span class="italic text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills -->
-    <section class="skills text-center px-14 py-10">
-        <h2>Skills</h2>
+    <section class="skills text-center px-14 py-10 dark:text-white" id="skills">
+        <!-- <h2>Skills</h2> -->
 
         <h3>Clean code</h3>
         <h3>Intégration web</h3>
@@ -133,7 +179,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="text-center border border-gray-200 rounded-3xl grid grid-cols-4 relative overflow-hidden m-12 py-20 px-10">
+    <section id="contact" class="text-center border border-portfolio-green dark:border-dark-green rounded-3xl grid grid-cols-4 relative overflow-hidden m-12 py-20 px-10">
         <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
         <div id="catch" class="relative z-2 text-left text-white col-span-3">
             <p>Vous recherchez <br>

@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Front-end Developer"
+  },
+  "projects": {
+    "title": "Projects",
+    "singula": { "goal": "Website creation" },
+    "sporty": { "goal": "Web integration" }
+  }
+}
