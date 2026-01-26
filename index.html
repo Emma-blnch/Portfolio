@@ -15,145 +15,127 @@
     <meta property="og:url" content="https://emma-blnch.github.io/Portfolio/">
 
     <title>Portfolio - Emma Blanchard</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="./dist/style.css" rel="stylesheet">
 
     <meta name="google-site-verification" content="tX_QQ9jng_1DgtWKW-OUfbh2mVgKwLukUvcIOgcDr8o" />
 </head>
 
 <body>
     <!-- Navigation -->
-    <header>
-        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy">
+    <header class="fixed top-8 left-5 flex justify-center items-center space-x-5 z-50 w-fit">
+        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-40 h-auto">
         <nav>
-            <ul>
-                <li>Accueil</li>
-                <li>Projets</li>
-                <li>À propos</li>
-                <li>Contact</li>
-                <li id="dark-mode-toggle"><img src="assets/img/dark-mode.png" alt="dark-mode-icon" loading="lazy"></li>
+            <ul class="flex items-center gap-10 text-lg border border-portfolio-yellow rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-3 px-6 m-0">
+                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Accueil</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Projets</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">À propos</li>
+                <li class="cursor-pointer list-none transition duration-150 hover:text-portfolio-blue">Contact</li>
+                <li id="dark-mode-toggle" class="list-none cursor-pointer">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
+                    <!-- <img src="assets/img/dark-mode.png" alt="dark-mode-icon" loading="lazy"> -->
+                </li>
             </ul>
             <!-- <button id="menu-toggle">☰</button> -->
         </nav>
     </header>
-    <!-- <a id="cv" href="assets/CV-0325.pdf" download="CV-Emma-Blanchard.pdf">CV</a> -->
 
     <!-- Presentation -->
-    <section id="accueil" class="intro">
-         <h1>Développeuse front-end</h1>
-         <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" loading="lazy" class="">
+    <section id="accueil" class="intro text-center px-8 pt-[20vh] pb-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light">
+        <img src="assets/img/EB_Logo-dark.png" alt="logo-emma-blanchard" loading="lazy" class="mx-auto pt-14">
+        <h1 class="mx-auto text-xl leading-6 font-semibold text-black italic">Développeuse front-end</h1>
     </section>
 
     <!-- Stats -->
-     <section id="stats">
-        <div class="stat-circle" id="stat-circle">
-            <span id="stat-value">20+</span>
+     <section id="stats" class="relative py-10 flex flex-col items-center justify-center rounded-b-2xl border-b-2 border-b-border-light z-2 bg-bg-dark text-center">
+        <div class="stat-circle aspect-square w-2xs font-thin h-2xs bg-black flex flex-col justify-center items-center rounded-full text-bg-dark text-base shadow-md relative overflow-hidden mb-10" id="stat-circle">
+            <span id="stat-value" class="font-bold text-3xl">20+</span>
             <p id="stat-label">Projets réalisés</p>
-            <div class="stat-dots">
+            <div class="stat-dots absolute bottom-10 flex gap-3 justify-center items-center">
             </div>
         </div>
     </section>
-    
 
     <!-- Projets -->
-    <section id="projets">
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-one">
-                    <div class="text1">
-                        <h3 onclick=" window.open('https://github.com/Emma-blnch/minishell', '_blank')">Mini-version d'un shell ↗️</h3>
-                        <p>Implémentation d’un shell en C, capable d’exécuter des commandes système en ligne de commande, en gérant les entrées/sorties et les processus.</p>
-                        <span>Technos : C | Shell</span>
-                    </div>
-                    <div class="image1">
-                        <img src="assets/img/preview-minishell.webp" alt="preview-minishell" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
+    <section id="projets" class="bg-bg-light border-b-2 border-b-border-light rounded-b-2xl relative -mt-10 z-1 py-20 text-center">
+        <div class="flex h-[90vh]">
+            <div class="projets-left w-[50%]">
+
             </div>
-            <div class="project-card">
-                <div class="project-two">
-                    <div class="text2">
-                        <h3 onclick=" window.open('https://github.com/Emma-blnch/GenAI-Hackaton-02-2025', '_blank')">Visualisation de données ↗️</h3>
-                        <p>Développement d'un site de visualisation de données interactif, intégrant une IA via AWS. Gestion de l'affichage et optimisation du rendu dynamique en JavaScript.</p>
-                        <span>Technos : HTML/CSS | JS | Python</span>
-                    </div>
-                    <div class="image2">
-                        <img src="assets/img/preview-data-vizualisation.webp" alt="preview-data-visualization-site" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
+            <div class="projets-right flex flex-col w-[50%] pl-8 pr-20">
+                <h2 class="uppercase font-bold text-4xl">Projets</h2>
+                <hr class="mt-3 w-full">
+                <ul>
+                    <li>
+                        <a href="https://github.com/Emma-blnch/minishell">
+                            <div class="projets-line">
+                                <h3>Mini-version d'un shell</h3>
+                                <span>Algorithmie</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
+                            <div class="projets-line">
+                                <h3>Visualisation de données</h3>
+                                <span>Développement web</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Emma-blnch/cub3D">
+                            <div class="projets-line">
+                                <h3>Cub3D</h3>
+                                <span>Jeu vidéo</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Emma-blnch/Blog-technique">
+                            <div class="projets-line">
+                                <h3>Blog technique</h3>
+                                <span>Développement web</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="project-card">
-                <div class="project-three">
-                    <div class="text3">
-                        <h3 onclick=" window.open('https://github.com/Emma-blnch/cub3D', '_blank')">Cub3D ↗️</h3>
-                        <p>Développement d'un moteur de rendu 3D basé sur la technique du raycasting. Projet combinant algorithmie, gestion de la mémoire, optimisations et ajout de fonctionnalités bonus.</p>
-                        <span>Technos : C</span>
-                    </div>
-                    <div class="image3">
-                        <img src="assets/img/preview-cub3d.webp" alt="preview-cub3d-project" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-four">
-                    <div class="text4">
-                        <h3 onclick=" window.open('https://github.com/Emma-blnch/Blog-technique', '_blank')">Blog technique ↗️</h3>
-                        <p>Blog personnel dédié à mon apprentissage du développement informatique, en particulier du langage C et des bases du web.</p>
-                        <span>Technos : HTML / Hugo / Github pages</span>
-                    </div>
-                    <div class="image4">
-                        <img src="assets/img/preview-blog.webp" alt="preview-blog" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="project-card">
-                <div class="project-five">
-                    <div class="text5">
-                        <h3 onclick=" window.open('https://github.com/Emma-blnch/Blog-technique', '_blank')">Blog technique ↗️</h3>
-                        <p>Blog personnel dédié à mon apprentissage du développement informatique, en particulier du langage C et des bases du web.</p>
-                        <span>Technos : HTML / Hugo / Github pages</span>
-                    </div>
-                    <div class="image5">
-                        <img src="assets/img/preview-blog.webp" alt="preview-blog" width="600" height="400" loading="lazy">
-                    </div>
-                </div>
-            </div> -->
-            <a href="" target="_blank" class="btn" style="text-decoration:none">Tous mes projets</a>
-            <a href="https://github.com/Emma-blnch" target="_blank" class="btn" style="text-decoration:none">Mon Github</a>
         </div>
+        <a href="https://github.com/Emma-blnch" target="_blank" class="btn">Mon Github</a>
     </section>
 
     <!-- A propos -->
-    <section id="about">
-        <img src="assets/img/eblancha.webp" alt="profile-pic-emma" loading="lazy">
-        <p>Développeuse front-end junior, spécialisée en <strong>création de sites</strong> et intégration web.<br>
+    <section id="about" class="flex items-center justify-center gap-20 mx-auto py-10">
+        <img src="assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
+        <p class="text-justify py-10 w-md">Développeuse front-end junior, spécialisée en <strong>création de sites</strong> et intégration web.<br>
             Mon objectif : construire des sites <strong>fiables</strong>, <strong>performants</strong> et bien <strong>référencés</strong>.
             <br><br>Formée à 42 Paris, je propose mes services de création d'expériences numériques accessibles pour le web.
         </p>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-        <h4>Skills</h4>
-        <h5>Clean code</h5>
-        <h5>Intégration web</h5>
-        <h5>Créativité</h5>
-        <h5>SEO (référencement naturel)</h5>
-        <h5>Résolution de problèmes</h5>
-        <h5>Rigeur & Autonomie</h5>
-        
+    <section class="skills text-center px-14 py-10">
+        <h2>Skills</h2>
+
+        <h3>Clean code</h3>
+        <h3>Intégration web</h3>
+        <h3>Créativité</h3>
+        <h3>SEO (référencement naturel)</h3>
+        <h3>Résolution de problèmes</h3>
+        <h3>Rigeur & Autonomie</h3>
     </section>
 
     <!-- Contact -->
-    <section id="contact">
-        <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy"></video>
-        <div id="catch">
+    <section id="contact" class="text-center border border-gray-200 rounded-3xl grid grid-cols-4 relative overflow-hidden m-12 py-20 px-10">
+        <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
+        <div id="catch" class="relative z-2 text-left text-white col-span-3">
             <p>Vous recherchez <br>
                 une <strong>développeuse front-end</strong>
                 <br>passionnée ?
             </p>
         </div>
-        <div class="contact-links">
-            <!-- <button onclick="location.href='mailto:emma.blnch4@gmail.com';">Mail</button> -->
+        <div class="contact-links flex items-center justify-end pr-8 gap-3 z-3 pt-10 col-start-4">
+            <button id="mail-link">Mail</button>
             <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
         </div>
     </section>

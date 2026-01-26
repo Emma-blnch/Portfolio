@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #008d36;
+  --color-portfolio-black: #333333;
+  --color-portfolio-yellow: #ffaf46f2;
+  --color-portfolio-blue: #36c5e9;
+  --color-border-light: #e0e0e0; 
+  --color-bg-light: #F6F4F2;
+  --color-bg-dark: #EAEAEA;
+}
+
+
+/* Importation des polices */
+@font-face {
+    font-family: "matter";
+    src: url(assets/font/matter/Matter-Regular.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "matter-thin";
+    src: url(assets/font/matter/Matter-Light.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "matter-bold";
+    src: url(assets/font/matter/Matter-Bold.ttf);
+    font-display: swap;
+}
+
+/* Reglages globaux */
+body {
+    font-family: "matter", sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 0;
+    background: #EAEAEA;
+    color: #333;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+/* html {
+    transition: none;
+} */
+ html { outline: 10px solid hotpink !important; }
+
+
+.intro {
+    border-bottom: 2px solid #e0e0e0;
+    background: #F6F4F2;
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+/* Stats */
+#stats {
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.stat-circle {
+    font-family: "matter-thin", sans-serif;
+}
+
+.stat-dot {
+    @apply w-2 h-2 bg-gray-200 rounded-full cursor-pointer transition duration-150;
+}
+
+.stat-dot.active {
+    @apply bg-white;
+}        
+
+#projets {
+    background-image: url(assets/effects/otis-redding.png);
+    background-size: 60px;
+    background-blend-mode: multiply;
+}
+
+.projets-right ul .projets-line {
+    @apply relative h-full w-full flex justify-between items-center border-b border-portfolio-black py-5;
+}
+
+.projets-line h3 {
+    @apply font-semibold;
+}
+
+.projets-line span {
+    @apply italic text-xl;
+}
+
+.btn {
+    @apply rounded-full px-8 py-3 text-lg bg-white border border-portfolio-yellow text-center cursor-pointer text-black shadow-sm hover:text-white hover:bg-portfolio-yellow transition duration-150;
+}
+
+#about p {
+    font-size: 1.4rem;
+}
+
+.skills h2 {
+    font-family: "matter-thin", sans-serif;
+    font-weight: 50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.skills h3 {
+    @apply flex justify-center uppercase m-2 font-bold py-3;
+    font-family: "matter-bold", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+}
+
+/* Contact */
+#catch {
+    letter-spacing: 0.1rem;
+    line-height: 4.5rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-links {
+    font-size: 2rem;
+    grid-row: 2;
+}
+
+.contact-links button {
+    @apply rounded-full border border-black text-white bg-portfolio-black px-8 py-1 cursor-pointer transition duration-150 hover:border-portfolio-yellow hover:bg-white hover:text-black;
+    font-size: 1.4rem;
+}
