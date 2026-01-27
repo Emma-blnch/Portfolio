@@ -73,11 +73,11 @@ html {
 }
 
 .projets-right ul .projets-line {
-    @apply relative h-full w-full flex justify-between items-center border-b border-portfolio-black dark:border-white py-5;
+    @apply relative h-full w-full flex justify-between items-center border-b border-portfolio-black dark:border-white py-3 lg:py-5;
 }
 
 .project-link .projets-line h3 {
-    @apply relative pl-0 transition-all duration-150 ease-in-out;
+    @apply leading-6 text-start relative pl-0 transition-all duration-150 ease-in-out lg:text-xl text-base md:text-lg;
 }
 
 /* la flèche (pseudo-élément) */
@@ -96,33 +96,30 @@ html {
 }
 
 .projets-line .goal {
-    @apply italic text-xl;
+    @apply italic lg:text-xl text-base md:text-lg leading-6;
     font-family: 'Luckiest Guy';
 }
 
 .projets-line .projets-right {
-    @apply flex flex-col items-end justify-center;
+    @apply flex flex-col items-end justify-center text-end;
 }
 
 /* About */
 #about p {
-    font-size: 1.4rem;
+    @apply lg:text-2xl text-lg md:text-xl;
 }
 
 /* Skills */
 .skills h3 {
-    @apply flex justify-center uppercase m-2 font-bold py-3;
+    @apply flex justify-center uppercase m-2 font-bold py-3 text-xl md:text-3xl lg:text-4xl;
     font-family: "matter-bold", sans-serif;
-    font-size: 2.5rem;
     letter-spacing: 0.6rem;
 }
 
 /* Contact */
 #catch {
+    @apply text-2xl md:text-3xl lg:text-5xl lg:leading-12 text-shadow-md;
     letter-spacing: 0.1rem;
-    line-height: 4.5rem;
-    font-size: 4rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact-links {
@@ -131,6 +128,5 @@ html {
 }
 
 .contact-links button {
-    @apply rounded-full border text-white px-8 py-1 cursor-pointer transition duration-150 border-darker-green border-black bg-portfolio-black hover:border-light-green hover:bg-dark-green;
-    font-size: 1.4rem;
+    @apply text-lg md:text-xl lg:text-3xl rounded-full border text-white px-8 py-1 cursor-pointer transition duration-150 border-darker-green border-black bg-portfolio-black hover:border-light-green hover:bg-dark-green;
 }

@@ -9,9 +9,41 @@
   "hero": {
     "title": "Développeuse front-end"
   },
+  "presentation": {
+    "text1": "Développeuse front-end junior, spécialisée en",
+    "text2": "création de sites",
+    "text3": "et intégration web.",
+    "text4": "Mon objectif : construire des sites",
+    "text5": "fiables, performants",
+    "text6": "et bien",
+    "text7": "référencés.",
+    "text8": "Formée à 42 Paris, je propose mes services de création d'expériences numériques accessibles pour le web."
+  },
   "projects": {
     "title": "Projets",
-    "singula": { "goal": "Création de site web" },
-    "sporty": { "goal": "Intégration web" }
+    "github": "Mon Github",
+    "name": {
+      "enedis": "Enedis visualisation",
+      "blog": "Blog technique",
+      "shell": "Mini-version d'un shell"
+    },
+    "goal": {
+      "integration": "Intégration web",
+      "creation": "Création de site web",
+      "devWeb": "Développement web",
+      "videoGame": "Jeu vidéo",
+      "algo": "Algorithmie"
+    },
+    "skills": {
+      "creativity": "Créativité",
+      "seo": "SEO (référencement naturel)",
+      "problem": "Résolution de problèmes",
+      "rigor": "Rigeur & Autonomie"
+    },
+    "cta": {
+      "text1": "Vous recherchez une",
+      "text2": "développeuse front-end",
+      "text3": "passionnée ?"
+    }
   }
 }

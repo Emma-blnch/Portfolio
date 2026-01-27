@@ -9,9 +9,41 @@
   "hero": {
     "title": "Front-end Developer"
   },
+  "presentation": {
+    "text1": "Junior front-end developer specializing in",
+    "text2": "website creation",
+    "text3": "and web integration.",
+    "text4": "My goal: to build",
+    "text5": "reliable, high-performance",
+    "text6": "websites with",
+    "text7": "good search engine optimization.",
+    "text8": "Trained at 42 Paris, I offer my services in creating accessible digital experiences for the web."
+  },
   "projects": {
     "title": "Projects",
-    "singula": { "goal": "Website creation" },
-    "sporty": { "goal": "Web integration" }
+    "github": "My Github",
+    "name": {
+      "enedis": "Enedis visualization",
+      "blog": "Technical blog",
+      "shell": "Mini version of a shell"
+    },
+    "goal": {
+      "integration": "Web integration",
+      "creation": "Website creation",
+      "devWeb": "Web development",
+      "videoGame": "Video Game",
+      "algo": "Algorithmics"
+    },
+    "skills": {
+      "creativity": "Creativity",
+      "seo": "SEO (search engine optimization)",
+      "problem": "Problem solving",
+      "rigor": "Rigor & Autonomy"
+    },
+    "cta": {
+      "text1": "Are you looking for a",
+      "text2": "front-end developer",
+      "text3": "who is passionate about their work?"
+    }
   }
 }
