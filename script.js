@@ -132,9 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// --------> Changer langue
+// --------> Changer langue (desktop + mobile)
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("lang-toggle");
+  const langButtons = document.querySelectorAll("[data-lang-toggle]");
   const supported = ["fr", "en"];
 
   function getByPath(obj, path) {
@@ -156,8 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof value === "string") el.textContent = value;
     });
 
-    // bouton affiche la langue vers laquelle on switch
-    if (btn) btn.textContent = lang === "fr" ? "EN" : "FR";
+    // mettre à jour TOUS les boutons (desktop + mobile)
+    langButtons.forEach((b) => {
+      b.textContent = lang === "fr" ? "EN" : "FR";
+    });
 
     localStorage.setItem("lang", lang);
     document.documentElement.setAttribute("lang", lang);
@@ -166,14 +168,83 @@ document.addEventListener("DOMContentLoaded", () => {
   // init
   const saved = localStorage.getItem("lang");
   const browser = (navigator.language || "fr").startsWith("en") ? "en" : "fr";
-  const lang = supported.includes(saved) ? saved : browser;
+  const initLang = supported.includes(saved) ? saved : browser;
 
-  applyLang(lang).catch(() => applyLang("fr"));
+  applyLang(initLang).catch(() => applyLang("fr"));
 
-  // toggle
-  btn?.addEventListener("click", () => {
-    const current = localStorage.getItem("lang") || lang;
-    const next = current === "fr" ? "en" : "fr";
-    applyLang(next);
+  // toggle (sur tous les boutons)
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // évite que ton handler de nav li interfère
+      const current = localStorage.getItem("lang") || initLang;
+      const next = current === "fr" ? "en" : "fr";
+      applyLang(next);
+    });
+  });
+});
+
+// --------> Menu mobile (burger)
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("menu-toggle");
+  const icon = document.getElementById("menu-icon");
+  const menu = document.getElementById("mobile-menu");
+
+  if (!btn || !icon || !menu) return;
+
+  function openMenu() {
+    menu.classList.remove("hidden");
+    icon.textContent = "✕";
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu() {
+    menu.classList.add("hidden");
+    icon.textContent = "☰";
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function toggleMenu() {
+    const isOpen = !menu.classList.contains("hidden");
+    isOpen ? closeMenu() : openMenu();
+  }
+
+  btn.addEventListener("click", toggleMenu);
+
+  // Fermer si clic sur un item + scroll vers la section
+  menu.querySelectorAll("li[data-target]").forEach((li) => {
+    li.addEventListener("click", () => {
+      const id = li.getAttribute("data-target");
+      const target = document.getElementById(id);
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 50, behavior: "smooth" });
+      }
+      closeMenu();
+    });
+  });
+
+  // Fermer si on clique en dehors
+  document.addEventListener("click", (e) => {
+    const isOpen = !menu.classList.contains("hidden");
+    if (!isOpen) return;
+    if (menu.contains(e.target) || btn.contains(e.target)) return;
+    closeMenu();
+  });
+
+  // Fermer avec Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Optionnel : relier les boutons mobile à tes toggles existants
+  const mobileDark = document.getElementById("mobile-dark-toggle");
+  const mobileLang = document.getElementById("mobile-lang-toggle");
+
+  mobileDark?.addEventListener("click", () => {
+    document.getElementById("dark-mode-toggle")?.click();
+  });
+
+  mobileLang?.addEventListener("click", () => {
+    document.getElementById("lang-toggle")?.click();
   });
 });
