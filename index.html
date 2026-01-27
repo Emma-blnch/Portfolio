@@ -28,9 +28,9 @@
 <body class="bg-bg-dark text-portfolio-black dark:text-white dark:bg-black">
     <!-- Navigation -->
     <header class="fixed top-8 left-5 flex justify-center items-center space-x-5 z-50 w-fit">
-        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-40 h-auto">
+        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-20 md:w-40 h-auto">
         <nav>
-            <ul class="flex items-center gap-7 text-sm md:text-base lg:text-lg border border-dark-green rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0">
+            <ul class="items-center gap-7 text-sm md:text-base lg:text-lg border border-dark-green rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0 hidden md:flex">
                 <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.home">Accueil</li>
                 <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.about">À propos</li>
                 <li class="cursor-pointer list-none transition duration-150 hover:text-dark-blue" data-i18n="nav.projects">Projets</li>
@@ -57,9 +57,9 @@
     </section>
 
     <!-- A propos -->
-    <section id="about" class="relative py-10 flex gap-20 items-center justify-center rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green z-2 bg-bg-dark dark:bg-black dark:text-white text-center">
+    <section id="about" class="relative px-7 md:px-0 py-10 flex flex-col md:flex-row gap-4 md:gap-20 items-center justify-center rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green z-2 bg-bg-dark dark:bg-black dark:text-white text-center">
         <img src="assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
-        <p class="text-justify py-10 w-sm lg:w-md">
+        <p class="text-justify py-10 w-fit lg:w-md">
             <span data-i18n="presentation.text1">Développeuse front-end junior, spécialisée en </span>
             <span class="font-bold" data-i18n="presentation.text2">création de sites</span>
             <span data-i18n="presentation.text3">et intégration web.</span><br>
@@ -74,15 +74,15 @@
 
     <!-- Projets -->
     <section id="projets" class="bg-bg-light dark:bg-portfolio-black border-b-2 border-b-border-light dark:border-b-darker-green dark:text-white rounded-b-2xl relative -mt-10 z-1 py-20 text-center">
-        <div class="flex h-[65vh] px-20">
-            <div class="projets-left w-[50%] pr-8">
+        <div class="flex justify-center h-[43vh] md:h-[65vh] px-7 md:px-20">
+            <div class="projets-left w-[50%] pr-8 hidden md:block">
                 <div class="relative h-full w-full overflow-hidden rounded-2xl">
                     <img id="projectPreview" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Preview projet" class="h-full w-full object-cover transition duration-300 ease-out opacity-0"/>
                     <!-- optionnel: léger overlay pour lisibilité -->
                     <div class="pointer-events-none absolute inset-0 bg-black/0"></div>
                 </div>
             </div>
-            <div class="projets-right flex flex-col w-[50%] mt-3">
+            <div class="projets-right flex flex-col md:w-[50%] mt-3">
                 <div class="flex justify-between items-center">
                    <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';" data-i18n="projects.title">Projets</h2>
                    <a href="https://github.com/Emma-blnch" target="_blank" class="italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150" data-i18n="projects.github">Mon Github</a>
@@ -184,7 +184,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="text-center border border-dark-green rounded-3xl grid grid-cols-4 relative overflow-hidden m-12 py-20 px-10">
+    <section id="contact" class="text-center border border-dark-green rounded-3xl grid grid-cols-4 relative overflow-hidden m-7 md:m-12 py-10 md:py-20 px-5 md:px-10">
         <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
         <div id="catch" class="relative z-2 text-left text-white col-span-3">
             <p>
@@ -199,6 +199,8 @@
             <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
         </div>
     </section>
+
+    <div class="noise"></div>
 
     <script src="script.js" defer></script> <!-- script pour les animations -->
 </body>
