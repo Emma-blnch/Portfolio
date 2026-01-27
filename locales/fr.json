@@ -7,7 +7,21 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Développeuse front-end"
+    "title": "Développeuse front-end",
+    "kicker": "Disponible pour missions freelance",
+    "ctaContact": "Me contacter",
+    "ctaProjects": "Voir mes projets",
+    "subheadline": {
+      "text1": "Je propose mes services de création",
+      "text2": "d'expériences numériques",
+      "text3": "accessibles pour le web.",
+      "text4": "Je crée des sites",
+      "text5": "rapides",
+      "text6": "accessibles",
+      "text7": "et",
+      "text8": "responsive."
+    },
+    "stack": "HTML • CSS/Tailwind • JS • Symfony/Twig • Accessibilité • SEO"
   },
   "presentation": {
     "text1": "Développeuse front-end junior, spécialisée en",
@@ -17,7 +31,7 @@
     "text5": "fiables, performants",
     "text6": "et bien",
     "text7": "référencés.",
-    "text8": "Formée à 42 Paris, je propose mes services de création d'expériences numériques accessibles pour le web."
+    "text8": "Besoin d'une intégration, d'une landing page, ou d'un site vitrine : je peux vous aider."
   },
   "projects": {
     "title": "Projets",

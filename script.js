@@ -1,34 +1,3 @@
-// --------> Animation pour amener au bon endroit de la page selon click sur menu
-document.addEventListener("DOMContentLoaded", function() {
-    // Correspondance entre les textes du menu et les IDs des sections
-    const sectionMapping = {
-        "Accueil": "accueil",
-        "Projets": "projets",
-        "À propos": "about",
-        "Skills": "skills",
-        "Contact": "contact"
-    };
-    
-    // Sélectionne tous les liens du menu
-    const menuLinks = document.querySelectorAll("nav ul li");
-
-    menuLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            const sectionId = sectionMapping[this.textContent.trim()]; // Trouve l'ID correspondant
-            
-            if (sectionId) {
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 50, // Ajuste le scroll pour tenir compte du menu fixe
-                        behavior: "smooth"
-                    });
-                }
-            }
-        });
-    });
-});
-
 // --------> Ralentir vitesse de video background de section contacts (bas de page)
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById("bg-video");
@@ -211,14 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btn.addEventListener("click", toggleMenu);
 
-  // Fermer si clic sur un item + scroll vers la section
-  menu.querySelectorAll("li[data-target]").forEach((li) => {
+  // Fermer si clic sur un item
+  menu.querySelectorAll("a[data-target]").forEach((li) => {
     li.addEventListener("click", () => {
-      const id = li.getAttribute("data-target");
-      const target = document.getElementById(id);
-      if (target) {
-        window.scrollTo({ top: target.offsetTop - 50, behavior: "smooth" });
-      }
       closeMenu();
     });
   });
@@ -242,9 +206,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mobileDark?.addEventListener("click", () => {
     document.getElementById("dark-mode-toggle")?.click();
-  });
-
-  mobileLang?.addEventListener("click", () => {
-    document.getElementById("lang-toggle")?.click();
   });
 });

@@ -28,20 +28,20 @@
 <body class="bg-bg-dark text-secondary dark:text-white dark:bg-black">
     <!-- Navigation -->
     <header class="fixed top-8 left-5 hidden md:flex justify-center items-center space-x-5 z-50 w-fit">
-        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-20 md:w-40 h-auto">
+        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" id="logo" loading="lazy" width="50" height="40" class="w-20 md:w-30 h-auto hidden">
         <nav>
             <ul class="text-portfolio-black items-center gap-7 text-sm md:text-base lg:text-lg border border-dark-green rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0 flex">
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green" data-i18n="nav.home">Accueil</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green" data-i18n="nav.about">À propos</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green" data-i18n="nav.projects">Projets</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green" data-i18n="nav.skills">Skills</li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green" data-i18n="nav.contact">Contact</li>
+                <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green" data-i18n="nav.home">Accueil</a></li>
+                <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green" data-i18n="nav.about">À propos</a></li>
+                <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green" data-i18n="nav.projects">Projets</a></li>
+                <li class="list-none"><a href="#skills" class="transition duration-150 hover:text-dark-green" data-i18n="nav.skills">Skills</a></li>
+                <li class="list-none"><a href="#contact" class="transition duration-150 hover:text-dark-green" data-i18n="nav.contact">Contact</a></li>
                 <li id="dark-mode-toggle" class="list-none cursor-pointer">
                     <svg id="dark-mode" class="dark:block hidden w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>
                     <svg id="light-mode" class="dark:hidden block w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
                 </li>
-                <li class="cursor-pointer list-none transition duration-150 hover:text-dark-green">
-                    <button id="lang-toggle" data-lang-toggle class="cursor-pointer">
+                <li class="list-none">
+                    <button id="lang-toggle" data-lang-toggle class="cursor-pointer transition duration-150 hover:text-dark-green">
                         EN
                     </button>
                 </li>
@@ -55,16 +55,16 @@
     <!-- Menu mobile -->
     <nav id="mobile-menu" class="md:hidden fixed top-20 right-5 left-5 hidden z-10">
         <ul class="flex flex-col gap-4 rounded-2xl border border-dark-green bg-white/80 backdrop-blur-[5px] p-6 shadow-md text-secondary text-lg">
-            <li class="cursor-pointer transition duration-150 hover:text-dark-green" data-i18n="nav.home" data-target="accueil">Accueil</li>
-            <li class="cursor-pointer transition duration-150 hover:text-dark-green" data-i18n="nav.about" data-target="about">À propos</li>
-            <li class="cursor-pointer transition duration-150 hover:text-dark-green" data-i18n="nav.projects" data-target="projets">Projets</li>
-            <li class="cursor-pointer transition duration-150 hover:text-dark-green" data-i18n="nav.skills" data-target="skills">Skills</li>
-            <li class="cursor-pointer transition duration-150 hover:text-dark-green" data-i18n="nav.contact" data-target="contact">Contact</li>
+            <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green" data-target="accueil" data-i18n="nav.home">Accueil</a></li>
+            <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green" data-target="about" data-i18n="nav.about">À propos</a></li>
+            <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green" data-target="projets" data-i18n="nav.projects">Projets</a></li>
+            <li class="list-none"><a href="#skills" class="transition duration-150 hover:text-dark-green" data-target="skills" data-i18n="nav.skills">Skills</a></li>
+            <li class="list-none"><a href="#contact" class="transition duration-150 hover:text-dark-green" data-target="contact" data-i18n="nav.contact">Contact</a></li>
 
             <li class="flex items-center justify-between pt-2 border-t border-dark-green/30">
                 <button id="mobile-dark-toggle" class="flex items-center gap-2">
-                   <svg id="dark-mode" class="dark:block hidden w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>
-                    <svg id="light-mode" class="dark:hidden block w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
+                   <svg class="dark:block hidden w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none"><g fill="currentColor" clip-path="url(#SVGHcSWxdhd)"><path d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1M4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414zM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm17 1a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-.343 4.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414zm-9.9 1.414a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414zM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414zM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0zm-1-3a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></g><defs><clipPath id="SVGHcSWxdhd"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg>
+                    <svg class="dark:hidden block w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
                 </button>
 
                 <button id="mobile-lang-toggle" data-lang-toggle class="text-sm underline">EN</button>
@@ -72,11 +72,45 @@
         </ul>
     </nav>
 
-
     <!-- Presentation -->
-    <section id="accueil" class="intro text-center px-8 py-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light dark:border-b-darker-green dark:bg-portfolio-black">
-        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo-emma-blanchard" loading="lazy" class="mx-auto pt-14">
-        <h1 class="mx-auto text-2xl leading-6 text-black" style="font-family: 'Luckiest Guy';" data-i18n="hero.title">Développeuse front-end</h1>
+    <section id="accueil" class="relative flex items-center justify-between gap-4 overflow-hidden px-8 py-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light dark:border-b-darker-green dark:bg-portfolio-black">
+        <!-- contenu -->
+        <div class="relative max-w-3xl">
+            <p class="uppercase tracking-widest text-sm md:text-base opacity-80" data-i18n="hero.kicker">
+                Disponible pour missions freelance
+            </p>
+
+            <h1 class="mt-4 text-4xl md:text-6xl font-bold text-black"
+                style="font-family:'Luckiest Guy';" data-i18n="hero.title">Développeuse front-end</h1>
+
+            <p class="mt-5 text-lg md:text-2xl leading-snug opacity-90">
+                <span class="" data-i18n="hero.subheadline.text4">Je crée des sites</span> 
+                <span class="font-bold" data-i18n="hero.subheadline.text5">rapides</span>, 
+                <span class="font-bold" data-i18n="hero.subheadline.text6">accessibles</span>
+                <span data-i18n="hero.subheadline.text7">et</span>
+                <span class="font-bold" data-i18n="hero.subheadline.text8">responsive.</span>
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="#projets" class="inline-flex justify-center rounded-full px-8 py-2 text-lg border border-dark-green
+                        bg-portfolio-green/70 hover:bg-darker-green hover:text-white transition duration-150" data-i18n="hero.ctaProjects">
+                    Voir mes projets
+                </a>
+
+                <a href="#contact" class="inline-flex justify-center rounded-full px-8 py-2 text-lg border border-dark-green
+                        bg-white/40 dark:bg-black/60 hover:bg-darker-green hover:text-white transition duration-150"
+                    data-i18n="hero.ctaContact">
+                    Me contacter
+                </a>
+            </div>
+
+            <p class="mt-6 text-sm opacity-70" data-i18n="hero.stack">
+                HTML • CSS/Tailwind • JS • Symfony/Twig • Accessibilité • SEO
+            </p>
+        </div>
+        <!-- logo -->
+        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo emma blanchard dark" class="h-auto w-md dark:hidden hidden md:block" width="20" height="20"/>
+        <img src="assets/img/logo/EB_Logo-light.png" alt="logo emma blanchard light" class="h-auto w-md hidden dark:md:block" width="20" height="20"/>
     </section>
 
     <!-- A propos -->
@@ -146,6 +180,17 @@
                         </a>
                     </li>
                     <li>
+                        <a class="project-link" data-preview="assets/img/projects/preview-portfolio.webp" href="#">
+                            <div class="projets-line">
+                                <h3>Portfolio Emma Blanchard</h3>
+                                <div class="projets-right">
+                                    <span class="goal" data-i18n="projects.goal.creation">Création de site web</span>
+                                    <span class="italic text-xs md:text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
                         <a class="project-link" data-preview="assets/img/projects/preview-cub3d.webp" href="https://github.com/Emma-blnch/cub3D">
                             <div class="projets-line">
                                 <h3>Cub3D</h3>
@@ -157,34 +202,12 @@
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-blog.webp" href="https://github.com/Emma-blnch/Blog-technique">
-                            <div class="projets-line">
-                                <h3 data-i18n="projects.name.blog">Blog technique</h3>
-                                <div class="projets-right">
-                                    <span class="goal" data-i18n="projects.goal.devWeb">Développement web</span>
-                                    <span class="italic text-xs md:text-sm -mt-2">- HTML, CSS, HUGO -</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
                         <a class="project-link" data-preview="assets/img/projects/preview-minishell.webp" href="https://github.com/Emma-blnch/minishell">
                             <div class="projets-line">
                                 <h3 data-i18n="projects.name.shell">Mini-version d'un shell</h3>
                                 <div class="projets-right">
                                     <span class="goal" data-i18n="projects.goal.algo">Algorithmie</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- C, GIT -</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-portfolio.webp" href="#">
-                            <div class="projets-line">
-                                <h3>Portfolio Emma Blanchard</h3>
-                                <div class="projets-right">
-                                    <span class="goal" data-i18n="projects.goal.creation">Création de site web</span>
-                                    <span class="italic text-xs md:text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
                                 </div>
                             </div>
                         </a>
