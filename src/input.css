@@ -4,6 +4,7 @@
 
 @theme {
     --color-primary: #008d36;
+    --color-secondary: #1c2e21;
     --color-black: #1f1f1f;
     --color-portfolio-black: #333333;
     --color-portfolio-green: #ffaf46f2;
@@ -41,9 +42,6 @@
 body {
     @apply m-0 p-0 text-2xl relative;
     font-family: "matter", sans-serif;
-    /* background-image: url(assets/effects/noise.png);
-    background-size: 60px;
-    background-blend-mode: overlay; */
 }
 
 html {
@@ -54,22 +52,8 @@ html {
     @apply rounded-full px-8 py-3 text-lg bg-white border border-portfolio-green text-center cursor-pointer text-black shadow-sm hover:text-white hover:bg-portfolio-green transition duration-150;
 }
 
-/* Hero */
-/* .intro {
-    background-image: url(assets/effects/noise.png);
-    background-size: 60px;
-    background-blend-mode: overlay;
-} */
-
-/* Projects */
-/* #projets {
-    background-image: url(assets/effects/noise.png);
-    background-size: 60px;
-    background-blend-mode: overlay;
-} */
-
 .projets-right ul .projets-line {
-    @apply relative h-full w-full flex justify-between items-center border-b border-portfolio-black dark:border-white py-3 lg:py-5;
+    @apply relative h-full w-full flex justify-between items-center border-b border-portfolio-black dark:border-white py-2 lg:py-5;
 }
 
 .project-link .projets-line h3 {
@@ -138,54 +122,39 @@ html {
 }
 
 .contact-links button {
-    @apply text-lg md:text-xl lg:text-3xl rounded-full border text-white px-8 py-1 cursor-pointer transition duration-150 border-darker-green border-black bg-portfolio-black hover:border-light-green hover:bg-dark-green;
+    @apply text-lg md:text-xl lg:text-3xl rounded-full border text-white px-8 py-1 cursor-pointer transition duration-150 border-secondary bg-portfolio-black hover:border-secondary hover:bg-dark-green;
 }
 
-.noise {
-    position: fixed;
-    z-index: 9999;
-    top: -300%;
-    left: -150%;
-    height: 600%;
-    width: 600%;
-    -webkit-animation: grain 7s steps(10) infinite;
-    animation: grain 7s steps(10) infinite;
-    background-image: url(/assets/effects/noise.png);
-    background-size: 200px;
+/* Noise effect */
+.noise-effect {
+    @apply fixed z-99 w-[610%] h-[610%];
+    top: -285%;
+    left: -170%;
+    background-image: url(/assets/effects/noise-effect.png);
+    background-size: 190px;
     background-repeat: repeat;
+    -webkit-animation: noiseDrift 8s steps(12) infinite;
+    animation: noiseDrift 8s steps(12) infinite;
     opacity: .25;
     pointer-events: none;
+    will-change: transform;
 }
 
-@keyframes grain {
-    0%, 100% {
-        transform: translate(0);
-    }
-    10% {
-        transform: translate(-5%, -10%);
-    }
-    20% {
-        transform: translate(-15%, 5%);
-    }
-    30% {
-        transform: translate(7%, -25%);
-    }
-    40% {
-        transform: translate(-5%, 25%);
-    }
-    50% {
-        transform: translate(-15%, 10%);
-    }
-    60% {
-        transform: translate(15%);
-    }
-    70% {
-        transform: translateY(15%);
-    }
-    80% {
-        transform: translate(3%, 35%);
-    }
-    90% {
-        transform: translate(-10%, 10%);
-    }
+@keyframes noiseDrift {
+    0%   { transform: translate3d(0, 0, 0); }
+    12%  { transform: translate3d(-6%, -12%, 0); }
+    25%  { transform: translate3d(-18%, 6%, 0); }
+    37%  { transform: translate3d(10%, -22%, 0); }
+    50%  { transform: translate3d(-8%, 18%, 0); }
+    62%  { transform: translate3d(-16%, 8%, 0); }
+    75%  { transform: translate3d(14%, -6%, 0); }
+    87%  { transform: translate3d(4%, 26%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noise-effect {
+    animation: none;
+    -webkit-animation: none;
+  }
 }
