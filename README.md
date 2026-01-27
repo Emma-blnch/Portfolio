@@ -3,10 +3,10 @@
 TO DO :   
 - do responsive
 - add contact form
-- finish english translation
 - buy domain name LWS
      
 DONE :     
 - dark mode
 - global style (except hero)
 - conversion to tailwind
+- finish english translation
