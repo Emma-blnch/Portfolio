@@ -10,19 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("dark-mode-toggle");
   const html = document.documentElement; // <html>
-  const logo = document.getElementById("logo");
 
   // init depuis localStorage
   const saved = localStorage.getItem("theme");
   if (saved === "dark") html.classList.add("dark");
-
-  function updateLogo() {
-    if (!logo) return;
-    const isDark = html.classList.contains("dark");
-    logo.src = isDark ? "assets/img/logo/EB_Logo-light.png" : "assets/img/logo/EB_Logo-dark.png";
-  }
-
-  updateLogo();
 
   toggle?.addEventListener("click", () => {
     html.classList.toggle("dark");
@@ -195,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(form);
 
     try {
-      const res = await fetch("./contact.php", {
+      const res = await fetch("s/contact.php", {
         method: "POST",
         body: formData,
         headers: { "Accept": "application/json" }

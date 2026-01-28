@@ -1,8 +1,6 @@
 # portfolio-front
 
 TO DO :   
-- add contact form
-- add one page per project
 - add colorful forms on bg
 - buy domain name LWS
      
@@ -12,3 +10,4 @@ DONE :
 - conversion to tailwind
 - finish english translation
 - responsive
+- add contact form
