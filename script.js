@@ -101,61 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// --------> Changer langue (desktop + mobile)
+// --------> Switch langue (redirige vers une autre page)
 document.addEventListener("DOMContentLoaded", () => {
-  const langButtons = document.querySelectorAll("[data-lang-toggle]");
-  const supported = ["fr", "en"];
-
-  function getByPath(obj, path) {
-    return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), obj);
-  }
-
-  async function loadLocale(lang) {
-    const res = await fetch(`./locales/${lang}.json`, { cache: "no-store" });
-    if (!res.ok) throw new Error("Locale not found");
-    return res.json();
-  }
-
-  async function applyLang(lang) {
-    const dict = await loadLocale(lang);
-
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const value = getByPath(dict, key);
-      if (typeof value === "string") el.textContent = value;
-    });
-
-    // Traduire les placeholders
-    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      const value = getByPath(dict, key);
-      if (typeof value === "string") el.setAttribute("placeholder", value);
-    });
-
-    // mettre à jour TOUS les boutons (desktop + mobile)
-    langButtons.forEach((b) => {
-      b.textContent = lang === "fr" ? "EN" : "FR";
-    });
-
-    localStorage.setItem("lang", lang);
-    document.documentElement.setAttribute("lang", lang);
-  }
-
-  // init
-  const saved = localStorage.getItem("lang");
-  const browser = (navigator.language || "fr").startsWith("en") ? "en" : "fr";
-  const initLang = supported.includes(saved) ? saved : browser;
-
-  applyLang(initLang).catch(() => applyLang("fr"));
-
-  // toggle (sur tous les boutons)
-  langButtons.forEach((btn) => {
+  const langBtns = document.querySelectorAll("[data-lang-href]");
+  langBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      e.stopPropagation(); // évite que ton handler de nav li interfère
-      const current = localStorage.getItem("lang") || initLang;
-      const next = current === "fr" ? "en" : "fr";
-      applyLang(next);
+      const href = btn.getAttribute("data-lang-href");
+      if (href) window.location.href = href;
     });
   });
 });

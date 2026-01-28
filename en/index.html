@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -7,17 +7,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon_16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon_32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon/favicon_48x48.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Développeuse front-end freelance, je crée des sites rapides, accessibles et responsive.">
+    <meta name="description" content="Front-end developer available for freelance work. I build fast, accessible, responsive websites.">
     <meta name="author" content="Emma Blanchard">
     
     <meta property="og:title" content="Portfolio - Emma Blanchard">
-    <meta property="og:description" content="Découvrez mes projets en développement web et intégration HTML/CSS.">
+    <meta property="og:description" content="Discover my web development and HTML/CSS integration projects.">
     <meta property="og:type" content="website">
 
-    <!-- Langues -->
+     <!-- Langues -->
     <link rel="alternate" hreflang="fr" href="https://emma-blnch.fr/">
     <link rel="alternate" hreflang="en" href="https://emma-blnch.fr/en/">
     <link rel="alternate" hreflang="x-default" href="https://emma-blnch.fr/">
@@ -25,14 +25,14 @@
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio — Emma Blanchard">
-    <meta name="twitter:description" content="Développeuse front-end — HTML, Tailwind, JS, intégration responsive.">
+    <meta name="twitter:description" content="Front-end developer — HTML, Tailwind, JS, responsive integration.">
     <meta name="twitter:image" content="https://emma-blnch.fr/assets/img/twitter-card.jpg">
 
     <!-- OG img + url -->
     <meta property="og:image" content="https://emma-blnch.fr/assets/img/preview.png"> <!-- TO CHANGE -->
-    <meta property="og:url" content="https://emma-blnch.fr/"> <!-- TO CHANGE -->
+    <meta property="og:url" content="https://emma-blnch.fr/en/"> <!-- TO CHANGE -->
 
-    <link rel="canonical" href="https://emma-blnch.fr/"> <!-- TO CHANGE -->
+    <link rel="canonical" href="https://emma-blnch.fr/en/"> <!-- TO CHANGE -->
 
     <title>Portfolio - Emma Blanchard</title>
 
@@ -42,7 +42,7 @@
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Emma Blanchard",
-            "jobTitle": "Développeuse front-end",
+            "jobTitle": "Front-end developer",
             "url": "https://emma-blnch.fr/",
             "sameAs": [
                 "https://www.linkedin.com/in/emmablnch/",
@@ -57,7 +57,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     
     <!-- Tailwind sans build -->
-    <link href="./dist/style.css" rel="stylesheet">
+    <link href="../dist/style.css" rel="stylesheet">
 </head>
 
 <body class="bg-bg-dark text-secondary dark:text-white dark:bg-black">
@@ -65,9 +65,9 @@
     <header class="fixed top-8 left-5 hidden md:flex justify-center items-center space-x-5 z-50 w-fit">
         <nav>
             <ul class="text-portfolio-black items-center gap-7 text-sm md:text-base lg:text-lg border border-dark-green rounded-full shadow-md bg-white/80 backdrop-blur-[2px] py-2 px-6 m-0 flex">
-                <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green">Accueil</a></li>
-                <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green">À propos</a></li>
-                <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green">Projets</a></li>
+                <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green">Home</a></li>
+                <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green">About</a></li>
+                <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green">Projects</a></li>
                 <li class="list-none"><a href="#skills" class="transition duration-150 hover:text-dark-green">Skills</a></li>
                 <li class="list-none"><a href="#contact" class="transition duration-150 hover:text-dark-green">Contact</a></li>
                 <li id="dark-mode-toggle" class="list-none cursor-pointer">
@@ -75,8 +75,8 @@
                     <svg id="light-mode" class="dark:hidden block w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
                 </li>
                 <li class="list-none">
-                    <button id="lang-toggle" data-lang-href="/en/" class="cursor-pointer transition duration-150 hover:text-dark-green">
-                        EN
+                    <button id="lang-toggle" data-lang-href="/" class="cursor-pointer transition duration-150 hover:text-dark-green">
+                        FR
                     </button>
                 </li>
             </ul>
@@ -89,9 +89,9 @@
     <!-- Menu mobile -->
     <nav id="mobile-menu" class="md:hidden fixed top-20 right-5 left-5 hidden z-10">
         <ul class="flex flex-col gap-4 rounded-2xl border border-dark-green bg-white/80 backdrop-blur-[5px] p-6 shadow-md text-secondary text-lg">
-            <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green" data-target="accueil">Accueil</a></li>
-            <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green" data-target="about">À propos</a></li>
-            <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green" data-target="projets">Projets</a></li>
+            <li class="list-none"><a href="#accueil" class="transition duration-150 hover:text-dark-green" data-target="accueil">Home</a></li>
+            <li class="list-none"><a href="#about" class="transition duration-150 hover:text-dark-green" data-target="about">About</a></li>
+            <li class="list-none"><a href="#projets" class="transition duration-150 hover:text-dark-green" data-target="projets">Projects</a></li>
             <li class="list-none"><a href="#skills" class="transition duration-150 hover:text-dark-green" data-target="skills">Skills</a></li>
             <li class="list-none"><a href="#contact" class="transition duration-150 hover:text-dark-green" data-target="contact">Contact</a></li>
 
@@ -101,7 +101,7 @@
                     <svg class="dark:hidden block w-5 md:w-6 lg:w-9" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333T4.058 12q0-3.039 1.98-5.27t4.904-2.634q.081 0 .159.006t.153.017q-.506.706-.801 1.57T10.158 7.5q0 2.667 1.866 4.533t4.534 1.867q.951 0 1.813-.295t1.548-.801q.012.075.017.153t.006.159q-.384 2.923-2.615 4.903T12.057 20"/></svg>
                 </button>
 
-                <button id="mobile-lang-toggle" data-lang-href="/en/" class="text-sm underline">EN</button>
+                <button id="mobile-lang-toggle" data-lang-href="/" class="text-sm underline">FR</button>
             </li>
         </ul>
     </nav>
@@ -111,54 +111,54 @@
         <!-- contenu -->
         <div class="relative max-w-3xl">
             <p class="uppercase tracking-widest text-sm md:text-base opacity-80">
-                Disponible pour missions freelance
+                Available for freelance work
             </p>
 
             <h1 class="mt-4 text-4xl md:text-6xl font-bold text-black"
-                style="font-family:'Luckiest Guy';">Développeuse front-end</h1>
+                style="font-family:'Luckiest Guy';">Front-end Developer</h1>
 
             <p class="mt-5 text-lg md:text-2xl leading-snug opacity-90">
-                <span class="">Je crée des sites</span> 
-                <span class="font-bold">rapides</span>, 
-                <span class="font-bold">accessibles</span>
-                <span>et</span>
+                <span class="">I create websites that are</span> 
+                <span class="font-bold">fast</span>, 
+                <span class="font-bold">accessible</span>
+                <span>and</span>
                 <span class="font-bold">responsive.</span>
             </p>
 
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
                 <a href="#projets" class="inline-flex justify-center rounded-full px-8 py-2 text-lg border border-dark-green
                         bg-portfolio-green/70 hover:bg-darker-green hover:text-white transition duration-150">
-                    Voir mes projets
+                    See my projects
                 </a>
 
                 <a href="#contact" class="inline-flex justify-center rounded-full px-8 py-2 text-lg border border-dark-green
                         bg-white/40 dark:bg-black/60 hover:bg-darker-green hover:text-white transition duration-150">
-                    Me contacter
+                    Contact me
                 </a>
             </div>
 
             <p class="mt-6 text-sm opacity-70">
-                HTML • CSS/Tailwind • JS • Symfony/Twig • Accessibilité • SEO
+                HTML • CSS/Tailwind • JS • Symfony/Twig • Accessibility • SEO
             </p>
         </div>
         <!-- logo -->
-        <img src="assets/img/logo/EB_Logo-dark.png" alt="logo emma blanchard dark" class="h-auto w-md dark:hidden hidden md:block" width="20" height="20"/>
-        <img src="assets/img/logo/EB_Logo-light.png" alt="logo emma blanchard light" class="h-auto w-md hidden dark:md:block" width="20" height="20"/>
+        <img src="/assets/img/logo/EB_Logo-dark.png" alt="logo emma blanchard dark" class="h-auto w-md dark:hidden hidden md:block" width="20" height="20"/>
+        <img src="/assets/img/logo/EB_Logo-light.png" alt="logo emma blanchard light" class="h-auto w-md hidden dark:md:block" width="20" height="20"/>
     </section>
 
     <!-- A propos -->
     <section id="about" class="relative px-7 md:px-0 py-10 flex flex-col md:flex-row gap-4 md:gap-20 items-center justify-center rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green z-2 bg-bg-dark dark:bg-black dark:text-white text-center">
-        <img src="assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
+        <img src="/assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
         <p class="text-justify py-10 w-fit lg:w-md">
-            <span>Développeuse front-end junior, spécialisée en </span>
-            <span class="font-bold">création de sites</span>
-            <span>et intégration web.</span><br>
-            <span>Mon objectif : construire des sites </span>
-            <span class="font-bold">fiables, performants</span>
-            <span>et bien</span>
-            <span class="font-bold">référencés.</span>
+            <span>Junior front-end developer specializing in</span>
+            <span class="font-bold">website creation</span>
+            <span>and web integration.</span><br>
+            <span>My goal: to build</span>
+            <span class="font-bold">reliable, high-performance</span>
+            <span>websites with</span>
+            <span class="font-bold">good search engine optimization.</span>
             <br><br>
-            <span>Formée à 42 Paris, je propose mes services de création d'expériences numériques accessibles pour le web.</span>
+            <span>Need a web integration, a landing page, or a showcase website? I can help you.</span>
         </p>
     </section>
 
@@ -174,72 +174,72 @@
             </div>
             <div class="projets-right flex flex-col md:w-[50%] mt-3">
                 <div class="flex justify-between items-center">
-                   <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projets</h2>
-                   <a href="https://github.com/Emma-blnch" target="_blank" class="italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150">Mon Github</a>
+                   <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projects</h2>
+                   <a href="https://github.com/Emma-blnch" target="_blank" class="italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150">My Github</a>
                 </div>
                 <hr class="mt-3 w-full">
                 <ul class="">
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-singula.webp" target="_blank" href="https://www.singula-sophrologie.fr/">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-singula.webp" target="_blank" href="https://www.singula-sophrologie.fr/">
                             <div class="projets-line">
                                 <h3>Singulã</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Création de site web</span>
+                                    <span class="goal">Website creation</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-sporty.webp" target="_blank" href="https://www.sportytrader.com/">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-sporty.webp" target="_blank" href="https://www.sportytrader.com/">
                             <div class="projets-line">
                                 <h3>SportyTrader</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Intégration web</span>
+                                    <span class="goal">Web integration</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- TWIG, TAILWIND, SYMFONY -</span>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-data-vizualisation.webp" target="_blank" href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-data-vizualisation.webp" target="_blank" href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
                             <div class="projets-line">
-                                <h3>Enedis Visualisation</h3>
+                                <h3>Enedis Vizualisation</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Développement web</span>
+                                    <span class="goal">Web development</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- HTML, CSS, JS-</span>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-portfolio.webp" href="#">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-portfolio.webp" href="#">
                             <div class="projets-line">
                                 <h3>Portfolio Emma Blanchard</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Création de site web</span>
+                                    <span class="goal">Website creation</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- PHP, HTML, TAILWIND -</span>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-cub3d.webp" target="_blank" href="https://github.com/Emma-blnch/cub3D">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-cub3d.webp" target="_blank" href="https://github.com/Emma-blnch/cub3D">
                             <div class="projets-line">
                                 <h3>Cub3D</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Jeu vidéo</span>
+                                    <span class="goal">Video game</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- C, GIT -</span>
                                 </div>
                             </div>
                         </a>
                     </li>
                     <li>
-                        <a class="project-link" data-preview="assets/img/projects/preview-minishell.webp" target="_blank" href="https://github.com/Emma-blnch/minishell">
+                        <a class="project-link" data-preview="/assets/img/projects/preview-minishell.webp" target="_blank" href="https://github.com/Emma-blnch/minishell">
                             <div class="projets-line">
-                                <h3>Mini-version d'un shell</h3>
+                                <h3>Mini version of a shell</h3>
                                 <div class="projets-right">
-                                    <span class="goal">Algorithmie</span>
+                                    <span class="goal">Algorithmics</span>
                                     <span class="italic text-xs md:text-sm -mt-2">- C, GIT -</span>
                                 </div>
                             </div>
@@ -255,11 +255,11 @@
         <h2 style="font-family: 'Luckiest Guy';">Skills</h2>
 
         <h3>Clean code</h3>
-        <h3>Intégration web</h3>
-        <h3>Créativité</h3>
-        <h3>SEO (référencement naturel)</h3>
-        <h3>Résolution de problèmes</h3>
-        <h3>Rigeur & Autonomie</h3>
+        <h3>Web integration</h3>
+        <h3>Creativity</h3>
+        <h3>SEO (search engine optimization)</h3>
+        <h3>Problem solving</h3>
+        <h3>Rigor & Autonomy</h3>
     </section>
 
     <!-- Contact -->
@@ -267,10 +267,10 @@
         <div class="w-full text-center flex items-center justify-center">
             <div id="catch" class="relative z-2 text-center w-full">
                 <h2>
-                    <span>Vous recherchez une </span><br>
-                    <span class="font-bold">développeuse front-end</span>
+                    <span>Are you looking for a</span><br>
+                    <span class="font-bold">front-end developer</span>
                     <br>
-                    <span>passionnée ?</span>
+                    <span>who is passionate about their work?</span>
                 </h2>
             </div>
         </div>
@@ -280,24 +280,23 @@
                     <p id="form-status" class="text-sm mt-3 hidden"></p>
                     
                     <label class="sr-only" for="name">Nom</label>
-                    <input id="name" name="name" type="text" required placeholder="Nom" class="w-full rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"/>
+                    <input id="name" name="name" type="text" required placeholder="Name *" class="w-full rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"/>
 
                     <label class="sr-only" for="email">Email</label>
-                    <input id="email" name="email" type="email" required placeholder="Email" class="w-full rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"/>
+                    <input id="email" name="email" type="email" required placeholder="Email *" class="w-full rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"/>
 
                     <label class="sr-only" for="message">Votre projet</label>
-                    <textarea id="message" name="message" required rows="5" placeholder="Votre projet" class="w-full resize-none rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"></textarea>
+                    <textarea id="message" name="message" required rows="5" placeholder="Tell me about your project *" class="w-full resize-none rounded-2xl bg-gray-200 px-6 py-5 text-sm md:text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green transition"></textarea>
 
                     <input type="hidden" name="ts" id="ts">
                     <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off">
 
                     <p class="text-xs text-gray-500 italic -mt-4">
-                        En envoyant ce formulaire, vous acceptez que vos données soient utilisées
-                        uniquement pour être recontacté·e dans le cadre de votre demande.
+                        By submitting this form, you agree that your data will be used solely for the purpose of contacting you in response to your request.
                     </p>
 
                     <button type="submit" class="inline-flex items-center gap-3 rounded-full border border-dark-green px-7 py-2 text-portfolio-black bg-portfolio-green/70 hover:bg-darker-green hover:text-white shadow-sm text-lg md:text-xl cursor-pointer transition duration-150">
-                        <span>Envoyer</span>
+                        <span>Send</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
                             <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -315,8 +314,8 @@
                 <p class="text-xs text-muted-foreground-2">
                     © 2026 Emma Blanchard
                 </p>
-                <img src="assets/img/logo/EB_Logo-dark.png" alt="logo emma blanchard dark" class="h-auto w-[90px] dark:hidden hidden md:block" width="20" height="20" loading="lazy"/>
-                <img src="assets/img/logo/EB_Logo-light.png" alt="logo emma blanchard light" class="h-auto w-[90px] hidden dark:md:block" width="20" height="20" loading="lazy"/>
+                <img src="/assets/img/logo/EB_Logo-dark.png" alt="logo emma blanchard dark" class="h-auto w-[90px] dark:hidden hidden md:block" width="20" height="20" loading="lazy"/>
+                <img src="/assets/img/logo/EB_Logo-light.png" alt="logo emma blanchard light" class="h-auto w-[90px] hidden dark:md:block" width="20" height="20" loading="lazy"/>
             </div>
 
             <ul class="flex flex-wrap items-center">
@@ -341,6 +340,6 @@
 
     <div class="noise-effect"></div>
 
-    <script src="script.js" defer></script> <!-- script pour les animations -->
+    <script src="/script.js" defer></script> <!-- script pour les animations -->
 </body>
 </html>

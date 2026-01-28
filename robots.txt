@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emma-blnch.fr/sitemap.xml
