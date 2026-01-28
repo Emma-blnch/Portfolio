@@ -59,5 +59,12 @@
       "text2": "front-end developer",
       "text3": "who is passionate about their work?"
     }
+  },
+  "form": {
+    "name": "Name *",
+    "email": "Email *",
+    "company": "Company",
+    "message": "Tell me about your project *",
+    "send": "Send"
   }
 }

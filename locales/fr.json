@@ -59,5 +59,12 @@
       "text2": "développeuse front-end",
       "text3": "passionnée ?"
     }
+  },
+  "form": {
+    "name": "Nom *",
+    "email": "Email *",
+    "company": "Entreprise",
+    "message": "Votre projet *",
+    "send": "Envoyer"
   }
 }

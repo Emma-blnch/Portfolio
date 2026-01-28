@@ -125,6 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof value === "string") el.textContent = value;
     });
 
+    // Traduire les placeholders
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      const value = getByPath(dict, key);
+      if (typeof value === "string") el.setAttribute("placeholder", value);
+    });
+
     // mettre à jour TOUS les boutons (desktop + mobile)
     langButtons.forEach((b) => {
       b.textContent = lang === "fr" ? "EN" : "FR";
@@ -206,5 +213,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mobileDark?.addEventListener("click", () => {
     document.getElementById("dark-mode-toggle")?.click();
+  });
+});
+
+// Script pour formulaire contact php
+document.addEventListener("DOMContentLoaded", () => {
+  const ts = document.getElementById("ts");
+  if (ts) ts.value = Math.floor(Date.now() / 1000);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
+  const ts = document.getElementById("ts");
+
+  if (ts) ts.value = Math.floor(Date.now() / 1000);
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // reset message
+    if (statusEl) {
+      statusEl.classList.remove("hidden");
+      statusEl.textContent = "";
+    }
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("./contact.php", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (res.ok && data && data.ok) {
+        if (statusEl) statusEl.textContent = "Message envoyé ✅ Je reviens vers vous rapidement.";
+        form.reset();
+        if (ts) ts.value = Math.floor(Date.now() / 1000); // nouveau ts après reset
+      } else {
+        const msg = (data && data.error) ? data.error : "Erreur lors de l’envoi.";
+        if (statusEl) statusEl.textContent = msg;
+      }
+    } catch (err) {
+      if (statusEl) statusEl.textContent = "Impossible d’envoyer le message (réseau).";
+    }
   });
 });
