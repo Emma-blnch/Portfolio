@@ -218,7 +218,7 @@
     </section>
 
     <!-- Skills -->
-    <section class="skills text-center px-14 py-10 dark:text-white" id="skills">
+    <section class="skills text-center px-14 py-10 z-2 relative bg-bg-dark dark:bg-black dark:text-white rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green" id="skills">
         <!-- <h2>Skills</h2> -->
 
         <h3>Clean code</h3>
@@ -230,21 +230,54 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="text-center border border-dark-green rounded-3xl grid grid-cols-4 relative overflow-hidden m-7 md:m-12 py-10 md:py-20 px-5 md:px-10">
-        <video autoplay loop muted playsinline src="assets/video/blue-waves.webm" type="video/mp4" id="bg-video" loading="lazy" class="absolute top-0 left-0 w-full h-full object-cover z-0"></video>
-        <div id="catch" class="relative z-2 text-left text-white col-span-3">
-            <p>
-                <span data-i18n="projects.cta.text1">Vous recherchez une </span><br>
-                <span class="font-bold" data-i18n="projects.cta.text2">développeuse front-end</span>
-                <br>
-                <span data-i18n="projects.cta.text3">passionnée ?</span>
-            </p>
+    <section id="contact" class="flex flex-col items-center -mt-10 z-1 py-20 bg-bg-light dark:bg-portfolio-black border-b-2 border-b-border-light dark:border-b-darker-green dark:text-white rounded-b-2xl">
+        <div class="w-full text-center flex items-center justify-center py-5 md:py-10 px-5 md:px-10">
+            <div id="catch" class="relative z-2 text-center w-full">
+                <p>
+                    <span data-i18n="projects.cta.text1">Vous recherchez une </span><br>
+                    <span class="font-bold" data-i18n="projects.cta.text2">développeuse front-end</span>
+                    <br>
+                    <span data-i18n="projects.cta.text3">passionnée ?</span>
+                </p>
+            </div>
         </div>
-        <div class="contact-links flex items-center justify-end pr-8 gap-3 z-3 pt-10 col-start-4">
-            <button id="mail-link">Mail</button>
-            <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
+        <div class="mt-6">
+            <form class="w-full max-w-xl">
+                <div class="space-y-5">
+                    <label class="sr-only" for="name">Nom</label>
+                    <input id="name" name="name" type="text" required placeholder="Nom" class="w-full rounded-2xl bg-gray-100 px-6 py-5 text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green/40 transition"/>
+
+                    <label class="sr-only" for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="Email" class="w-full rounded-2xl bg-gray-100 px-6 py-5 text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green/40 transition"/>
+
+                    <label class="sr-only" for="company">Entreprise</label>
+                    <input id="company" name="company" type="text" placeholder="Entreprise" class="w-full rounded-2xl bg-gray-100 px-6 py-5 text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green/40 transition"/>
+
+                    <label class="sr-only" for="message">Votre projet</label>
+                    <textarea id="message" name="message" required rows="5" placeholder="Votre projet" class="w-full resize-none rounded-2xl bg-gray-100 px-6 py-5 text-base text-secondary placeholder:text-gray-500 outline-none ring-1 ring-transparent focus:bg-white focus:ring-dark-green/40 transition"></textarea>
+
+                    <p class="text-xs text-gray-500 italic -mt-5 ">Tous les champs sont requis</p>
+
+                    <button type="submit" class="inline-flex items-center gap-3 rounded-full bg-white/70 border border-dark-green px-7 py-2 text-portfolio-black shadow-sm text-xl cursor-pointer hover:bg-dark-green hover:text-white transition duration-150">
+                        <span>Envoyer</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
         </div>
     </section>
+    
+            <!-- <div class="contact-links flex items-center justify-end pr-8 gap-3 z-3 pt-10 col-start-4">
+            <button id="mail-link">Mail</button>
+            <button onclick=" window.open('https://www.linkedin.com/in/emmablnch/', '_blank')">Linkedin</button>
+        </div> -->
+
+    <footer>
+
+    </footer>
 
     <div class="noise-effect"></div>
 
