@@ -1,7 +1,6 @@
 # portfolio-front
 
 TO DO :   
-- add colorful forms on bg
 - buy domain name LWS
      
 DONE :     
