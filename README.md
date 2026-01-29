@@ -61,27 +61,26 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 ---
 
 ## 📁 Project structure
-├── index.html # French homepage
-├── en/
-│ └── index.html # English version
-├── pages/
-│ ├── cgv.html # Terms & Conditions
-│ └── rgpd.html # Privacy policy (GDPR)
-├── assets/
-│ ├── img/
-│ │ ├── logo/
-│ │ ├── projects/
-│ │ └── preview.png
-│ ├── effects/
-│ │ └── noise-effect.png
-│ ├── font/
-│ └── favicon/
-├── dist/
-│ └── style.css # Compiled Tailwind CSS
-├── script.js # Interactions & animations
-├── s/
-│ └── contact.php # Secure contact form handler
-└── README.md
+├── index.html # French homepage  
+├── en/  
+│ └── index.html # English version  
+├── pages/  
+│ ├── cgv.html # Terms & Conditions  
+│ └── rgpd.html # Privacy policy (GDPR)  
+├── assets/  
+│ ├── img/  
+│ │ ├── logo/  
+│ │ ├── projects/  
+│ │ └── preview.png  
+│ ├── effects/  
+│ │ └── noise-effect.png  
+│ ├── font/  
+│ └── favicon/  
+├── dist/   
+│ └── style.css # Compiled Tailwind CSS  
+├── script.js # Interactions & animations  
+├── contact.php # Secure contact form handler  
+└── README.md  
 
 
 ---
