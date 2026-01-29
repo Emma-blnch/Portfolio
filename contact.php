@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 $to = "emma.blnch4@gmail.com";
-$from = "no-reply@emma-blnch.fr"; // adresse du domaine (créée sur LWS)
+$from = "no-reply@emma-blnch.fr";
 $siteName = "Portfolio Emma Blanchard";
 $subject = "Nouveau message depuis le portfolio";
 
@@ -19,6 +19,8 @@ if (($_SERVER["REQUEST_METHOD"] ?? '') !== "POST") {
 $allowedHosts = [
   'emma-blnch.fr',
   'www.emma-blnch.fr',
+  'emma-blnch.com',
+  'www.emma-blnch.com',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
