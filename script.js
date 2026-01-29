@@ -207,3 +207,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// --------> Reveal on scroll (animations d’apparition)
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll("[data-animate]");
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const delay = el.getAttribute("data-delay") || "0ms";
+        el.style.transitionDelay = delay;
+
+        el.classList.add("reveal--in");
+        observer.unobserve(el);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+});

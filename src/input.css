@@ -178,3 +178,34 @@ html {
 .animate-floatSlow { animation: floatSlow 10s ease-in-out infinite; }
 .animate-floatSlow2 { animation: floatSlow2 12s ease-in-out infinite; }
 .animate-floatSlow3 { animation: floatSlow3 14s ease-in-out infinite; }
+
+/* =========================
+   Reveal animations (global)
+========================= */
+
+/* état initial */
+.reveal {
+  @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+}
+
+/* variantes directionnelles */
+.reveal-left {
+  @apply opacity-0 -translate-x-8 transition-all duration-700 ease-out;
+}
+
+.reveal-right {
+  @apply opacity-0 translate-x-8 transition-all duration-700 ease-out;
+}
+
+.reveal-top {
+  @apply opacity-0 -translate-y-8 transition-all duration-700 ease-out;
+}
+
+.reveal-scale {
+  @apply opacity-0 scale-[0.96] transition-all duration-700 ease-out;
+}
+
+/* état visible */
+.reveal--in {
+  @apply opacity-100 translate-x-0 translate-y-0 scale-100;
+}

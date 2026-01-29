@@ -112,14 +112,14 @@
     <section id="accueil" class="relative flex items-center justify-between gap-4 overflow-hidden px-8 py-[20vh] rounded-b-2xl border-b-2 border-b-border-light bg-bg-light dark:border-b-darker-green dark:bg-portfolio-black">
         <!-- contenu -->
         <div class="relative max-w-3xl">
-            <p class="uppercase tracking-widest text-sm md:text-base opacity-80">
+            <p data-animate class="reveal uppercase tracking-widest text-sm md:text-base opacity-80">
                 Available for freelance work
             </p>
 
-            <h1 class="mt-4 text-4xl md:text-6xl font-bold text-black dark:text-white"
+            <h1 data-animate class="reveal-scale mt-4 text-4xl md:text-6xl font-bold text-black dark:text-white"
                 style="font-family:'Luckiest Guy';">Front-end Developer</h1>
 
-            <p class="mt-5 text-lg md:text-2xl leading-snug opacity-90">
+            <p data-animate data-delay="100ms" class="reveal-left mt-5 text-lg md:text-2xl leading-snug opacity-90">
                 <span class="">I create websites that are</span> 
                 <span class="font-bold">fast</span>, 
                 <span class="font-bold">accessible</span>
@@ -127,7 +127,7 @@
                 <span class="font-bold">responsive.</span>
             </p>
 
-            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <div class="mt-8 flex flex-col sm:flex-row gap-3 reveal-left" data-animate data-delay="100ms">
                 <a href="#projets" class="inline-flex justify-center rounded-full px-8 py-2 text-lg border border-dark-green
                         bg-portfolio-green/70 hover:bg-darker-green hover:text-white transition duration-150">
                     See my projects
@@ -139,7 +139,7 @@
                 </a>
             </div>
 
-            <p class="mt-6 text-sm opacity-70">
+            <p class="mt-6 text-sm opacity-70 reveal-right" data-animate data-delay="100ms">
                 HTML • CSS/Tailwind • JS • Symfony/Twig • Accessibility • SEO
             </p>
         </div>
@@ -150,8 +150,8 @@
 
     <!-- A propos -->
     <section id="about" class="relative px-7 md:px-0 py-10 flex flex-col md:flex-row gap-4 md:gap-20 items-center justify-center rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green z-2 bg-bg-dark dark:bg-black dark:text-white text-center">
-        <img src="/assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover">
-        <p class="text-justify py-10 w-fit lg:w-md">
+        <img src="/assets/img/photo-profile.webp" alt="profile-pic-emma" width="300" height="300" loading="lazy" class="rounded-2xl object-cover reveal-left" data-animate data-delay="200ms">
+        <p class="text-justify py-10 w-fit lg:w-md reveal-right" data-animate data-delay="100ms">
             <span>Junior front-end developer specializing in</span>
             <span class="font-bold">website creation</span>
             <span>and web integration.</span><br>
@@ -176,14 +176,14 @@
             </div>
             <div class="projets-right flex flex-col md:w-[50%] mt-3">
                 <div class="flex justify-between items-center">
-                   <h2 class="uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projects</h2>
-                   <a href="https://github.com/Emma-blnch" target="_blank" class="italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150">My Github</a>
+                   <h2 data-animate data-delay="100ms" class="reveal uppercase text-4xl text-left" style="font-family: 'Luckiest Guy';">Projects</h2>
+                   <a data-animate data-delay="100ms" href="https://github.com/Emma-blnch" target="_blank" class="reveal italic text-base underline hover:scale-108 hover:text-dark-green transition duration-150">My Github</a>
                 </div>
                 <hr class="mt-3 w-full">
                 <ul class="">
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-singula.webp" target="_blank" href="https://www.singula-sophrologie.fr/">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>Singulã</h3>
                                 <div class="projets-right">
                                     <span class="goal">Website creation</span>
@@ -194,7 +194,7 @@
                     </li>
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-sporty.webp" target="_blank" href="https://www.sportytrader.com/">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>SportyTrader</h3>
                                 <div class="projets-right">
                                     <span class="goal">Web integration</span>
@@ -205,7 +205,7 @@
                     </li>
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-data-vizualisation.webp" target="_blank" href="https://github.com/Emma-blnch/GenAI-Hackaton-02-2025">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>Enedis Vizualisation</h3>
                                 <div class="projets-right">
                                     <span class="goal">Web development</span>
@@ -216,7 +216,7 @@
                     </li>
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-portfolio.webp" href="#">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>Portfolio Emma Blanchard</h3>
                                 <div class="projets-right">
                                     <span class="goal">Website creation</span>
@@ -227,7 +227,7 @@
                     </li>
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-cub3d.webp" target="_blank" href="https://github.com/Emma-blnch/cub3D">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>Cub3D</h3>
                                 <div class="projets-right">
                                     <span class="goal">Video game</span>
@@ -238,7 +238,7 @@
                     </li>
                     <li>
                         <a class="project-link" data-preview="/assets/img/projects/preview-minishell.webp" target="_blank" href="https://github.com/Emma-blnch/minishell">
-                            <div class="projets-line">
+                            <div data-animate data-delay="100ms" class="reveal-top projets-line">
                                 <h3>Mini version of a shell</h3>
                                 <div class="projets-right">
                                     <span class="goal">Algorithmics</span>
@@ -254,21 +254,21 @@
 
     <!-- Skills -->
     <section class="skills text-center px-14 py-10 z-2 relative bg-bg-dark dark:bg-black dark:text-white rounded-b-2xl border-b-2 border-b-border-light dark:border-b-darker-green" id="skills">
-        <h2 style="font-family: 'Luckiest Guy';">Skills</h2>
+        <h2 class="reveal" data-animate style="font-family: 'Luckiest Guy';">Skills</h2>
 
-        <h3>Clean code</h3>
-        <h3>Web integration</h3>
-        <h3>Creativity</h3>
-        <h3>SEO (search engine optimization)</h3>
-        <h3>Problem solving</h3>
-        <h3>Rigor & Autonomy</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-left">Clean code</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-right">Web integration</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-left">Creativity</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-right">SEO (search engine optimization)</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-left">Problem solving</h3>
+        <h3 data-animate data-delay="200ms" class="reveal-right">Rigor & Autonomy</h3>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="flex flex-col items-center -mt-10 z-1 py-20 bg-bg-light dark:bg-portfolio-black dark:text-white px-14 md:px-10">
         <div class="w-full text-center flex items-center justify-center">
             <div id="catch" class="relative z-2 text-center w-full">
-                <h2>
+                <h2 data-animate data-delay="200ms" class="reveal-scale">
                     <span>Are you looking for a</span><br>
                     <span class="font-bold">front-end developer</span>
                     <br>
