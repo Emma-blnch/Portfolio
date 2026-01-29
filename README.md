@@ -1,3 +1,7 @@
+📌 This repository contains the source code of my personal portfolio.   
+No sensitive data or credentials are included.   
+
+
 # 🌐 Portfolio — Emma Blanchard
 
 Personal portfolio website showcasing my work as a **front-end developer**, my skills, and selected projects.  
