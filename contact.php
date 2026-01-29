@@ -3,8 +3,8 @@
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
-$to = "emma.blnch4@gmail.com";
-$from = "no-reply@emma-blnch.fr";
+$to = "contact@emma-blnch.fr";
+$from = "contact@emma-blnch.fr";
 $siteName = "Portfolio Emma Blanchard";
 $subject = "Nouveau message depuis le portfolio";
 
@@ -132,7 +132,7 @@ if (mb_strlen($message) > 4000) $message = mb_substr($message, 0, 4000);
 $body = "Nom : {$name}\nEmail : {$email}\n\nMessage :\n{$message}\n";
 
 // From sur ton domaine + Reply-To vers le visiteur
-$from = "no-reply@emma-blnch.fr";
+$from = "contact@emma-blnch.fr";
 $headers = [];
 $headers[] = "From: Singula <{$from}>";
 $headers[] = "Reply-To: {$email}";
