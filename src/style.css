@@ -1,0 +1,490 @@
+@import "tailwindcss";
+
+/* ─── Theme ──────────────────────────────────────────────────────────────── */
+@theme {
+  --color-wii-blue: #009ac7;
+  --color-wii-blue-dark: #006fa3;
+}
+
+/* ─── Fonts ──────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Matter';
+  src: url('/assets/font/matter/Matter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('/assets/font/matter/Matter-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Matter';
+  src: url('/assets/font/matter/Matter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Continuum';
+  src: url('/assets/font/continuum/contl.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Continuum';
+  src: url('/assets/font/continuum/contm.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Continuum';
+  src: url('/assets/font/continuum/contb.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+body {
+  font-family: 'Matter', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Police Continuum pour tout le menu Wii (avant ouverture d'un overlay) */
+#wii-menu {
+  font-family: 'Continuum', 'Matter', sans-serif;
+}
+
+/* ─── Fond Wii : gris + stries de la texture jpg ────────────────────────── */
+#wii-menu {
+  background: radial-gradient(ellipse 110% 80% at 48% 38%, #ebebeb 0%, #d0d0d0 100%);
+  isolation: isolate;
+}
+
+/* Texture de stries : image placée en pseudo-element à très faible opacité */
+#wii-menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/effects/blue-product-backdrop-with-patterned-glass.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tout le contenu du menu passe au-dessus de la texture */
+#wii-menu > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Nom dans l'overlay footer — au-dessus de la bordure bleue ─────────── */
+.footer-name {
+  position: absolute;
+  left: 50%;
+  /* y≈34% = juste au-dessus de la bordure bleue centrale (dip à ~40% du SVG) */
+  top: 30%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.54rem, 3.08vw, 2.16rem);
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Footer SVG Wii ─────────────────────────────────────────────────────── */
+.wii-bottom-wrap {
+  position: relative;
+}
+
+.footer-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Overlay transparent couvrant toute la zone du footer SVG */
+.footer-btns-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Bouton gauche (EB) — centre du cercle SVG gauche : x=8.67%, y=38% */
+#btn-about {
+  position: absolute;
+  left: 8.67%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+/* Bouton son — décalé à gauche et plus bas */
+#btn-mute {
+  position: absolute;
+  left: 18%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+/* Sous-titre dans la zone grise sous la bordure bleue */
+.footer-subtitle {
+  position: absolute;
+  left: 50%;
+  /* y≈58% = dans la zone grise sous la bordure bleue centrale */
+  top: 52%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(0.78rem, 1.27vw, 1.04rem);
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Bouton droit (Contact) — centre du cercle SVG droit : x=91.84%, y=37.73% */
+#btn-contact {
+  position: absolute;
+  left: 91.84%;
+  top: 37.73%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+/* ─── Bouton rond Wii (HOME / Mail) ─────────────────────────────────────── */
+.wii-round-btn {
+  position: relative;
+  width: clamp(76px, 9.4vw, 140px);
+  height: clamp(76px, 9.4vw, 140px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 42% 32%, #ffffff 0%, #e8e8e8 55%, #c8c8c8 100%);
+  /* Border bleue cyan identique au stroke SVG #34BEED */
+  border: 3px solid #34BEED;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.3),
+    0 1px 2px rgba(0,0,0,0.12),
+    inset 0 1px 3px rgba(255,255,255,0.95);
+  transition: scale 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  color: #3a3a3a;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Reflet glossy en haut du bouton */
+.wii-btn-gloss {
+  position: absolute;
+  top: 8%;
+  left: 12%;
+  width: 76%;
+  height: 40%;
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.wii-btn-label {
+  position: relative;
+  z-index: 3;
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  color: #a8a8a8;
+  letter-spacing: 0.01em;
+}
+
+.footer-contact-icon {
+  position: relative;
+  z-index: 1;
+  width: clamp(36px, 4.6vw, 66px);
+  height: clamp(36px, 4.6vw, 66px);
+  color: #a8a8a8;
+}
+
+/* scale CSS property — indépendant de transform (qui positionne le bouton) */
+.wii-round-btn:hover {
+  scale: 1.07;
+  border-color: #5bc8e8;
+  box-shadow:
+    0 5px 14px rgba(0,0,0,0.32),
+    0 0 0 1px rgba(52,190,237,0.3),
+    inset 0 1px 3px rgba(255,255,255,0.95);
+}
+
+.wii-round-btn:active {
+  scale: 0.93;
+  box-shadow:
+    0 1px 4px rgba(0,0,0,0.3),
+    inset 0 2px 4px rgba(0,0,0,0.12);
+}
+
+/* ─── Bouton son (style neutre gris — comme la carte SD sur la Wii) ─────── */
+.mute-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1.5px solid #b0b0b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #a0a0a0;
+  transition: background 0.15s, scale 0.1s;
+}
+
+.mute-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  scale: 1.1;
+}
+
+.mute-btn.is-muted {
+  opacity: 0.5;
+}
+
+/* ─── Channel cards ──────────────────────────────────────────────────────── */
+.channel {
+  cursor: pointer;
+  transform-origin: center;
+  will-change: transform;
+  outline: none;
+  position: relative;
+}
+
+.channel-card {
+  display: flex;
+  flex-direction: column;
+  /* Rectangle paysage comme les vraies chaînes Wii */
+  aspect-ratio: 4 / 2.55;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  /* Border grise visible (style Wii) */
+  border: 2.5px solid #b0b0b0;
+  background: radial-gradient(ellipse 55% 100% at 50% 50%, #ffffff 0%, #ededed 100%);
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.07),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* Assombrit les bords gauche/droite → renforce l'illusion de bombé latéral */
+.channel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.045) 0%,
+    transparent 22%,
+    transparent 78%,
+    rgba(0,0,0,0.045) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.channel--hovered .channel-card {
+  border-color: #5bc8e8;
+  box-shadow:
+    0 0 0 2px #5bc8e8,
+    0 4px 22px rgba(0, 154, 199, 0.32),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.channel-illustration {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14%;
+  padding-bottom: 28%;
+}
+
+.channel-illustration svg {
+  width: 100%;
+  height: 100%;
+  max-width: 64px;
+  max-height: 64px;
+}
+
+/* Titre en blanc directement sur l'image, avec dégradé sombre en bas */
+.channel-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 8px 7px;
+  background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 100%);
+  text-align: center;
+  font-size: clamp(0.55rem, 0.88vw, 0.7rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  line-height: 1.2;
+  z-index: 3;
+}
+
+/* ─── Overlays ───────────────────────────────────────────────────────────── */
+.overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.overlay--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay-back-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 60;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.overlay-back-btn:hover {
+  background: rgba(0, 0, 0, 0.14);
+  transform: scale(1.06);
+}
+
+/* ─── Contenu overlay projet ─────────────────────────────────────────────── */
+.project-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111;
+}
+
+.project-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #009ac7;
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
+  color: #444;
+  max-width: 600px;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
+  border-radius: 999px;
+  padding: 3px 14px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.project-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+}
+
+.project-link-btn--primary {
+  background: #111;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.project-link-btn--secondary {
+  background: #fff;
+  color: #111;
+  border: 2px solid #ddd;
+}
+
+.project-preview {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-top: 36px;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-preview--gradient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Mobile : grille 2×4 ────────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  #channel-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(4, 1fr) !important;
+    max-width: 330px;
+    gap: 10px !important;
+  }
+
+  .channel-label {
+    font-size: 0.6rem;
+  }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

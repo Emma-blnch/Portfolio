@@ -1,26 +1,29 @@
 {
-  "name": "front-portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "name": "portfolio-wii",
+  "version": "2.0.0",
+  "description": "Portfolio Emma Blanchard — Wii Menu",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch --content ./index.html",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --minify --content ./index.html"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "howler": "^2.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "vite": "^5.4.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Emma-blnch/portfolio-front.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Emma-blnch/portfolio-front/issues"
   },
   "homepage": "https://github.com/Emma-blnch/portfolio-front#readme",
-  "devDependencies": {
-    "tailwindcss": "^4.1.18"
-  }
+  "author": "Emma Blanchard",
+  "license": "ISC"
 }
