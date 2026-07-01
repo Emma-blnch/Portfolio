@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { channels } from './data/channels.js';
-import { initSounds, playHover, playSelect, playBack, playArrow, playButton } from './audio/sounds.js';
+import { initSounds, playHover, playHoverButton, playSelect, playBack, playArrow, playButton } from './audio/sounds.js';
 import './style.css';
 
 // ─── State ────────────────────────────────────────────────────────────────────
@@ -130,8 +130,12 @@ function renderChannelGrid() {
 
 // ─── Overlay projet ───────────────────────────────────────────────────────────
 function updateNavArrows() {
-  document.getElementById('overlay-prev').disabled = currentProjectIndex === 0;
-  document.getElementById('overlay-next').disabled = currentProjectIndex === projectChannels.length - 1;
+  const prev = document.getElementById('overlay-prev');
+  const next = document.getElementById('overlay-next');
+  prev.disabled = currentProjectIndex === 0;
+  next.disabled = currentProjectIndex === projectChannels.length - 1;
+  gsap.to(prev, { opacity: prev.disabled ? 0.25 : 1, duration: 0.2, ease: 'power2.out' });
+  gsap.to(next, { opacity: next.disabled ? 0.25 : 1, duration: 0.2, ease: 'power2.out' });
 }
 
 function navigateProject(delta) {
@@ -180,7 +184,6 @@ function openProjectOverlay(ch, sourceEl) {
   content.innerHTML = buildProjectHTML(ch);
   gsap.set([content, overlayFooter, prevBtn, nextBtn], { opacity: 0 });
   initGallery();
-  updateNavArrows();
   content.querySelectorAll('.wii-back-btn--sm').forEach(el => {
     el.addEventListener('click', () => { if (soundReady && !isMuted) playButton(); });
   });
@@ -220,7 +223,10 @@ function openProjectOverlay(ch, sourceEl) {
           background: '#ffffff',
           duration: 0.25,
           ease: 'power2.inOut',
-          onComplete: () => gsap.to([content, overlayFooter, prevBtn, nextBtn], { opacity: 1, duration: 0.2, ease: 'power2.out' }),
+          onComplete: () => {
+            gsap.to([content, overlayFooter], { opacity: 1, duration: 0.2, ease: 'power2.out' });
+            updateNavArrows();
+          },
         });
       },
     }
@@ -405,8 +411,11 @@ function closeGenericOverlay(id) {
 
 // ─── Barre du bas ─────────────────────────────────────────────────────────────
 function setupBottomBar() {
-  document.getElementById('btn-about').addEventListener('click', () => openGenericOverlay('about-overlay'));
-  document.getElementById('btn-contact').addEventListener('click', () => openGenericOverlay('contact-overlay'));
+  ['btn-about', 'btn-contact'].forEach(id => {
+    const btn = document.getElementById(id);
+    btn.addEventListener('mouseenter', () => { if (soundReady && !isMuted) playHoverButton(); });
+    btn.addEventListener('click', () => openGenericOverlay(id === 'btn-about' ? 'about-overlay' : 'contact-overlay'));
+  });
   document.getElementById('btn-mute').addEventListener('click', toggleMute);
 
   // Sons sur les liens externes des drawers (LinkedIn, GitHub)

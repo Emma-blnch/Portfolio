@@ -1,16 +1,23 @@
 import { Howl } from 'howler';
 
-let sfxHover   = null;
-let sfxSelect  = null;
-let sfxBack    = null;
-let sfxArrow   = null;
-let sfxButton  = null;
+let sfxHover        = null;
+let sfxHoverButton  = null;
+let sfxSelect       = null;
+let sfxBack         = null;
+let sfxArrow        = null;
+let sfxButton       = null;
 
 export function initSounds() {
   try {
     sfxHover = new Howl({
       src: ['/assets/sounds/hover.wav'],
       volume: 0.3,
+      preload: true,
+    });
+
+    sfxHoverButton = new Howl({
+      src: ['/assets/sounds/hver-button.wav'],
+      volume: 0.4,
       preload: true,
     });
 
@@ -42,7 +49,8 @@ export function initSounds() {
   }
 }
 
-export const playHover  = () => sfxHover?.play();
+export const playHover        = () => sfxHover?.play();
+export const playHoverButton  = () => sfxHoverButton?.play();
 export const playSelect = () => sfxSelect?.play();
 export const playBack   = () => sfxBack?.play();
 export const playArrow  = () => sfxArrow?.play();
