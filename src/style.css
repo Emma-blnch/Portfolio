@@ -270,6 +270,7 @@ body {
   @apply opacity-100 pointer-events-auto;
 }
 
+/* Bouton retour flèche (overlay projet uniquement) */
 .overlay-back-btn {
   @apply fixed flex items-center justify-center rounded-full cursor-pointer;
   top: 18px;
@@ -288,6 +289,73 @@ body {
 .overlay-back-btn:hover {
   background: rgba(0,0,0,0.14);
   transform: scale(1.06);
+}
+
+/* ─── Drawer (À propos / Contact) ────────────────────────────────────────── */
+.drawer-overlay {
+  font-family: 'Continuum', 'Matter', sans-serif;
+  @apply bg-white;
+}
+
+.drawer-footer {
+  @apply flex items-center justify-center flex-shrink-0 relative;
+  height: 17%;
+  border-top: 3.5px solid #34BEED;
+  background: radial-gradient(ellipse 110% 80% at 48% 38%, #ebebeb 0%, #d0d0d0 100%);
+  z-index: 1;
+}
+
+.drawer-footer::before {
+  content: '';
+  @apply absolute inset-0 pointer-events-none;
+  background-image: url('/assets/effects/blue-product-backdrop-with-patterned-glass.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.04;
+  z-index: 0;
+}
+
+/* Bouton Retour style Wii Home Menu (pill glossy) */
+.wii-back-btn {
+  @apply relative flex items-center justify-center cursor-pointer overflow-hidden font-bold;
+  height: clamp(48px, 8vh, 72px);
+  padding: 0 clamp(36px, 6vw, 80px);
+  border-radius: 999px;
+  background: radial-gradient(ellipse 80% 55% at 50% 35%, #ffffff 0%, #e8e8e8 60%, #c8c8c8 100%);
+  border: 2.7px solid #34BEED;
+  font-family: 'Continuum', 'Matter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #3a3a3a;
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.2),
+    inset 0 1px 3px rgba(255,255,255,0.95);
+  transition: scale 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.wii-back-btn-gloss {
+  @apply absolute pointer-events-none;
+  top: 6%; left: 8%;
+  width: 84%; height: 46%;
+  border-radius: 50% 50% 38% 38%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.04) 100%);
+  z-index: 1;
+}
+
+.wii-back-btn:hover {
+  scale: 1.04;
+  border-color: #5bc8e8;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.22),
+    0 0 0 1px rgba(52,190,237,0.3),
+    inset 0 1px 3px rgba(255,255,255,0.95);
+}
+
+.wii-back-btn:active { scale: 0.96; }
+
+.wii-back-btn--sm {
+  height: clamp(36px, 5vh, 52px);
+  padding: 0 clamp(20px, 3vw, 44px);
+  font-size: clamp(0.78rem, 1.3vw, 1rem);
 }
 
 /* ─── Contenu overlay projet ─────────────────────────────────────────────── */

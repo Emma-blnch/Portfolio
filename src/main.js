@@ -265,18 +265,18 @@ function buildProjectHTML(ch) {
   `;
 }
 
-// ─── Overlays About + Contact ─────────────────────────────────────────────────
+// ─── Drawers About + Contact (slide bas → haut) ───────────────────────────────
 function openGenericOverlay(id) {
   if (soundReady && !isMuted) playSelect();
   const overlay = document.getElementById(id);
+
+  // Positionner hors écran avant de rendre visible (évite le flash)
+  gsap.set(overlay, { y: '100%' });
   overlay.classList.add('overlay--visible');
   overlay.setAttribute('aria-hidden', 'false');
   lockMenu();
 
-  gsap.fromTo(overlay,
-    { opacity: 0, y: 24 },
-    { opacity: 1, y: 0, duration: 0.38, ease: 'power3.out' }
-  );
+  gsap.to(overlay, { y: '0%', duration: 0.48, ease: 'power3.out' });
 }
 
 function closeGenericOverlay(id) {
@@ -284,10 +284,9 @@ function closeGenericOverlay(id) {
   const overlay = document.getElementById(id);
 
   gsap.to(overlay, {
-    opacity: 0,
-    y: 16,
-    duration: 0.24,
-    ease: 'power2.in',
+    y: '100%',
+    duration: 0.38,
+    ease: 'power3.in',
     onComplete: () => {
       overlay.classList.remove('overlay--visible');
       overlay.setAttribute('aria-hidden', 'true');
