@@ -9,6 +9,7 @@ export const channels = [
     tech: ['React Native', 'TypeScript', 'Expo', 'Supabase'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     image: null,
+    gif: null,
     icon: `<svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polyline points="5,52 22,30 38,40 57,16 75,22"
         stroke="rgba(255,255,255,0.92)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -27,6 +28,7 @@ export const channels = [
     tech: ['PHP', 'HTML', 'Tailwind CSS'],
     links: { github: null, demo: 'https://www.singula-sophrologie.fr/' },
     image: '/assets/img/projects/preview-singula.webp',
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="40" r="26" stroke="rgba(255,255,255,0.75)" stroke-width="4" fill="rgba(255,255,255,0.07)"/>
       <path d="M40 17 C54 22 60 31 58 40 C56 51 47 59 40 63 C33 59 24 51 22 40 C20 31 26 22 40 17Z"
@@ -44,6 +46,7 @@ export const channels = [
     tech: ['C', 'MiniLibX', 'Raycasting', 'Git'],
     links: { github: 'https://github.com/Emma-blnch/cub3D', demo: null },
     image: '/assets/img/projects/preview-cub3d.webp',
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="40,10 68,26 68,58 40,74 12,58 12,26"
         stroke="rgba(220,100,20,0.9)" stroke-width="3.5" fill="rgba(220,100,20,0.07)"/>
@@ -62,6 +65,7 @@ export const channels = [
     tech: ['Python', 'PyTorch', 'DQN', 'Pygame'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     image: null,
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 56 Q24 28 36 50 Q48 72 60 44 Q70 22 72 32"
         stroke="rgba(82,183,136,0.92)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -79,6 +83,7 @@ export const channels = [
     tech: ['C', 'Python', 'Assembleur', 'Bash', 'GDB', 'Radare2'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     image: null,
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M40 10 L65 22 L65 46 Q65 66 40 74 Q15 66 15 46 L15 22 Z"
         stroke="rgba(0,200,230,0.8)" stroke-width="3" fill="rgba(0,200,230,0.06)"/>
@@ -96,6 +101,7 @@ export const channels = [
     tech: ['Docker', 'Docker Compose', 'Nginx', 'WordPress', 'MariaDB'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     image: null,
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="8" y="14" width="64" height="52" rx="7"
         stroke="rgba(110,210,235,0.8)" stroke-width="3" fill="rgba(110,210,235,0.06)"/>
@@ -114,6 +120,7 @@ export const channels = [
     tech: ['Twig', 'Tailwind CSS', 'Symfony', 'TypeScript', 'Git'],
     links: { github: null, demo: 'https://www.sportytrader.com/' },
     image: '/assets/img/projects/preview-sporty.webp',
+    gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M26 14 L54 14 L54 46 Q54 64 40 68 Q26 64 26 46 Z"
         stroke="rgba(252,211,77,0.9)" stroke-width="3" fill="rgba(252,211,77,0.1)"/>
@@ -138,6 +145,7 @@ export const channels = [
       demo: null,
     },
     image: '/assets/img/projects/preview-data-vizualisation.webp',
+    gif: null,
     icon: `<svg viewBox="0 0 80 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="7" y="42" width="14" height="22" rx="3" fill="rgba(131,197,190,0.65)"/>
       <rect x="25" y="26" width="14" height="38" rx="3" fill="rgba(131,197,190,0.8)"/>

@@ -8,24 +8,6 @@
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
 @font-face {
-  font-family: 'Matter';
-  src: url('/assets/font/matter/Matter-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Matter';
-  src: url('/assets/font/matter/Matter-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Matter';
-  src: url('/assets/font/matter/Matter-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
   font-family: 'Continuum';
   src: url('/assets/font/continuum/contl.ttf') format('truetype');
   font-weight: 300;
@@ -46,13 +28,13 @@
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
 body {
-  font-family: 'Matter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Continuum', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ─── Menu Wii ───────────────────────────────────────────────────────────── */
 #wii-menu {
-  font-family: 'Continuum', 'Matter', sans-serif;
+  font-family: 'Continuum', sans-serif;
   background: radial-gradient(ellipse 110% 80% at 48% 38%, #ebebeb 0%, #d0d0d0 100%);
   @apply isolate;
 }
@@ -271,29 +253,13 @@ body {
 }
 
 /* Bouton retour flèche (overlay projet uniquement) */
-.overlay-back-btn {
-  @apply fixed flex items-center justify-center rounded-full cursor-pointer;
-  top: 18px;
-  left: 18px;
-  z-index: 60;
-  width: 42px;
-  height: 42px;
-  background: rgba(0,0,0,0.08);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(0,0,0,0.1);
-  color: #333;
-  transition: background 0.15s, transform 0.1s;
-}
-
-.overlay-back-btn:hover {
-  background: rgba(0,0,0,0.14);
-  transform: scale(1.06);
+#channel-overlay {
+  font-family: 'Continuum', sans-serif;
 }
 
 /* ─── Drawer (À propos / Contact) ────────────────────────────────────────── */
 .drawer-overlay {
-  font-family: 'Continuum', 'Matter', sans-serif;
+  font-family: 'Continuum', sans-serif;
   @apply bg-white;
   height: 100vh;
 }
@@ -324,7 +290,7 @@ body {
   border-radius: 999px;
   background: radial-gradient(ellipse 80% 55% at 50% 35%, #ffffff 0%, #e8e8e8 60%, #c8c8c8 100%);
   border: 2.7px solid #34BEED;
-  font-family: 'Continuum', 'Matter', sans-serif;
+  font-family: 'Continuum', sans-serif;
   font-size: clamp(1rem, 2vw, 1.4rem);
   color: #3a3a3a;
   box-shadow:
