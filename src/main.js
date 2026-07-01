@@ -6,6 +6,8 @@ import './style.css';
 // ─── State ────────────────────────────────────────────────────────────────────
 let soundReady = false;
 let isMuted = false;
+let lastOpenedChannelEl = null;
+let lastOpenedChannel = null;
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,7 +37,7 @@ function animateMenuIn() {
     delay: 0.05,
   });
 
-  gsap.from('.identity-name, .identity-sub', {
+  gsap.from('.footer-name, .footer-subtitle', {
     opacity: 0,
     y: 10,
     duration: 0.4,
@@ -44,7 +46,7 @@ function animateMenuIn() {
     delay: 0.35,
   });
 
-  gsap.from('.bottom-bar', {
+  gsap.from('.wii-bottom-wrap', {
     y: 40,
     opacity: 0,
     duration: 0.4,
@@ -59,11 +61,20 @@ function renderChannelGrid() {
 
   channels.forEach(ch => {
     const el = document.createElement('div');
+    el.dataset.id = ch.id;
+
+    if (ch.empty) {
+      el.className = 'channel channel--empty';
+      el.setAttribute('aria-hidden', 'true');
+      el.innerHTML = `<div class="channel-card--empty"></div>`;
+      grid.appendChild(el);
+      return;
+    }
+
     el.className = 'channel';
     el.tabIndex = 0;
     el.role = 'button';
     el.setAttribute('aria-label', `Projet ${ch.label}`);
-    el.dataset.id = ch.id;
 
     el.innerHTML = `
       <div class="channel-card">
@@ -113,40 +124,107 @@ function renderChannelGrid() {
 function openProjectOverlay(ch, sourceEl) {
   if (soundReady && !isMuted) playSelect();
 
+  lastOpenedChannelEl = sourceEl;
+  lastOpenedChannel = ch;
+
   const overlay = document.getElementById('channel-overlay');
   const content = document.getElementById('overlay-content');
 
   content.innerHTML = buildProjectHTML(ch);
+  gsap.set(content, { opacity: 0 });
+
+  // Overlay couleur de la card pendant le zoom (pas du blanc vide)
+  overlay.style.background = ch.color;
 
   const rect = sourceEl.getBoundingClientRect();
-  const cx = rect.left + rect.width / 2;
-  const cy = rect.top + rect.height / 2;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  const clipStart = `inset(${rect.top}px ${vw - rect.right}px ${vh - rect.bottom}px ${rect.left}px round 14px)`;
+  const clipEnd   = `inset(0px 0px 0px 0px round 0px)`;
 
   overlay.classList.add('overlay--visible');
   overlay.setAttribute('aria-hidden', 'false');
   lockMenu();
 
-  // Zoom circulaire depuis la position de la chaîne
+  // La grille zoome en avant (caméra qui s'avance)
+  gsap.to('#channel-grid', {
+    scale: 1.35,
+    opacity: 0,
+    duration: 0.45,
+    ease: 'power3.in',
+  });
+
+  // Expansion de la card vers plein écran
   gsap.fromTo(overlay,
-    { clipPath: `circle(${rect.width * 0.48}px at ${cx}px ${cy}px)`, opacity: 0.5 },
-    { clipPath: `circle(150% at ${cx}px ${cy}px)`, opacity: 1, duration: 0.52, ease: 'power3.inOut' }
+    { clipPath: clipStart },
+    {
+      clipPath: clipEnd,
+      duration: 0.52,
+      ease: 'power3.inOut',
+      onComplete: () => {
+        // Passage fond coloré → blanc, puis contenu
+        gsap.to(overlay, {
+          background: '#ffffff',
+          duration: 0.25,
+          ease: 'power2.inOut',
+          onComplete: () => gsap.to(content, { opacity: 1, duration: 0.2, ease: 'power2.out' }),
+        });
+      },
+    }
   );
 }
 
 function closeProjectOverlay() {
   if (soundReady && !isMuted) playBack();
-  const overlay = document.getElementById('channel-overlay');
 
-  gsap.to(overlay, {
+  const overlay = document.getElementById('channel-overlay');
+  const content = document.getElementById('overlay-content');
+
+  const rect = lastOpenedChannelEl?.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  const clipEnd = rect
+    ? `inset(${rect.top}px ${vw - rect.right}px ${vh - rect.bottom}px ${rect.left}px round 14px)`
+    : `inset(50% 50% 50% 50% round 14px)`;
+
+  // Contenu disparaît, fond repasse à la couleur de la card
+  gsap.to(content, {
     opacity: 0,
-    scale: 0.97,
-    duration: 0.28,
+    duration: 0.15,
     ease: 'power2.in',
     onComplete: () => {
-      overlay.classList.remove('overlay--visible');
-      overlay.setAttribute('aria-hidden', 'true');
-      gsap.set(overlay, { clearProps: 'all' });
-      unlockMenu();
+      gsap.to(overlay, {
+        background: lastOpenedChannel?.color ?? '#ffffff',
+        duration: 0.2,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          // Rétrécissement vers la card + grille qui revient
+          gsap.fromTo(overlay,
+            { clipPath: 'inset(0px 0px 0px 0px round 0px)' },
+            {
+              clipPath: clipEnd,
+              duration: 0.45,
+              ease: 'power3.inOut',
+              onComplete: () => {
+                overlay.classList.remove('overlay--visible');
+                overlay.setAttribute('aria-hidden', 'true');
+                gsap.set(overlay, { clearProps: 'all' });
+                unlockMenu();
+              },
+            }
+          );
+
+          // La grille revient en arrière en même temps
+          gsap.to('#channel-grid', {
+            scale: 1,
+            opacity: 1,
+            duration: 0.45,
+            ease: 'power3.out',
+          });
+        },
+      });
     },
   });
 }

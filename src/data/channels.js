@@ -146,4 +146,8 @@ export const channels = [
       <line x1="5" y1="65" x2="78" y2="65" stroke="rgba(131,197,190,0.35)" stroke-width="2.5"/>
     </svg>`,
   },
+  { id: 'empty-1', empty: true },
+  { id: 'empty-2', empty: true },
+  { id: 'empty-3', empty: true },
+  { id: 'empty-4', empty: true },
 ];
