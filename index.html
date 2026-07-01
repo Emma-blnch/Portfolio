@@ -94,6 +94,12 @@
 
   <!-- ─── Overlay projet ────────────────────────────────────────────────── -->
   <div id="channel-overlay" class="overlay fixed inset-0 z-50 bg-white flex flex-col" aria-hidden="true">
+    <button id="overlay-prev" class="overlay-nav-btn overlay-nav-btn--left" aria-label="Projet précédent">
+      <img src="/assets/wii-right-arrow.svg" alt="" class="overlay-nav-arrow overlay-nav-arrow--left">
+    </button>
+    <button id="overlay-next" class="overlay-nav-btn overlay-nav-btn--right" aria-label="Projet suivant">
+      <img src="/assets/wii-right-arrow.svg" alt="" class="overlay-nav-arrow">
+    </button>
     <div id="overlay-content" class="flex-1 overflow-y-auto pt-10 pb-8 px-6 sm:px-10 lg:px-16 w-full"></div>
     <div class="drawer-footer">
       <button id="overlay-back" class="wii-back-btn" aria-label="Retour">

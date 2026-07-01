@@ -9,6 +9,9 @@ let isMuted = false;
 let lastOpenedChannelEl = null;
 let lastOpenedChannel = null;
 let galleryInterval = null;
+let currentProjectIndex = 0;
+
+const projectChannels = channels.filter(ch => !ch.empty);
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -126,11 +129,42 @@ function renderChannelGrid() {
 }
 
 // ─── Overlay projet ───────────────────────────────────────────────────────────
+function updateNavArrows() {
+  document.getElementById('overlay-prev').disabled = currentProjectIndex === 0;
+  document.getElementById('overlay-next').disabled = currentProjectIndex === projectChannels.length - 1;
+}
+
+function navigateProject(delta) {
+  const next = currentProjectIndex + delta;
+  if (next < 0 || next >= projectChannels.length) return;
+
+  clearInterval(galleryInterval);
+  galleryInterval = null;
+
+  const content = document.getElementById('overlay-content');
+  const ch = projectChannels[next];
+
+  gsap.to(content, {
+    opacity: 0,
+    duration: 0.15,
+    ease: 'power2.in',
+    onComplete: () => {
+      currentProjectIndex = next;
+      lastOpenedChannel = ch;
+      content.innerHTML = buildProjectHTML(ch);
+      initGallery();
+      updateNavArrows();
+      gsap.to(content, { opacity: 1, duration: 0.2, ease: 'power2.out' });
+    },
+  });
+}
+
 function openProjectOverlay(ch, sourceEl) {
   if (soundReady && !isMuted) playSelect();
 
   lastOpenedChannelEl = sourceEl;
   lastOpenedChannel = ch;
+  currentProjectIndex = projectChannels.findIndex(p => p.id === ch.id);
 
   const overlay = document.getElementById('channel-overlay');
   const content = document.getElementById('overlay-content');
@@ -138,6 +172,7 @@ function openProjectOverlay(ch, sourceEl) {
   content.innerHTML = buildProjectHTML(ch);
   gsap.set(content, { opacity: 0 });
   initGallery();
+  updateNavArrows();
 
   // Overlay couleur de la card pendant le zoom (pas du blanc vide)
   overlay.style.background = ch.color;
@@ -363,6 +398,8 @@ function setupBottomBar() {
 // ─── Back buttons ─────────────────────────────────────────────────────────────
 function setupOverlayBackButtons() {
   document.getElementById('overlay-back').addEventListener('click', closeProjectOverlay);
+  document.getElementById('overlay-prev').addEventListener('click', () => navigateProject(-1));
+  document.getElementById('overlay-next').addEventListener('click', () => navigateProject(1));
   document.getElementById('about-back').addEventListener('click', () => closeGenericOverlay('about-overlay'));
   document.getElementById('contact-back').addEventListener('click', () => closeGenericOverlay('contact-overlay'));
 }

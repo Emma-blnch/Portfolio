@@ -81,8 +81,10 @@ export const channels = [
       "Agent IA apprenant à jouer au Snake par Deep Q-Network (DQN). Entraînement autonome, visualisation des courbes de score, expérimentation de différentes architectures de réseau.",
     tech: ['Python', 'DQN', 'Pygame'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
-    images: [],
-    gif: 'assets/img/projects/gif-learntoslither.gif',
+    images: [
+      'assets/img/projects/learntoslither/learntoslither-screenshot1.webp',
+    ],
+    gif: 'assets/img/projects/learntoslither/gif-learntoslither.gif',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 56 Q24 28 36 50 Q48 72 60 44 Q70 22 72 32"
         stroke="rgba(82,183,136,0.92)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
