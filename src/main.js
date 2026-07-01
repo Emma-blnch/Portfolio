@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { channels } from './data/channels.js';
-import { initSounds, playHover, playSelect, playBack } from './audio/sounds.js';
+import { initSounds, playHover, playSelect, playBack, playArrow, playButton } from './audio/sounds.js';
 import './style.css';
 
 // ─── State ────────────────────────────────────────────────────────────────────
@@ -137,6 +137,7 @@ function updateNavArrows() {
 function navigateProject(delta) {
   const next = currentProjectIndex + delta;
   if (next < 0 || next >= projectChannels.length) return;
+  if (soundReady && !isMuted) playArrow();
 
   clearInterval(galleryInterval);
   galleryInterval = null;
@@ -154,6 +155,9 @@ function navigateProject(delta) {
       content.innerHTML = buildProjectHTML(ch);
       initGallery();
       updateNavArrows();
+      content.querySelectorAll('.wii-back-btn--sm').forEach(el => {
+        el.addEventListener('click', () => { if (soundReady && !isMuted) playButton(); });
+      });
       gsap.to(content, { opacity: 1, duration: 0.2, ease: 'power2.out' });
     },
   });
@@ -169,10 +173,17 @@ function openProjectOverlay(ch, sourceEl) {
   const overlay = document.getElementById('channel-overlay');
   const content = document.getElementById('overlay-content');
 
+  const overlayFooter = overlay.querySelector('.drawer-footer');
+  const prevBtn = document.getElementById('overlay-prev');
+  const nextBtn = document.getElementById('overlay-next');
+
   content.innerHTML = buildProjectHTML(ch);
-  gsap.set(content, { opacity: 0 });
+  gsap.set([content, overlayFooter, prevBtn, nextBtn], { opacity: 0 });
   initGallery();
   updateNavArrows();
+  content.querySelectorAll('.wii-back-btn--sm').forEach(el => {
+    el.addEventListener('click', () => { if (soundReady && !isMuted) playButton(); });
+  });
 
   // Overlay couleur de la card pendant le zoom (pas du blanc vide)
   overlay.style.background = ch.color;
@@ -209,7 +220,7 @@ function openProjectOverlay(ch, sourceEl) {
           background: '#ffffff',
           duration: 0.25,
           ease: 'power2.inOut',
-          onComplete: () => gsap.to(content, { opacity: 1, duration: 0.2, ease: 'power2.out' }),
+          onComplete: () => gsap.to([content, overlayFooter, prevBtn, nextBtn], { opacity: 1, duration: 0.2, ease: 'power2.out' }),
         });
       },
     }
@@ -232,8 +243,12 @@ function closeProjectOverlay() {
     ? `inset(${rect.top}px ${vw - rect.right}px ${vh - rect.bottom}px ${rect.left}px round 14px)`
     : `inset(50% 50% 50% 50% round 14px)`;
 
+  const overlayFooter = overlay.querySelector('.drawer-footer');
+  const prevBtn = document.getElementById('overlay-prev');
+  const nextBtn = document.getElementById('overlay-next');
+
   // Contenu disparaît, fond repasse à la couleur de la card
-  gsap.to(content, {
+  gsap.to([content, overlayFooter, prevBtn, nextBtn], {
     opacity: 0,
     duration: 0.15,
     ease: 'power2.in',
@@ -359,7 +374,7 @@ function initGallery() {
 
 // ─── Drawers About + Contact (slide bas → haut) ───────────────────────────────
 function openGenericOverlay(id) {
-  if (soundReady && !isMuted) playSelect();
+  if (soundReady && !isMuted) playButton();
   const overlay = document.getElementById(id);
 
   // Positionner hors écran avant de rendre visible (évite le flash)
@@ -393,6 +408,11 @@ function setupBottomBar() {
   document.getElementById('btn-about').addEventListener('click', () => openGenericOverlay('about-overlay'));
   document.getElementById('btn-contact').addEventListener('click', () => openGenericOverlay('contact-overlay'));
   document.getElementById('btn-mute').addEventListener('click', toggleMute);
+
+  // Sons sur les liens externes des drawers (LinkedIn, GitHub)
+  document.querySelectorAll('#about-overlay .wii-back-btn--sm, #contact-overlay .wii-back-btn--sm').forEach(el => {
+    el.addEventListener('click', () => { if (soundReady && !isMuted) playButton(); });
+  });
 }
 
 // ─── Back buttons ─────────────────────────────────────────────────────────────

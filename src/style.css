@@ -27,6 +27,10 @@
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  cursor: url('/assets/cursor.png') 0 0, auto !important;
+}
+
 body {
   font-family: 'Continuum', sans-serif;
   -webkit-font-smoothing: antialiased;
