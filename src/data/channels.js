@@ -2,12 +2,12 @@ export const channels = [
   {
     id: 'trainlytics',
     label: 'Trainlytics',
-    category: 'App Mobile · Co-fondatrice',
+    category: 'App Mobile · Co-fondatrice et Développeuse fullstack',
     color: 'linear-gradient(135deg, #0077b6 0%, #00b4d8 100%)',
     description:
-      "Application mobile de suivi d'entraînement sportif. Co-fondée et développée de zéro : interface athlète, suivi de séances, tableau de bord coach, synchronisation temps réel.",
-    tech: ['React Native', 'TypeScript', 'Expo', 'Supabase'],
-    links: { github: 'https://github.com/Emma-blnch', demo: null },
+      "Site web et applicaiton mobile (single page application) de suivi d'entraînement sportif. Co-fondée et développée de zéro : interface athlète, suivi de séances, tableau de bord coach, synchronisation temps réel.",
+    tech: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
+    links: { github: null, demo: 'https://trainlytics.app' },
     image: null,
     gif: null,
     icon: `<svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,11 +21,11 @@ export const channels = [
   {
     id: 'singula',
     label: 'Singulã',
-    category: 'Site web · Sophrologie',
+    category: 'Site web vitrine · Développement et maintenance du site',
     color: 'linear-gradient(135deg, #6a0dad 0%, #c77dff 100%)',
     description:
       "Création complète du site web d'un cabinet de sophrologie. Design épuré, responsive, accessible, formulaire de contact sécurisé, optimisation SEO.",
-    tech: ['PHP', 'HTML', 'Tailwind CSS'],
+    tech: ['PHP', 'HTML', 'Tailwind CSS', 'Javascript'],
     links: { github: null, demo: 'https://www.singula-sophrologie.fr/' },
     image: '/assets/img/projects/preview-singula.webp',
     gif: null,
@@ -39,7 +39,7 @@ export const channels = [
   {
     id: 'cub3d',
     label: 'cub3D',
-    category: 'Jeu vidéo · C · 42 Paris',
+    category: 'Jeu vidéo · 42 Paris',
     color: 'linear-gradient(135deg, #1a1a2e 0%, #c34a00 100%)',
     description:
       "Moteur de rendu 3D en raycasting inspiré de Wolfenstein 3D, développé entièrement en C. Gestion des textures de murs, sprites, collisions, parsing de carte.",
@@ -62,7 +62,7 @@ export const channels = [
     color: 'linear-gradient(135deg, #1b4332 0%, #52b788 100%)',
     description:
       "Agent IA apprenant à jouer au Snake par Deep Q-Network (DQN). Entraînement autonome, visualisation des courbes de score, expérimentation de différentes architectures de réseau.",
-    tech: ['Python', 'PyTorch', 'DQN', 'Pygame'],
+    tech: ['Python', 'DQN', 'Pygame'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     image: null,
     gif: null,
@@ -80,8 +80,8 @@ export const channels = [
     color: 'linear-gradient(135deg, #03045e 0%, #0096c7 100%)',
     description:
       "Série de projets cybersécurité à 42 Paris : analyse de binaires, exploitation de vulnérabilités, cryptographie, reverse engineering, forensics et scripting d'attaque.",
-    tech: ['C', 'Python', 'Assembleur', 'Bash', 'GDB', 'Radare2'],
-    links: { github: 'https://github.com/Emma-blnch', demo: null },
+    tech: ['C', 'Python', 'Assembleur', 'Bash', 'GDB'],
+    links: { github: null, demo: null },
     image: null,
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ export const channels = [
     description:
       "Infrastructure conteneurisée multi-services avec Docker Compose : Nginx, WordPress, MariaDB, volumes persistants, réseau isolé, certificat TLS self-signed.",
     tech: ['Docker', 'Docker Compose', 'Nginx', 'WordPress', 'MariaDB'],
-    links: { github: 'https://github.com/Emma-blnch', demo: null },
+    links: { github: 'https://github.com/Emma-blnch/Inception-Docker-project', demo: null },
     image: null,
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
