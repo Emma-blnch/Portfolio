@@ -459,6 +459,42 @@ body {
   .channel-label {
     font-size: 0.6rem;
   }
+
+  /* Footer : boutons plus petits */
+  .wii-round-btn {
+    width: 54px;
+    height: 54px;
+  }
+
+  .wii-btn-label {
+    font-size: 0.78rem;
+  }
+
+  /* Bouton son */
+  .mute-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Footer : repositionnement des textes */
+  .footer-name {
+    top: 22%;
+    font-size: clamp(1.1rem, 4.5vw, 1.54rem);
+  }
+
+  .footer-subtitle {
+    top: 60%;
+    font-size: clamp(0.6rem, 2.2vw, 0.78rem);
+  }
+
+  /* Overlay projet : flèches remontées pour ne pas chevaucher la galerie */
+  .overlay-nav-btn {
+    top: 28%;
+  }
+
+  .overlay-nav-arrow {
+    width: 20px;
+  }
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────────── */
