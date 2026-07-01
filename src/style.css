@@ -235,6 +235,10 @@ body {
   max-height: 64px;
 }
 
+.channel-gif {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+
 .channel-label {
   @apply absolute bottom-0 left-0 right-0 text-center font-bold text-white;
   padding: 8px 8px 16px;

@@ -80,14 +80,12 @@ function renderChannelGrid() {
     el.role = 'button';
     el.setAttribute('aria-label', `Projet ${ch.label}`);
 
-    const illustrationStyle = ch.gif
-      ? `background: url('${ch.gif}') center / cover no-repeat`
-      : `background: ${ch.color}`;
-
     el.innerHTML = `
       <div class="channel-card">
-        <div class="channel-illustration" style="${illustrationStyle}">
-          ${ch.gif ? '' : ch.icon}
+        <div class="channel-illustration" style="${ch.gif ? '' : `background: ${ch.color}`}">
+          ${ch.gif
+            ? `<video class="channel-gif" src="${ch.gif}" autoplay loop muted playsinline></video>`
+            : ch.icon}
           <div class="channel-label">${ch.label}</div>
         </div>
       </div>
