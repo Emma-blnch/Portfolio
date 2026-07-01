@@ -295,6 +295,7 @@ body {
 .drawer-overlay {
   font-family: 'Continuum', 'Matter', sans-serif;
   @apply bg-white;
+  height: 100vh;
 }
 
 .drawer-footer {
