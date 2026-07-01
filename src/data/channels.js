@@ -8,7 +8,13 @@ export const channels = [
       "Site web et applicaiton mobile (single page application) de suivi d'entraînement sportif. Co-fondée et développée de zéro : interface athlète, suivi de séances, tableau de bord coach, synchronisation temps réel.",
     tech: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
     links: { github: null, demo: 'https://trainlytics.app' },
-    image: null,
+    images: [
+      '/assets/img/projects/trainlytics/trainlytics-screenshot1.webp',
+      '/assets/img/projects/trainlytics/trainlytics-screenshot2.webp',
+      '/assets/img/projects/trainlytics/trainlytics-screenshot3.webp',
+      '/assets/img/projects/trainlytics/trainlytics-screenshot4.webp',
+      '/assets/img/projects/trainlytics/trainlytics-screenshot5.webp',
+    ],
     gif: null,
     icon: `<svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polyline points="5,52 22,30 38,40 57,16 75,22"
@@ -27,7 +33,12 @@ export const channels = [
       "Création complète du site web d'un cabinet de sophrologie. Design épuré, responsive, accessible, formulaire de contact sécurisé, optimisation SEO.",
     tech: ['PHP', 'HTML', 'Tailwind CSS', 'Javascript'],
     links: { github: null, demo: 'https://www.singula-sophrologie.fr/' },
-    image: '/assets/img/projects/preview-singula.webp',
+    images: [
+      '/assets/img/projects/singula/singula-screenshot1.webp',
+      '/assets/img/projects/singula/singula-screenshot2.webp',
+      '/assets/img/projects/singula/singula-screenshot3.webp',
+      '/assets/img/projects/singula/singula-screenshot4.webp',
+    ],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="40" r="26" stroke="rgba(255,255,255,0.75)" stroke-width="4" fill="rgba(255,255,255,0.07)"/>
@@ -45,7 +56,11 @@ export const channels = [
       "Moteur de rendu 3D en raycasting inspiré de Wolfenstein 3D, développé entièrement en C. Gestion des textures de murs, sprites, collisions, parsing de carte.",
     tech: ['C', 'MiniLibX', 'Raycasting', 'Git'],
     links: { github: 'https://github.com/Emma-blnch/cub3D', demo: null },
-    image: '/assets/img/projects/preview-cub3d.webp',
+    images: [
+      '/assets/img/projects/cub3d/cub3d-screenshot1.webp',
+      '/assets/img/projects/cub3d/cub3d-screenshot2.webp',
+      '/assets/img/projects/cub3d/cub3d-screenshot3.webp',
+    ],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="40,10 68,26 68,58 40,74 12,58 12,26"
@@ -64,7 +79,7 @@ export const channels = [
       "Agent IA apprenant à jouer au Snake par Deep Q-Network (DQN). Entraînement autonome, visualisation des courbes de score, expérimentation de différentes architectures de réseau.",
     tech: ['Python', 'DQN', 'Pygame'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
-    image: null,
+    images: [],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 56 Q24 28 36 50 Q48 72 60 44 Q70 22 72 32"
@@ -79,10 +94,10 @@ export const channels = [
     category: 'Cybersécurité · 42 Paris',
     color: 'linear-gradient(135deg, #03045e 0%, #0096c7 100%)',
     description:
-      "Série de projets cybersécurité à 42 Paris : analyse de binaires, exploitation de vulnérabilités, cryptographie, reverse engineering, forensics et scripting d'attaque.",
+      "Série de projets cybersécurité à 42 Paris sous la forme de capture the flag (CTF) : analyse de binaires, exploitation de vulnérabilités, cryptographie, reverse engineering et scripting d'attaque.",
     tech: ['C', 'Python', 'Assembleur', 'Bash', 'GDB'],
     links: { github: null, demo: null },
-    image: null,
+    images: ['/assets/img/projects/cyber-screenshot.webp'],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M40 10 L65 22 L65 46 Q65 66 40 74 Q15 66 15 46 L15 22 Z"
@@ -100,7 +115,7 @@ export const channels = [
       "Infrastructure conteneurisée multi-services avec Docker Compose : Nginx, WordPress, MariaDB, volumes persistants, réseau isolé, certificat TLS self-signed.",
     tech: ['Docker', 'Docker Compose', 'Nginx', 'WordPress', 'MariaDB'],
     links: { github: 'https://github.com/Emma-blnch/Inception-Docker-project', demo: null },
-    image: null,
+    images: ['/assets/img/projects/inception-screenshot.webp'],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="8" y="14" width="64" height="52" rx="7"
@@ -119,7 +134,11 @@ export const channels = [
       "Intégration et développement de composants front-end pour SportyTrader, plateforme d'actualité sportive (>1M visites/mois). Environnement Scrum, revues de code, CI/CD.",
     tech: ['Twig', 'Tailwind CSS', 'Symfony', 'TypeScript', 'Git'],
     links: { github: null, demo: 'https://www.sportytrader.com/' },
-    image: '/assets/img/projects/preview-sporty.webp',
+    images: [
+      '/assets/img/projects/sporty/sporty-screenshot1.webp',
+      '/assets/img/projects/sporty/sporty-screenshot2.webp',
+      '/assets/img/projects/sporty/sporty-screenshot3.webp',
+    ],
     gif: null,
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M26 14 L54 14 L54 46 Q54 64 40 68 Q26 64 26 46 Z"
@@ -144,7 +163,12 @@ export const channels = [
       github: 'https://github.com/Emma-blnch/GenAI-Hackaton-02-2025',
       demo: null,
     },
-    image: '/assets/img/projects/preview-data-vizualisation.webp',
+    images: [
+      '/assets/img/projects/preview-data-vizualisation.webp',
+      '/assets/img/projects/genai-hackaton/genai-screenshot1.webp',
+      '/assets/img/projects/genai-hackaton/genai-screenshot2.webp',
+      '/assets/img/projects/genai-hackaton/genai-screenshot3.webp',
+    ],
     gif: null,
     icon: `<svg viewBox="0 0 80 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="7" y="42" width="14" height="22" rx="3" fill="rgba(131,197,190,0.65)"/>

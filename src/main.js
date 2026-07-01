@@ -8,6 +8,7 @@ let soundReady = false;
 let isMuted = false;
 let lastOpenedChannelEl = null;
 let lastOpenedChannel = null;
+let galleryInterval = null;
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
@@ -136,6 +137,7 @@ function openProjectOverlay(ch, sourceEl) {
 
   content.innerHTML = buildProjectHTML(ch);
   gsap.set(content, { opacity: 0 });
+  initGallery();
 
   // Overlay couleur de la card pendant le zoom (pas du blanc vide)
   overlay.style.background = ch.color;
@@ -181,6 +183,8 @@ function openProjectOverlay(ch, sourceEl) {
 
 function closeProjectOverlay() {
   if (soundReady && !isMuted) playBack();
+  clearInterval(galleryInterval);
+  galleryInterval = null;
 
   const overlay = document.getElementById('channel-overlay');
   const content = document.getElementById('overlay-content');
@@ -248,22 +252,74 @@ function buildProjectHTML(ch) {
 
   const techHTML = ch.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
 
-  const previewHTML = ch.image
-    ? `<div class="project-preview">
-        <img src="${ch.image}" alt="Aperçu ${ch.label}" loading="lazy"/>
-      </div>`
-    : `<div class="project-preview project-preview--gradient" style="background: ${ch.color}">
+  let galleryHTML;
+  if (ch.images && ch.images.length > 0) {
+    const thumbsHTML = ch.images.length > 1
+      ? `<div class="gallery-thumbs">
+          ${ch.images.map((src, i) => `
+            <button class="gallery-thumb${i === 0 ? ' gallery-thumb--active' : ''}" data-index="${i}" aria-label="Image ${i + 1}">
+              <img src="${src}" alt="" loading="lazy">
+            </button>`).join('')}
+        </div>`
+      : '';
+    galleryHTML = `
+      <div class="project-gallery">
+        <div class="gallery-main">
+          <img src="${ch.images[0]}" class="gallery-main-img" alt="Aperçu ${ch.label}" loading="lazy">
+        </div>
+        ${thumbsHTML}
+      </div>`;
+  } else {
+    galleryHTML = `
+      <div class="project-preview project-preview--gradient" style="background: ${ch.color}">
         ${ch.label}
       </div>`;
+  }
 
   return `
-    <p class="project-category">${ch.category}</p>
-    <h1 class="project-title">${ch.label}</h1>
-    <p class="project-desc mt-5">${ch.description}</p>
-    <div class="flex flex-wrap gap-2 mt-5">${techHTML}</div>
-    <div class="flex flex-wrap gap-3 mt-8">${githubBtn}${demoBtn}</div>
-    ${previewHTML}
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start h-full">
+      <div class="flex flex-col flex-1 min-w-0">
+        <p class="project-category">${ch.category}</p>
+        <h1 class="project-title">${ch.label}</h1>
+        <p class="project-desc mt-5">${ch.description}</p>
+        <div class="flex flex-wrap gap-2 mt-5">${techHTML}</div>
+        <div class="flex flex-wrap gap-3 mt-8">${githubBtn}${demoBtn}</div>
+      </div>
+      <div class="w-full lg:w-[48%] flex-shrink-0">${galleryHTML}</div>
+    </div>
   `;
+}
+
+function initGallery() {
+  const mainImg = document.querySelector('.gallery-main-img');
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+  if (!mainImg || thumbs.length <= 1) return;
+
+  let current = 0;
+
+  function goTo(index) {
+    current = index;
+    const newSrc = thumbs[index].querySelector('img').src;
+    gsap.to(mainImg, {
+      opacity: 0,
+      duration: 0.2,
+      onComplete: () => {
+        mainImg.src = newSrc;
+        gsap.to(mainImg, { opacity: 1, duration: 0.3 });
+      },
+    });
+    thumbs.forEach((t, i) => t.classList.toggle('gallery-thumb--active', i === index));
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      clearInterval(galleryInterval);
+      goTo(i);
+      galleryInterval = setInterval(() => goTo((current + 1) % thumbs.length), 2700);
+    });
+  });
+
+  galleryInterval = setInterval(() => goTo((current + 1) % thumbs.length), 2500);
 }
 
 // ─── Drawers About + Contact (slide bas → haut) ───────────────────────────────

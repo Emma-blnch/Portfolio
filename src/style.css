@@ -374,6 +374,42 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* ─── Galerie projet ─────────────────────────────────────────────────────── */
+.project-gallery {
+  @apply w-full;
+}
+
+.gallery-main {
+  @apply w-full overflow-hidden rounded-[14px] aspect-video;
+}
+
+.gallery-main-img {
+  @apply w-full h-full object-cover block;
+}
+
+.gallery-thumbs {
+  @apply flex gap-2 mt-3 overflow-x-auto;
+  padding-bottom: 4px;
+}
+
+.gallery-thumb {
+  @apply flex-shrink-0 overflow-hidden rounded-lg cursor-pointer;
+  width: 80px;
+  height: 52px;
+  border: 2.5px solid transparent;
+  transition: border-color 0.15s, opacity 0.15s;
+  opacity: 0.65;
+}
+
+.gallery-thumb img {
+  @apply w-full h-full object-cover block;
+}
+
+.gallery-thumb--active {
+  border-color: #34BEED;
+  opacity: 1;
+}
+
 /* ─── Mobile : grille 2×4 ────────────────────────────────────────────────── */
 @media (max-width: 580px) {
   #channel-grid {
