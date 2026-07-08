@@ -5,8 +5,9 @@ No sensitive data or credentials are included.
 # 🌐 Portfolio — Emma Blanchard
 
 Personal portfolio website showcasing my work as a **fullstack web developer**, my skills, and selected projects.
+Designed and built to be **fast, accessible, responsive**, and easy to maintain.*
+
 Design inspired by the lovely Wii menu.  
-Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 
 👉 Live website: **https://emma-blnch.fr**
 
