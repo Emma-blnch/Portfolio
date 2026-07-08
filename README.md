@@ -4,7 +4,8 @@ No sensitive data or credentials are included.
 
 # 🌐 Portfolio — Emma Blanchard
 
-Personal portfolio website showcasing my work as a **front-end developer**, my skills, and selected projects.  
+Personal portfolio website showcasing my work as a **fullstack web developer**, my skills, and selected projects.
+Design inspired by the lovely Wii menu.  
 Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 
 👉 Live website: **https://emma-blnch.fr**
@@ -13,7 +14,7 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 
 ## 🚀 Project goals
 
-- Present my profile as a **freelance front-end developer**
+- Present my profile as a **fullstack web developer**
 - Showcase selected **professional and personal projects**
 - Provide a **clear and simple way to get in touch**
 - Build a site that reflects my values:
@@ -27,13 +28,11 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 ## ✨ Features
 
 ✅ Fully responsive (mobile → desktop)  
-✅ Clean UI with subtle animated background shapes  
-✅ Light / Dark mode toggle  
-✅ Bilingual navigation (FR / EN via separate pages)  
+✅ Design that makes you think immediatly of the Wii 
+✅ Clean UI      
 ✅ Accessible HTML structure (semantic tags, focus, contrast)  
 ✅ SEO-ready (meta tags, Open Graph, Twitter Cards, canonical)  
 ✅ Project previews on hover  
-✅ Secure contact form (PHP, rate limiting, honeypot, timestamp validation)  
 ✅ GDPR-compliant pages (Privacy Policy & Terms)  
 
 ---
@@ -41,10 +40,10 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 ## 🧠 What I focused on
 
 - **UX & visual identity**  
-  Subtle animations, soft background effects, readable typography, and a friendly tone.
+  Sound effects for certain actions, animated project overviews, readable typography, and a friendly tone.
 
 - **Performance & simplicity**  
-  No heavy frameworks — plain HTML, Tailwind CSS, and vanilla JavaScript.
+  No heavy frameworks — plain HTML, Tailwind CSS, Javascript and Vite.
 
 - **Accessibility**  
   Semantic markup, keyboard navigation, readable contrasts, reduced-motion support.
@@ -58,18 +57,14 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 
 - **HTML5**
 - **Tailwind CSS**
-- **JavaScript (Vanilla)**
-- **PHP** (contact form)
-- **SVG** (background shapes & UI elements)
+- **JavaScript**
+- **Vite**
 
 ---
 
 ## 📁 Project structure
 ├── index.html # French homepage  
-├── en/  
-│ └── index.html # English version  
 ├── pages/  
-│ ├── cgv.html # Terms & Conditions  
 │ └── rgpd.html # Privacy policy (GDPR)  
 ├── assets/  
 │ ├── img/  
@@ -77,28 +72,18 @@ Designed and built to be **fast, accessible, responsive**, and easy to maintain.
 │ │ ├── projects/  
 │ │ └── preview.png  
 │ ├── effects/  
-│ │ └── noise-effect.png  
 │ ├── font/  
-│ └── favicon/  
+│ └── favicon/ 
+├──src
+│ ├── img/ # Sound effects  
+│ ├── data/  
+│ │ ├── channels.js # Animated channels, Wii style  
+│ ├── main.js # Interactions & animations   
 ├── dist/   
-│ └── style.css # Compiled Tailwind CSS  
-├── script.js # Interactions & animations  
-├── contact.php # Secure contact form handler  
+│ └── assets/ # Compiled assets (styles and animations) 
+│ └── index.html # Compiled index 
 └── README.md  
 
-
----
-
-## 🔐 Contact form security
-
-The contact form includes:
-- POST-only requests
-- Timestamp validation (anti-bot)
-- Honeypot field
-- Rate limiting per IP
-- Email header injection protection
-
-No data is stored in a database.
 
 ---
 
@@ -123,7 +108,7 @@ No data is stored in a database.
 ## 👩‍💻 Author
 
 **Emma Blanchard**  
-Front-end developer — freelance  
+Fullstack web developer
 
 - 🌍 https://emma-blnch.fr  
 - 💼 https://www.linkedin.com/in/emmablnch/  
