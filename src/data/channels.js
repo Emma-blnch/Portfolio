@@ -2,10 +2,10 @@ export const channels = [
   {
     id: 'trainlytics',
     label: 'Trainlytics',
-    category: 'PWA · Co-fondatrice et Développeuse fullstack',
+    category: 'PWA · Co-founder & Fullstack Developer',
     color: 'linear-gradient(135deg, #0077b6 0%, #00b4d8 100%)',
     description:
-      "Progressive Web App (PWA) de suivi d'entraînement sportif. Co-fondée et développée de zéro : interface athlète, suivi de séances, tableau de bord coach, synchronisation temps réel.",
+      "Progressive Web App (PWA) for sports training tracking. Co-founded and built from scratch: athlete interface, workout tracking, coach dashboard, real-time sync.",
     tech: ['React', 'TypeScript', 'Supabase', 'Tailwind', 'Cloudfare'],
     links: { github: null, demo: 'https://trainlytics.app' },
     images: [
@@ -26,10 +26,10 @@ export const channels = [
   {
     id: 'singula',
     label: 'Singulã',
-    category: 'Site web vitrine · Développement et maintenance du site',
+    category: 'Showcase website · Development & maintenance',
     color: 'linear-gradient(135deg, #6a0dad 0%, #c77dff 100%)',
     description:
-      "Création complète du site web d'un cabinet de sophrologie. Design épuré, responsive, accessible, formulaire de contact sécurisé, optimisation SEO.",
+      "Full website build for a sophrology practice. Clean, responsive, accessible design, secure contact form, SEO optimization.",
     tech: ['PHP', 'HTML', 'Tailwind CSS', 'Javascript'],
     links: { github: null, demo: 'https://www.singula-sophrologie.fr/' },
     images: [
@@ -49,10 +49,10 @@ export const channels = [
   {
     id: 'sportytrader',
     label: 'SportyTrader',
-    category: 'Intégration web · Alternance',
+    category: 'Web integration · Apprenticeship',
     color: 'linear-gradient(135deg, #b91c1c 0%, #f97316 100%)',
     description:
-      "Intégration et développement de composants front-end pour SportyTrader, plateforme d'actualité sportive (>1M visites/mois). Environnement Scrum, revues de code, CI/CD.",
+      "Integration and development of front-end components for SportyTrader, a sports news platform (>1M visits/month). Scrum environment, code reviews, CI/CD.",
     tech: ['Twig', 'Tailwind CSS', 'Symfony', 'TypeScript', 'Git'],
     links: { github: null, demo: 'https://www.sportytrader.com/' },
     images: [
@@ -74,11 +74,11 @@ export const channels = [
   },
   {
     id: 'learn2slither',
-    label: 'Intelligence Artificielle',
-    category: 'IA · Reinforcement Learning',
+    label: 'Artificial Intelligence',
+    category: 'AI · Reinforcement Learning',
     color: 'linear-gradient(135deg, #1b4332 0%, #52b788 100%)',
     description:
-      "Agent IA apprenant à jouer au Snake par Deep Q-Network (DQN). Entraînement autonome, visualisation des courbes de score, expérimentation de différentes architectures de réseau.",
+      "AI agent learning to play Snake via Deep Q-Network (DQN). Autonomous training, score curve visualization, experimentation with different network architectures.",
     tech: ['Python', 'DQN', 'Pygame'],
     links: { github: 'https://github.com/Emma-blnch', demo: null },
     images: [
@@ -94,12 +94,12 @@ export const channels = [
   },
   {
     id: 'cyber42',
-    label: 'Projets Cyber',
-    category: 'Cybersécurité · 42 Paris',
+    label: 'Cyber Security Projects',
+    category: 'Cyber Security · 42 Paris',
     color: 'linear-gradient(135deg, #03045e 0%, #0096c7 100%)',
     description:
-      "Série de projets cybersécurité à 42 Paris sous la forme de capture the flag (CTF) : analyse de binaires, exploitation de vulnérabilités, cryptographie, reverse engineering et scripting d'attaque.",
-    tech: ['C', 'Python', 'Assembleur', 'Bash', 'GDB'],
+      "Series of cybersecurity projects at 42 Paris in capture the flag (CTF) format: binary analysis, vulnerability exploitation, cryptography, reverse engineering and attack scripting.",
+    tech: ['C', 'Python', 'Assembly', 'Bash', 'GDB'],
     links: { github: null, demo: null },
     images: ['/assets/img/projects/cyber-screenshot.webp'],
     gif: 'assets/img/projects/gif-cyber.webm',
@@ -116,7 +116,7 @@ export const channels = [
     category: 'Infrastructure · Docker',
     color: 'linear-gradient(135deg, #023e8a 0%, #48cae4 100%)',
     description:
-      "Infrastructure conteneurisée multi-services avec Docker Compose : Nginx, WordPress, MariaDB, volumes persistants, réseau isolé, certificat TLS self-signed.",
+      "Multi-service containerized infrastructure with Docker Compose: Nginx, WordPress, MariaDB, persistent volumes, isolated network, self-signed TLS certificate.",
     tech: ['Docker', 'Docker Compose', 'Nginx', 'WordPress', 'MariaDB'],
     links: { github: 'https://github.com/Emma-blnch/Inception-Docker-project', demo: null },
     images: ['/assets/img/projects/inception-screenshot.webp'],
@@ -132,10 +132,10 @@ export const channels = [
    {
     id: 'cub3d',
     label: 'Raycasting',
-    category: 'Jeu vidéo · 42 Paris',
+    category: 'Video game · 42 Paris',
     color: 'linear-gradient(135deg, #1a1a2e 0%, #c34a00 100%)',
     description:
-      "Moteur de rendu 3D en raycasting inspiré de Wolfenstein 3D, développé entièrement en C. Gestion des textures de murs, sprites, collisions, parsing de carte.",
+      "3D raycasting rendering engine inspired by Wolfenstein 3D, built entirely in C. Wall texturing, sprites, collisions, map parsing.",
     tech: ['C', 'MiniLibX', 'Raycasting', 'Git'],
     links: { github: 'https://github.com/Emma-blnch/cub3D', demo: null },
     images: [
@@ -158,7 +158,7 @@ export const channels = [
     category: 'Hackathon · GenAI',
     color: 'linear-gradient(135deg, #006d77 0%, #83c5be 100%)',
     description:
-      "Dashboard de visualisation de données Enedis réalisé lors d'un hackathon GenAI. Charts interactifs, analyse de consommation énergétique, rendu en 48h.",
+      "Enedis data visualization dashboard built during a GenAI hackathon. Interactive charts, energy consumption analysis, delivered in 48h.",
     tech: ['HTML', 'CSS', 'JavaScript', 'Chart.js'],
     links: {
       github: 'https://github.com/Emma-blnch/GenAI-Hackaton-02-2025',
