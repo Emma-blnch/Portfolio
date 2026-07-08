@@ -79,6 +79,28 @@ body {
   letter-spacing: 0.14em;
 }
 
+.footer-legal {
+  @apply absolute pointer-events-auto select-none whitespace-nowrap flex items-center;
+  left: 50%;
+  top: 88%;
+  transform: translate(-50%, -50%);
+  gap: 6px;
+  font-size: clamp(0.62rem, 1vw, 0.75rem);
+  color: #999;
+  letter-spacing: 0.05em;
+}
+
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.12s ease;
+}
+
+.footer-legal a:hover {
+  color: #009ac7;
+}
+
 #btn-about {
   @apply absolute pointer-events-auto;
   left: 8.67%;
@@ -485,6 +507,11 @@ body {
   .footer-subtitle {
     top: 60%;
     font-size: clamp(0.6rem, 2.2vw, 0.78rem);
+  }
+
+  .footer-legal {
+    top: 85%;
+    font-size: clamp(0.55rem, 2vw, 0.68rem);
   }
 
   /* Overlay projet : flèches remontées pour ne pas chevaucher la galerie */

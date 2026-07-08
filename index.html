@@ -47,13 +47,13 @@
 
     <!-- Grille de chaînes -->
     <div class="flex-1 flex items-center justify-center w-full px-4 sm:px-8 lg:px-16">
-      <div id="channel-grid" class="grid grid-cols-4 grid-rows-3 gap-4 w-full max-w-[1200px]">
+      <div id="channel-grid" class="grid grid-cols-4 grid-rows-3 gap-4 w-full max-w-300">
         <!-- Les chaînes sont injectées par main.js -->
       </div>
     </div>
 
     <!-- Footer Wii — SVG officiel + boutons par-dessus -->
-    <div class="wii-bottom-wrap w-full flex-shrink-0 relative z-10">
+    <div class="wii-bottom-wrap w-full shrink-0 relative z-10">
 
       <!-- SVG du footer Wii (forme + cercles visuels) -->
       <img src="/assets/menu-footer.svg" class="block w-full h-auto" aria-hidden="true" alt="">
@@ -88,6 +88,13 @@
           </svg>
         </button>
 
+        <!-- Liens légaux — bas du bandeau, zone grise sous les boutons -->
+        <nav class="footer-legal" aria-label="Liens légaux">
+          <a href="/pages/cgv.html">CGV</a>
+          <span aria-hidden="true">·</span>
+          <a href="/pages/rgpd.html">RGPD</a>
+        </nav>
+
       </div>
     </div>
   </div>
@@ -113,7 +120,7 @@
   <div id="about-overlay" class="overlay drawer-overlay fixed bottom-0 left-0 right-0 z-50 flex flex-col" aria-hidden="true">
     <div class="flex-1 flex items-center justify-center overflow-y-auto relative z-10">
       <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-14 py-8 px-6 sm:px-14 lg:px-24 max-w-4xl mx-auto">
-        <img src="/assets/img/photo-profile.webp" alt="Emma Blanchard" class="w-32 sm:w-44 lg:w-56 rounded-2xl object-cover flex-shrink-0 shadow-md">
+        <img src="/assets/img/photo-profile.webp" alt="Emma Blanchard" class="w-32 sm:w-44 lg:w-56 rounded-2xl object-cover shrink-0 shadow-md">
         <div>
           <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 leading-tight">Emma Blanchard</h2>
           <p class="text-sm font-semibold uppercase tracking-widest mt-2 mb-5" style="color: #009ac7">Développeuse Fullstack Web</p>
