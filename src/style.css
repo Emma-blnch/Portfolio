@@ -469,6 +469,22 @@ body {
   opacity: 1;
 }
 
+/* ─── Petites hauteurs : la grille s'adapte à l'espace vertical disponible ─
+   Sans ça, la grille garde sa hauteur "naturelle" (dérivée de sa largeur)
+   et déborde/rogne sur les écrans larges mais peu hauts. On rend le wrapper
+   size-container pour pouvoir dimensionner la grille en fonction du cqh
+   (hauteur réellement dispo après le footer), en conservant son ratio. ── */
+@supports (container-type: size) {
+  .channel-grid-wrap {
+    container-type: size;
+  }
+
+  /* 4 colonnes × 3 lignes, ratio carte 4/2.55 → ratio grille ≈ 2.09 */
+  #channel-grid {
+    width: min(100%, 205cqh);
+  }
+}
+
 /* ─── Mobile : grille 2×4 ────────────────────────────────────────────────── */
 @media (max-width: 580px) {
   #channel-grid {
@@ -476,6 +492,13 @@ body {
     grid-template-rows: repeat(4, 1fr) !important;
     max-width: 330px;
     gap: 10px !important;
+  }
+
+  /* 2 colonnes × 4 lignes → ratio grille ≈ 0.78 (voir bloc @supports plus bas) */
+  @supports (container-type: size) {
+    #channel-grid {
+      width: min(100%, 78cqh);
+    }
   }
 
   .channel-label {
@@ -522,6 +545,36 @@ body {
   .overlay-nav-arrow {
     width: 20px;
   }
+}
+
+/* ─── Écrans larges mais peu hauts : footer moins haut, pleine largeur ──────
+   Le footer reste w-full (c'est une image) : au lieu de le rétrécir en
+   largeur, on réduit sa hauteur affichée et on rogne le bas de l'image
+   (object-fit: cover + object-position: top) plutôt que de la redimensionner.
+   Les cercles Info/Contact sont dessinés DANS le SVG (voir menu-footer.svg,
+   cx/cy à 8.67%/38% et 91.84%/37.7% de la hauteur native) : on recalcule donc
+   leur position (top / 0.75, le SVG étant rogné à 75% de sa hauteur) pour que
+   les boutons HTML restent posés exactement dessus. Les textes n'ont pas de
+   contrainte d'alignement avec l'artwork : ils sont juste replacés à l'oeil
+   dans l'espace restant. ── */
+@media (max-height: 700px) and (min-width: 700px) {
+  .wii-bottom-wrap {
+    height: 12.9vw;
+    overflow: hidden;
+  }
+
+  .wii-bottom-wrap img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  #btn-about { top: 50.7%; }
+  #btn-contact { top: 50.3%; }
+  .footer-name { top: 40%; }
+  .footer-subtitle,
+  #btn-mute { top: 70%; }
+  .footer-legal { top: 90%; }
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────────── */
