@@ -59,12 +59,30 @@ body {
 }
 
 /* ─── Footer ─────────────────────────────────────────────────────────────── */
+/* --fh = hauteur du footer. Au ratio natif du SVG (1891×325) elle vaut 17.18vw,
+   mais sur les écrans larges on la plafonne pour laisser de la place à la grille :
+   la barre centrale s'étire alors en largeur (preserveAspectRatio="none") et les
+   deux socles latéraux gardent leurs proportions. Tout ce qui est posé sur le
+   footer est dimensionné en fonction de --fh (et plus du vw). */
+.wii-bottom-wrap {
+  --fh: min(17.18vw, max(140px, 21vh));
+  height: var(--fh);
+}
+
+.footer-art {
+  @apply absolute top-0 h-full pointer-events-none;
+}
+
+.footer-art--bar   { @apply left-0 w-full; }
+.footer-art--left  { @apply left-0 w-auto; }
+.footer-art--right { @apply right-0 w-auto; }
+
 .footer-name {
   @apply absolute pointer-events-none select-none whitespace-nowrap font-bold;
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
-  font-size: clamp(1.54rem, 3.08vw, 2.16rem);
+  font-size: clamp(1.54rem, calc(var(--fh) * 0.179), 2.16rem);
   color: #888;
   letter-spacing: 0.03em;
 }
@@ -74,7 +92,7 @@ body {
   left: 50%;
   top: 52%;
   transform: translate(-50%, -50%);
-  font-size: clamp(0.78rem, 1.27vw, 1.04rem);
+  font-size: clamp(0.78rem, calc(var(--fh) * 0.074), 1.04rem);
   color: #888;
   letter-spacing: 0.14em;
 }
@@ -85,7 +103,7 @@ body {
   top: 88%;
   transform: translate(-50%, -50%);
   gap: 6px;
-  font-size: clamp(0.62rem, 1vw, 0.75rem);
+  font-size: clamp(0.62rem, calc(var(--fh) * 0.058), 0.75rem);
   color: #999;
   letter-spacing: 0.05em;
 }
@@ -101,32 +119,33 @@ body {
   color: #009ac7;
 }
 
+/* Centres des cercles dans le SVG : (164, 123.6) et (1891 - 1736.8, 122.6) sur 325 de haut */
 #btn-about {
   @apply absolute pointer-events-auto;
-  left: 8.67%;
+  left: calc(var(--fh) * 0.5046);
   top: 38%;
   transform: translate(-50%, -50%);
 }
 
 #btn-mute {
   @apply absolute pointer-events-auto;
-  left: 18%;
+  left: calc(var(--fh) * 1.048);
   top: 52%;
   transform: translate(-50%, -50%);
 }
 
 #btn-contact {
   @apply absolute pointer-events-auto;
-  left: 91.84%;
+  right: calc(var(--fh) * 0.4744);
   top: 37.73%;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, -50%);
 }
 
 /* ─── Bouton rond Wii ────────────────────────────────────────────────────── */
 .wii-round-btn {
   @apply relative flex items-center justify-center rounded-full cursor-pointer overflow-hidden;
-  width: clamp(76px, 9.4vw, 140px);
-  height: clamp(76px, 9.4vw, 140px);
+  width: clamp(76px, calc(var(--fh) * 0.547), 140px);
+  height: clamp(76px, calc(var(--fh) * 0.547), 140px);
   background: radial-gradient(circle at 42% 32%, #ffffff 0%, #e8e8e8 55%, #c8c8c8 100%);
   border: 3px solid #34BEED;
   box-shadow:
@@ -150,7 +169,7 @@ body {
 .wii-btn-label {
   @apply relative font-bold;
   z-index: 3;
-  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.2rem, calc(var(--fh) * 0.14), 1.9rem);
   color: #a8a8a8;
   letter-spacing: 0.01em;
 }
@@ -158,8 +177,8 @@ body {
 .footer-contact-icon {
   @apply relative;
   z-index: 1;
-  width: clamp(36px, 4.6vw, 66px);
-  height: clamp(36px, 4.6vw, 66px);
+  width: clamp(36px, calc(var(--fh) * 0.268), 66px);
+  height: clamp(36px, calc(var(--fh) * 0.268), 66px);
   color: #a8a8a8;
 }
 
@@ -271,6 +290,13 @@ body {
     0 2px 0 rgba(0,0,0,1);
   line-height: 1.2;
   z-index: 3;
+}
+
+/* Description de la tuile : présente dans le HTML pour le SEO, masquée
+   visuellement sans display:none (reprise dans l'overlay détail). */
+.channel-desc,
+.channel-role {
+  @apply sr-only;
 }
 
 /* ─── Overlays ───────────────────────────────────────────────────────────── */
@@ -406,6 +432,41 @@ body {
   color: #444;
 }
 
+.project-role-title {
+  @apply text-xs font-semibold uppercase mt-6 mb-2;
+  letter-spacing: 0.1em;
+  color: #009ac7;
+}
+
+.project-role {
+  @apply max-w-[600px] flex flex-col gap-1.5;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.6;
+  color: #444;
+}
+
+.project-role li {
+  @apply relative;
+  padding-left: 18px;
+}
+
+.project-role li::before {
+  content: '';
+  @apply absolute left-0 rounded-full;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  background: #34BEED;
+}
+
+.project-role strong { color: #222; }
+
+.project-note {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
 .tech-badge {
   @apply inline-block rounded-full font-semibold;
   background: #f2f2f2;
@@ -474,6 +535,12 @@ body {
    et déborde/rogne sur les écrans larges mais peu hauts. On rend le wrapper
    size-container pour pouvoir dimensionner la grille en fonction du cqh
    (hauteur réellement dispo après le footer), en conservant son ratio. ── */
+/* Respiration au-dessus / en dessous de la grille (le cqh se base sur la
+   content box : la grille se réduit pour tenir dans l'espace restant) */
+.channel-grid-wrap {
+  padding-block: clamp(16px, 5vh, 56px);
+}
+
 @supports (container-type: size) {
   .channel-grid-wrap {
     container-type: size;
@@ -545,36 +612,6 @@ body {
   .overlay-nav-arrow {
     width: 20px;
   }
-}
-
-/* ─── Écrans larges mais peu hauts : footer moins haut, pleine largeur ──────
-   Le footer reste w-full (c'est une image) : au lieu de le rétrécir en
-   largeur, on réduit sa hauteur affichée et on rogne le bas de l'image
-   (object-fit: cover + object-position: top) plutôt que de la redimensionner.
-   Les cercles Info/Contact sont dessinés DANS le SVG (voir menu-footer.svg,
-   cx/cy à 8.67%/38% et 91.84%/37.7% de la hauteur native) : on recalcule donc
-   leur position (top / 0.75, le SVG étant rogné à 75% de sa hauteur) pour que
-   les boutons HTML restent posés exactement dessus. Les textes n'ont pas de
-   contrainte d'alignement avec l'artwork : ils sont juste replacés à l'oeil
-   dans l'espace restant. ── */
-@media (max-height: 700px) and (min-width: 700px) {
-  .wii-bottom-wrap {
-    height: 12.9vw;
-    overflow: hidden;
-  }
-
-  .wii-bottom-wrap img {
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  #btn-about { top: 50.7%; }
-  #btn-contact { top: 50.3%; }
-  .footer-name { top: 40%; }
-  .footer-subtitle,
-  #btn-mute { top: 70%; }
-  .footer-legal { top: 90%; }
 }
 
 /* ─── Reduced motion ─────────────────────────────────────────────────────── */

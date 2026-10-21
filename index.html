@@ -15,12 +15,12 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://emma-blnch.fr/">
-  <meta property="og:image" content="https://emma-blnch.fr/assets/img/twitter-card.jpg">
+  <meta property="og:image" content="https://emma-blnch.fr/assets/img/twitter-card-2026.jpeg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Portfolio - Emma Blanchard">
   <meta name="twitter:description" content="Front-end developer · 42 Paris · Co-founder of Trainlytics">
-  <meta name="twitter:image" content="https://emma-blnch.fr/assets/img/twitter-card.jpg">
+  <meta name="twitter:image" content="https://emma-blnch.fr/assets/img/twitter-card-2026.jpeg">
 
   <link rel="canonical" href="https://emma-blnch.fr/">
   <title>Portfolio - Emma Blanchard</title>
@@ -47,22 +47,138 @@
 
     <!-- Channel grid -->
     <div class="channel-grid-wrap flex-1 flex items-center justify-center w-full min-h-0 px-4 sm:px-8 lg:px-16">
-      <div id="channel-grid" class="grid grid-cols-4 grid-rows-3 gap-2 lg:gap-4 w-full max-w-300">
-        <!-- Channels are injected by main.js -->
-      </div>
+      <section aria-labelledby="projects-title" class="w-full max-w-300">
+        <h2 id="projects-title" class="sr-only">Projects</h2>
+        <!-- Each tile is static HTML (readable by crawlers); main.js only adds interactivity.
+             Detail data (category, tech, links, images) lives in src/data/channels.js, keyed by data-id. -->
+        <div id="channel-grid" class="grid grid-cols-4 grid-rows-3 gap-2 lg:gap-4 w-full mx-auto">
+
+          <article class="channel" data-id="trainlytics">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/trainlytics/gif-trainlytics.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Trainlytics</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Progressive Web App for endurance athletes and coaches, co-founded and built from scratch. I designed the design system, built the React/TypeScript front-end, brought Lighthouse from 40 to 84, fixed a tricky service-worker caching bug in production, and run it with Sentry for beta users. Flutter mobile app in progress.</p>
+          </article>
+
+          <article class="channel" data-id="sportytrader">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/sporty/gif-sporty.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">SportyTrader</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Integration and development of front-end components for SportyTrader, a sports betting &amp; news platform (&gt;1M visits/month). Scrum environment, code reviews, CI/CD.</p>
+          </article>
+
+          <article class="channel" data-id="transcendence">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/transcendence/gif-transcendence.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">ft_transcendence</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Multiplayer Pong web application with real-time online matches over WebSockets, tournaments, live chat, user profiles and match history, and secure authentication (42 OAuth, 2FA, JWT). Built as a team of 3, fully containerized with Docker.</p>
+            <ul class="channel-role">
+              <li><strong>Front-end:</strong> interface design, integration, UI component management, compliance with SPA constraints.</li>
+              <li><strong>Back-end:</strong> creation and securing of API routes, socket management for real-time gaming.</li>
+              <li><strong>Game:</strong> game logic, canvas design, tournament mode.</li>
+            </ul>
+          </article>
+
+          <article class="channel" data-id="singula">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/singula/gif-singula.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Singulã</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Full website build for a sophrology practice. Clean, responsive, accessible design, secure contact form, SEO optimization.</p>
+          </article>
+
+          <article class="channel" data-id="dataviz">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/genai-hackaton/gif-genai.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">GenAI Data Visualization</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Media sentiment analysis dashboard for Enedis, built in 48h during a GenAI hackathon: an LLM classifies press articles by theme and sentiment, results shown in interactive charts. I built all the front-end views.</p>
+          </article>
+
+          <article class="channel" data-id="neural-network">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/neural/gif-neural.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Neural Network from Scratch</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Multilayer perceptron built from scratch in Python with NumPy, no ML framework, to classify breast cancer tumors. Hand-written backpropagation, mini-batch gradient descent and learning curves. 98% accuracy on the validation set, no malignant tumor missed.</p>
+          </article>
+
+          <article class="channel" data-id="learn2slither">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/learntoslither/gif-learntoslither.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Snake AI (Deep Q-Learning)</h3>
+              </div>
+            </div>
+            <p class="channel-desc">AI agent learning to play Snake via Deep Q-Network (DQN). Autonomous training, score curve visualization, experimentation with different network architectures.</p>
+          </article>
+
+          <article class="channel" data-id="inception">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/gif-inception.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Inception (Docker)</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Multi-service containerized infrastructure with Docker Compose: Nginx, WordPress, MariaDB, persistent volumes, isolated network, self-signed TLS certificate.</p>
+          </article>
+
+          <article class="channel" data-id="cyber42">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/gif-cyber.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Cyber Security Projects</h3>
+              </div>
+            </div>
+            <p class="channel-desc">Series of cybersecurity projects at 42 Paris in capture the flag (CTF) format: binary analysis, vulnerability exploitation, cryptography, reverse engineering and attack scripting.</p>
+          </article>
+
+          <article class="channel" data-id="cub3d">
+            <div class="channel-card">
+              <div class="channel-illustration">
+                <video class="channel-gif" src="/assets/img/projects/cub3d/gif-cub3d.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                <h3 class="channel-label">Raycasting</h3>
+              </div>
+            </div>
+            <p class="channel-desc">3D raycasting rendering engine inspired by Wolfenstein 3D, built entirely in C. Wall texturing, sprites, collisions, map parsing.</p>
+          </article>
+
+          <div class="channel channel--empty" aria-hidden="true"><div class="channel-card--empty"></div></div>
+          <div class="channel channel--empty" aria-hidden="true"><div class="channel-card--empty"></div></div>
+
+        </div>
+      </section>
     </div>
 
     <!-- Wii footer — official SVG + buttons on top -->
     <div class="wii-bottom-wrap w-full shrink-0 relative z-10">
 
-      <!-- Wii footer SVG (shape + visual circles) -->
-      <img src="/assets/menu-footer.svg" class="block w-full h-auto" aria-hidden="true" alt="">
+      <!-- Wii footer SVG, split in 3 so the bar can stretch on wide screens
+           while the side pods (button circles) keep their proportions -->
+      <img src="/assets/menu-footer-bar.svg" class="footer-art footer-art--bar" aria-hidden="true" alt="">
+      <img src="/assets/menu-footer-left.svg" class="footer-art footer-art--left" aria-hidden="true" alt="">
+      <img src="/assets/menu-footer-right.svg" class="footer-art footer-art--right" aria-hidden="true" alt="">
 
       <!-- Overlay: text + buttons positioned precisely on the SVG -->
       <div class="absolute inset-0 pointer-events-none" aria-hidden="false">
 
         <!-- Name — just above the central blue border (y≈34% of the SVG) -->
-        <p class="footer-name">Emma Blanchard</p>
+        <h1 class="footer-name">Emma Blanchard</h1>
 
         <!-- Subtitle — in the grey area below the border (y≈58%) -->
         <p class="footer-subtitle">Front-end Developer</p>
@@ -128,7 +244,7 @@
             Passionate about web and video games, I love building experiences and challenging myself.
           </p>
           <p class="text-sm text-gray-400 mt-4 leading-loose">
-            HTML · CSS/Tailwind · JavaScript · TypeScript · React · Vue.js · Node.js · Symfony · Python · Docker · Supabase · C
+            HTML · CSS/Tailwind · JavaScript · TypeScript · React · Vue.js · Node.js · Symfony · Python · Docker · Supabase · C · Vite · Claude Code
           </p>
           <div class="flex flex-wrap gap-3 mt-6">
             <a href="https://www.linkedin.com/in/emmablnch/" target="_blank" rel="noopener" class="wii-back-btn wii-back-btn--sm">

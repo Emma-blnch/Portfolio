@@ -11,11 +11,11 @@ let lastOpenedChannel = null;
 let galleryInterval = null;
 let currentProjectIndex = 0;
 
-const projectChannels = channels.filter(ch => !ch.empty);
+let projectChannels = [];
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  renderChannelGrid();
+  setupChannelGrid();
   setupBottomBar();
   setupOverlayBackButtons();
   setupKeyboard();
@@ -60,36 +60,23 @@ function animateMenuIn() {
 }
 
 // ─── Grille de chaînes ────────────────────────────────────────────────────────
-function renderChannelGrid() {
-  const grid = document.getElementById('channel-grid');
+// Les tuiles sont déjà dans le HTML (lisibles par les crawlers) : on lit leur
+// titre/description et on y branche l'interactivité.
+function setupChannelGrid() {
+  const tiles = document.querySelectorAll('#channel-grid .channel:not(.channel--empty)');
 
-  channels.forEach(ch => {
-    const el = document.createElement('div');
-    el.dataset.id = ch.id;
+  projectChannels = [...tiles].map(el => ({
+    id: el.dataset.id,
+    label: el.querySelector('.channel-label').innerHTML.trim(),
+    description: el.querySelector('.channel-desc').innerHTML.trim(),
+    role: el.querySelector('.channel-role')?.innerHTML.trim() ?? null,
+    ...channels[el.dataset.id],
+  }));
 
-    if (ch.empty) {
-      el.className = 'channel channel--empty';
-      el.setAttribute('aria-hidden', 'true');
-      el.innerHTML = `<div class="channel-card--empty"></div>`;
-      grid.appendChild(el);
-      return;
-    }
-
-    el.className = 'channel';
+  tiles.forEach((el, i) => {
+    const ch = projectChannels[i];
     el.tabIndex = 0;
-    el.role = 'button';
-    el.setAttribute('aria-label', `Project ${ch.label}`);
-
-    el.innerHTML = `
-      <div class="channel-card">
-        <div class="channel-illustration" style="${ch.gif ? '' : `background: ${ch.color}`}">
-          ${ch.gif
-            ? `<video class="channel-gif" src="${ch.gif}" autoplay loop muted playsinline></video>`
-            : ch.icon}
-          <div class="channel-label">${ch.label}</div>
-        </div>
-      </div>
-    `;
+    el.setAttribute('aria-haspopup', 'dialog');
 
     // Hover
     el.addEventListener('mouseenter', () => {
@@ -121,8 +108,6 @@ function renderChannelGrid() {
         openProjectOverlay(ch, el);
       }
     });
-
-    grid.appendChild(el);
   });
 }
 
@@ -304,6 +289,12 @@ function buildProjectHTML(ch) {
       </a>`
     : '';
 
+  const roleHTML = ch.role
+    ? `<h3 class="project-role-title">My role</h3><ul class="project-role">${ch.role}</ul>`
+    : '';
+
+  const noteHTML = ch.note ? `<span class="project-note">${ch.note}</span>` : '';
+
   const techHTML = ch.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
 
   let galleryHTML;
@@ -334,10 +325,11 @@ function buildProjectHTML(ch) {
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start h-full">
       <div class="flex flex-col flex-1 min-w-0">
         <p class="project-category">${ch.category}</p>
-        <h1 class="project-title">${ch.label}</h1>
+        <h2 class="project-title">${ch.label}</h2>
         <p class="project-desc mt-5">${ch.description}</p>
+        ${roleHTML}
         <div class="flex flex-wrap gap-2 mt-5">${techHTML}</div>
-        <div class="flex flex-wrap gap-3 mt-8">${githubBtn}${demoBtn}</div>
+        <div class="flex flex-wrap items-center gap-3 mt-8">${githubBtn}${demoBtn}${noteHTML}</div>
       </div>
       <div class="w-full lg:w-[48%] shrink-0">${galleryHTML}</div>
     </div>

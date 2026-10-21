@@ -101,7 +101,6 @@ Design inspired by the lovely Wii menu.
 ## 📄 Legal
 
 - GDPR-compliant privacy policy
-- Terms & Conditions (micro-entrepreneur — France)
 - Hosted in France (LWS)
 
 ---
