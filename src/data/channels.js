@@ -73,10 +73,11 @@ export const channels = {
   learn2slither: {
     category: 'AI · Reinforcement Learning',
     color: 'linear-gradient(135deg, #1b4332 0%, #52b788 100%)',
-    tech: ['Python', 'NumPy', 'DQN', 'Pygame'],
-    links: { github: 'https://github.com/Emma-blnch', demo: null },
+    tech: ['Python', 'NumPy', 'Q-Learning', 'Pygame'],
+    links: { github: 'https://github.com/Emma-blnch/learntoslither', demo: null },
     images: [
       '/assets/img/projects/learntoslither/learntoslither-screenshot1.webp',
+      '/assets/img/projects/learntoslither/learntoslither-screenshot2.webp',
     ],
   },
   inception: {
